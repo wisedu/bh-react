@@ -1,0 +1,25 @@
+{
+  "name": "bh-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "list.js",
+  "dependencies": {
+    "babel-core": "^6.1.21",
+    "babel-loader": "^6.1.0",
+    "babel-preset-react": "^6.1.18"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wisedu/bh-react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wisedu/bh-react/issues"
+  },
+  "homepage": "https://github.com/wisedu/bh-react#readme"
+}
