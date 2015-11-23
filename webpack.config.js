@@ -3,7 +3,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require('path');
 
 var entry = {};
-entry["button"] = ["./src/button/index.jsx"];
+entry["button"] = ["./samples/button.jsx"];
 
 module.exports = {
   entry: entry,

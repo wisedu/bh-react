@@ -30,6 +30,7 @@
     "less-loader": "^2.2.1",
     "node-sass": "^3.4.2",
     "rc-animate": "2.x",
+    "rc-dialog": "^5.3.0",
     "rc-util": "^3.0.1",
     "sass-loader": "^3.1.1",
     "style-loader": "^0.13.0",
