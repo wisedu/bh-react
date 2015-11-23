@@ -1,50 +1,36 @@
 var webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var path = require('path');
-
-var entry = {};
-entry["button"] = ["./src/button/index.jsx"];
 
 module.exports = {
-  entry: entry,
-
-  resolve: {
-    extensions: ['', '.js', '.jsx']
+  entry : {
+    tree : ['./src/tree/examples/tree.js']
   },
-
-  output: {
-    path: path.join(process.cwd(), 'dist'),
+  output : {
+    //path: './dist/',
     filename: '[name].js'
   },
-
-  module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      exclude: /node_modules/,
-      loader: 'babel',
-      query:{
-        "compact": false,
-        "presets": ["react", "es2015", "stage-0", "stage-1", "stage-2", "stage-3"]
+  module : {
+    loaders : [
+      {
+        test : [/\.js$/, /\.jsx$/],
+        loader : ['babel-loader'],
+        exclude : /node-modules/,
+        query : {
+          presets : ['es2015','react']
+        }
+      },
+      {
+        test : /\.css$/,
+        loaders : ['style', 'css']
+      },
+      {
+        test : /\.less$/,
+        loaders : ['style', 'css', 'less-loader']
+      },
+      {
+        test : /\.scss$/,
+        loaders : ['style', 'css', 'sass-loader']
       }
-    }, {
-      test: /\.json$/,
-      loader: 'json-loader'
-    }, {
-      test: /\.less$/,
-      loader: ExtractTextPlugin.extract(
-          'style-loader',"css-loader!less-loader"
-      )
-    }, {
-      test: /\.css$/,
-      loader: ExtractTextPlugin.extract(
-          'style-loader', 'css-loader'
-      )
-    }]
+    ]
   },
-
-  plugins: [
-    new ExtractTextPlugin('[name].css')
-  ],
-
-  devtool: 'source-map'
+  devtool : 'source-map'
 };
