@@ -4,7 +4,7 @@ import React from 'react';
 const AntRadio = React.createClass({
   getDefaultProps() {
     return {
-      prefixCls: 'ant-radio'
+      prefixCls: 'bh-radio'
     };
   },
   render() {

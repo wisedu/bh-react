@@ -30,7 +30,7 @@ Group.propTypes = {
 };
 
 Group.defaultProps = {
-  className: 'ant-input-group',
+  className: 'bh-input-group',
 };
 
 

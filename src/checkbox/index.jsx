@@ -4,7 +4,7 @@ import React from 'react';
 export default React.createClass({
   getDefaultProps() {
     return {
-      prefixCls: 'ant-checkbox'
+      prefixCls: 'bh-checkbox'
     };
   },
   render() {
