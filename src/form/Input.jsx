@@ -63,14 +63,14 @@ class Input extends React.Component {
   renderInput() {
     const props = this.props;
     const prefixCls = props.prefixCls;
-    let inputClassName = prefixClsFn(prefixCls, 'input');
+    let inputClassName = prefixClsFn(prefixCls, 'form-control');
     if (!props.type) {
       return props.children;
     }
 
     switch (props.size) {
-    case 'small': inputClassName = prefixClsFn(prefixCls, 'input', 'input-sm'); break;
-    case 'large': inputClassName = prefixClsFn(prefixCls, 'input', 'input-lg'); break;
+    case 'small': inputClassName = prefixClsFn(prefixCls, 'form-control', 'input-sm'); break;
+    case 'large': inputClassName = prefixClsFn(prefixCls, 'form-control', 'input-lg'); break;
     default:
     }
     let placeholder = props.placeholder;

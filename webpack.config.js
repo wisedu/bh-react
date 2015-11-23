@@ -3,12 +3,8 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require('path');
 
 var entry = {};
-<<<<<<< HEAD
 entry["bh"] = ["./samples/form.jsx"];
 //entry["bh"] = ["./index.js"];
-=======
-entry["button"] = ["./samples/button.jsx"];
->>>>>>> lgh
 
 module.exports = {
   entry: entry,

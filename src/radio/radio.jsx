@@ -24,4 +24,4 @@ const AntRadio = React.createClass({
   }
 });
 
-export default AntRadio;
+module.exports = AntRadio;

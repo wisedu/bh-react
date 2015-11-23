@@ -14,4 +14,4 @@ const RadioButton = React.createClass({
   }
 });
 
-export default RadioButton;
+module.exports = RadioButton;
