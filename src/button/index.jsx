@@ -1,5 +1,7 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import Button from './button';
-import ButtonGroup from './button-group';
-
-Button.Group = ButtonGroup;
+//import ButtonGroup from './button-group';
+//
+//Button.Group = ButtonGroup;
 export default Button;
