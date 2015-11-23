@@ -10,6 +10,7 @@ class Demo extends React.Component {
 
     handleSelect (info) {
         console.log(info)
+        console.log(this)
     }
 
     handleCheck (info) {

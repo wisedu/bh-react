@@ -173,7 +173,6 @@ class TreeNode extends React.Component {
       [`${prefixCls}-icon_loading`]: this.state.dataLoading,
       [`${prefixCls}-icon__${expandedState}`]: true,
     };
-    console.log(iconEleCls)
 
     let canRenderSwitcher = true;
     const content = props.title;
@@ -192,7 +191,9 @@ class TreeNode extends React.Component {
       const domProps = {};
       if (!props.disabled) {
         if (props.selected) {
-          domProps.className = `${prefixCls}-node-selected`;
+          domProps.className = `${prefixCls}-item ${prefixCls}-node-selected`;
+        }else {
+          domProps.className = `${prefixCls}-item`;
         }
         domProps.onClick = () => {
           this.handleSelect();
@@ -205,20 +206,24 @@ class TreeNode extends React.Component {
         }
       }
       return (
-        <div>
-          {canRenderSwitcher ? this.renderSwitcher(props, expandedState) : <span className={`${prefixCls}-switcher-noop`}></span>}
-          {props.checkable ? this.renderCheckbox(props) : null}
-          <a ref="selectHandle" title={content} {...domProps}>
-            {icon} {title}
-          </a>
-        </div>
+          <div {...domProps} ref="item" >
+            <div className={`${prefixCls}-item-mask`}></div>
+            <div className={`${prefixCls}-item-content`}>
+              {canRenderSwitcher ? this.renderSwitcher(props, expandedState) : <span className={`${prefixCls}-switcher-noop`}></span>}
+              {props.checkable ? this.renderCheckbox(props) : null}
+              <a ref="selectHandle" title={content} >
+                {icon} {title}
+              </a>
+            </div>
+          </div>
       );
     };
 
 
     return (
+
       <li className={joinClasses(props.className, props.disabled ? `${prefixCls}-treenode-disabled` : '')}>
-        {selectHandle()}
+          {selectHandle()}
         {newChildren}
       </li>
     );
