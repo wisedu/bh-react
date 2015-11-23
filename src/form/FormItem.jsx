@@ -15,8 +15,8 @@ class FormItem extends React.Component {
       return '';
     }
     const {span, offset} = colDef;
-    const col = span ? 'col-' + span : '';
-    const offsetCol = offset ? ' col-offset-' + offset : '';
+    const col = span ? 'bh-col-md-' + span : '';
+    const offsetCol = offset ? ' bh-col-offset-md-' + offset : '';
     return col + offsetCol;
   }
 
