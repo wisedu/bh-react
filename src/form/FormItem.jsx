@@ -1,7 +1,7 @@
 import React from 'react';
-import rcUtil from 'rc-util';
+import classSet from 'classnames';
 
-const cx = rcUtil.classSet;
+const cx = classSet;
 
 function prefixClsFn(prefixCls, ...args) {
   return args.map((s)=> {
@@ -140,7 +140,7 @@ FormItem.propTypes = {
 FormItem.defaultProps = {
   hasFeedback: false,
   required: false,
-  prefixCls: 'ant-form',
+  prefixCls: 'bh-form',
 };
 
 module.exports = FormItem;

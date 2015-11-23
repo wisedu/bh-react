@@ -1,7 +1,7 @@
 import React from 'react';
-import rcUtil from 'rc-util';
+import classSet from 'classnames';
 
-const cx = rcUtil.classSet;
+const cx = classSet;
 
 class Form extends React.Component {
   render() {
@@ -29,7 +29,7 @@ Form.propTypes = {
 };
 
 Form.defaultProps = {
-  prefixCls: 'ant-form',
+  prefixCls: 'bh-form',
 };
 
 module.exports = Form;

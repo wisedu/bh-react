@@ -3,7 +3,8 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require('path');
 
 var entry = {};
-entry["bh"] = ["./samples/form.js"];
+entry["bh"] = ["./samples/form.jsx"];
+//entry["bh"] = ["./index.js"];
 
 module.exports = {
   entry: entry,

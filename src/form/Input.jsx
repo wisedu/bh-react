@@ -110,7 +110,7 @@ Input.propTypes = {
 Input.defaultProps = {
   defaultValue: '',
   disabled: false,
-  prefixCls: 'ant',
+  prefixCls: 'bh',
   type: 'text',
 };
 
