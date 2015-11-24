@@ -1,47 +1,17 @@
 'use strict';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Tree, {TreeNode} from '../lib';
-import '../assets/tree.scss';
+import Tree from '../src';
 
+$.getJSON('./data.json',(data) => {
+    let treeDatas = data.datas.code.rows;
+    ReactDOM.render(<Tree
+        data={treeDatas}
+        multiple={true}
+        showIcon={true}
+        defaultExpandAll={true}
+        defaultSelectedKeys={["000012", "000406", "000001"]}
+    />, document.getElementById('main'));
+});
 
-
-class Demo extends React.Component {
-
-    handleSelect (info) {
-        console.log(info)
-        console.log(this)
-    }
-
-    handleCheck (info) {
-        console.log(info)
-    }
-
-
-    render () {
-        return (
-            <Tree
-                className="myCls"
-                checkable={false}
-                showIcon={true}
-                onSelect={this.handleSelect}
-                multiple={true}
-                defaultExpandAll={true}
-                >
-                <TreeNode title="parent 1" key="0-1">
-                    <TreeNode title="parent 1-0" key="0-1-1" disabled={true}>
-                        <TreeNode title="leaf" key="random" />
-                        <TreeNode title="leaf" key='2' />
-                    </TreeNode>
-                    <TreeNode className="" title="parent 1-1" key='1-1'>
-                        <TreeNode key='1-1-1' title={<span style={{color: 'red'}}>sss</span>} />
-                    </TreeNode>
-                </TreeNode>
-            </Tree>
-        )
-    }
-}
-
-
-ReactDOM.render(<Demo/>, document.getElementById('main'));
 
