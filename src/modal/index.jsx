@@ -3,6 +3,7 @@ import Dialog from 'rc-dialog';
 import { Dom } from 'rc-util';
 import AlertDialog from './alert.jsx';
 import ConfirmDialog from './confirm.jsx';
+import DialogIcon from './dialogIcon.jsx';
 
 function noop() {}
 
@@ -22,7 +23,8 @@ let BhDialog = React.createClass({
       closable: this.props.closable ? this.props.closable : true,
       onClose: this.onClose,
       type: this.props.type,
-      content: this.props.content
+      content: this.props.content,
+      showType: this.props.showType
     };
   },
   componentWillReceiveProps(nextProps){
@@ -58,6 +60,9 @@ let BhDialog = React.createClass({
     let state = this.state;
     if(state.visible){
       if(state.type === "alert"){
+        if(state.showType){
+          state.title = <div><DialogIcon {...this.props} /> <h4>{this.props.title}</h4> </div>;
+        }
         state.footer = <AlertDialog {...this.props} onClose={this.onClose} />;
         state.closable = this.props.closable ? this.props.closable : false;
       }else if(state.type === "confirm"){
