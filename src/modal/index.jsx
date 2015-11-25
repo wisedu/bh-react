@@ -1,36 +1,33 @@
 import React from 'react';
 import Dialog from 'rc-dialog';
 import { Dom } from 'rc-util';
-import confirm from './confirm';
-import Button from '../button/button.jsx';
+import AlertDialog from './alert.jsx';
+import ConfirmDialog from './confirm.jsx';
 
 function noop() {}
 
 let mousePosition;
 let mousePositionEventBinded;
 
-let AntModal = React.createClass({
-  getDefaultProps() {
+let BhDialog = React.createClass({
+  getInitialState() {
     return {
-      prefixCls: 'bh-modal',
-      onOk: noop,
-      onCancel: noop,
-      width: 520,
-      transitionName: 'zoom',
+      prefixCls: 'bh-dialog',
+      width: this.props.width ? this.props.width : 564,
+      height: this.props.height ? this.props.height : "auto",
+      animation: 'zoom',
       maskAnimation: 'fade',
-      confirmLoading: false,
-      visible: false
+      visible: this.props.visible ? this.props.visible : false,
+      title: this.props.title ? <h4>{this.props.title}</h4> : '',
+      closable: this.props.closable ? this.props.closable : true,
+      onClose: this.onClose
     };
   },
-
-  handleCancel() {
-    this.props.onCancel();
+  componentWillReceiveProps(nextProps){
+    this.setState({
+      visible: nextProps.visible
+    });
   },
-
-  handleOk() {
-    this.props.onOk();
-  },
-
   componentDidMount() {
     if (mousePositionEventBinded) {
       return;
@@ -46,53 +43,32 @@ let AntModal = React.createClass({
       // 这样可以兼容非点击方式展开
       setTimeout(() => mousePosition = null, 20);
     });
+
     mousePositionEventBinded = true;
   },
+  onClose(){
+    this.setState({
+      visible: false
+    });
+  },
 
-  render() {
-    let props = this.props;
-    let defaultFooter = [
-      <Button key="cancel"
-        type="ghost"
-        size="large"
-        onClick={this.handleCancel}>
-        取消
-      </Button>,
-      <Button key="confirm"
-        type="primary"
-        size="large"
-        loading={props.confirmLoading}
-        onClick={this.handleOk}>
-        确定
-      </Button>
-    ];
-    let footer = props.footer || defaultFooter;
-    return <Dialog onClose={this.handleCancel} footer={footer} {...props}
-      visible={props.visible} mousePosition={mousePosition} />;
+  render: function () {
+    let state = this.state;
+    if(state.visible){
+      var footer;
+      if(this.props.type === "alert"){
+        state.footer = <AlertDialog {...this.props} onClose={this.onClose} />;
+        state.closable = this.props.closable ? this.props.closable : false;
+      }else if(this.props.type === "confirm"){
+        state.footer = <ConfirmDialog {...this.props} onClose={this.onClose} />;
+        state.closable = this.props.closable ? this.props.closable : false;
+      }
+      return (<Dialog style={{width:state.width, height: state.height}} mousePosition={mousePosition} {...state}>
+              </Dialog>);
+    }else{
+      return (<div></div>);
+    }
   }
 });
 
-AntModal.info = function (props) {
-  props.iconClassName = 'info-circle';
-  props.okCancel = false;
-  return confirm(props);
-};
-
-AntModal.success = function (props) {
-  props.iconClassName = 'check-circle';
-  props.okCancel = false;
-  return confirm(props);
-};
-
-AntModal.error = function (props) {
-  props.iconClassName = 'exclamation-circle';
-  props.okCancel = false;
-  return confirm(props);
-};
-
-AntModal.confirm = function (props) {
-  props.okCancel = true;
-  return confirm(props);
-};
-
-export default AntModal;
+export default BhDialog;

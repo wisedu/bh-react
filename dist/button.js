@@ -19783,7 +19783,11 @@
 	            var value = _step.value;
 	
 	            if (value) {
-	              classArr[prefix + value] = value;
+	              if (value !== "disabled") {
+	                classArr[prefix + value] = value;
+	              } else {
+	                classArr["bh-" + value] = value;
+	              }
 	            }
 	          }
 	        } catch (err) {

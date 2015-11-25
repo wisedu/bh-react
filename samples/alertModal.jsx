@@ -1,39 +1,67 @@
+'use strict';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Modal from '../src/modal/index.jsx';
-import Button from '../src/button/button.jsx';
+import Dialog from '../src/modal/index.jsx';
+import Button from '../src/button/index.jsx';
 
-const App = React.createClass({
+const AlertDialog = React.createClass({
     getInitialState() {
-        return { visible: false };
+        return {
+            visible: false,
+            title: "这是一条提醒信息",
+            type: "alert",
+            okBtnText: "",
+            handleOk: this.handleOk
+        };
+    },
+    handleOk(){
+        console.log("1111")
     },
     showModal() {
         this.setState({
             visible: true
         });
     },
-    handleOk() {
-        console.log('点击了确定');
-        this.setState({
-            visible: false
-        });
+    render() {
+        return <div>
+                    <Button classType="primary" onClick={this.showModal}>alert对话框</Button>
+                    <Dialog {...this.state}  />
+                </div>;
+    }
+});
+ReactDOM.render(<AlertDialog /> , document.getElementById('example_alert'));
+
+
+const ConfirmDialog = React.createClass({
+    getInitialState() {
+        return {
+            visible: false,
+            title: "这是一条confirm信息",
+            type: "confirm",
+            okBtnText: "",
+            cancelBtnText: "",
+            handleOk: this.handleOk,
+            handleCancel: this.handleCancel
+        };
     },
-    handleCancel() {
+    handleOk(){
+        console.log("确认")
+    },
+    handleCancel(){
+        console.log("取消")
+    },
+    showModal() {
         this.setState({
-            visible: false
+            visible: true
         });
     },
     render() {
         return <div>
-            <Button className="bh-btn bh-btn-primary" onClick={this.showModal}>显示对话框</Button>
-            <Modal title="第一个 Modal" visible={this.state.visible}
-                   onOk={this.handleOk} onCancel={this.handleCancel}>
-                <p>对话框的内容</p>
-                <p>对话框的内容</p>
-                <p>对话框的内容</p>
-            </Modal>
-        </div>;
+                    <Button classType="primary" onClick={this.showModal}>confirm对话框</Button>
+                    <Dialog {...this.state}  />
+                </div>;
     }
 });
 
-ReactDOM.render(<App /> , document.getElementById('example'));
+ReactDOM.render(<ConfirmDialog /> , document.getElementById('example_confirm'));
