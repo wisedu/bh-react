@@ -11,11 +11,12 @@ const Row = React.createClass({
   },
   render() {
     const { type, justify, align, className, ...others } = this.props;
+    const prefixCls = "bh-";
     const classes = rcUtil.classSet({
-      'row': true,
-      ['row-' + type]: type,
-      ['row-' + type + '-' + justify]: justify,
-      ['row-' + type + '-' + align]: align,
+      [prefixCls + 'row']: true,
+      //[prefixCls + 'row-' + type]: type,
+      //[prefixCls + 'row-' + type + '-' + justify]: justify,
+      //[prefixCls + 'row-' + type + '-' + align]: align,
       [className]: className,
     });
     return <div {...others} className={classes}>{ this.props.children }</div>;

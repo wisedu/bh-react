@@ -2,7 +2,7 @@ import React from 'react';
 import Dialog from 'rc-dialog';
 import { Dom } from 'rc-util';
 import confirm from './confirm';
-import Button from '../button';
+import Button from '../button/button.jsx';
 
 function noop() {}
 
@@ -12,7 +12,7 @@ let mousePositionEventBinded;
 let AntModal = React.createClass({
   getDefaultProps() {
     return {
-      prefixCls: 'ant-modal',
+      prefixCls: 'bh-modal',
       onOk: noop,
       onCancel: noop,
       width: 520,

@@ -4,7 +4,7 @@ import AntRadio from './radio';
 const RadioButton = React.createClass({
   getDefaultProps() {
     return {
-      className: 'ant-radio-button'
+      className: 'bh-radio-button'
     };
   },
   render() {
@@ -14,4 +14,4 @@ const RadioButton = React.createClass({
   }
 });
 
-export default RadioButton;
+module.exports = RadioButton;

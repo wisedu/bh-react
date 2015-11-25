@@ -14,7 +14,7 @@ function getCheckedValue(children) {
 export default React.createClass({
   getDefaultProps: function () {
     return {
-      prefixCls: 'ant-radio-group',
+      prefixCls: 'bh-radio-group',
       disabled: false,
       onChange: function () {
       }

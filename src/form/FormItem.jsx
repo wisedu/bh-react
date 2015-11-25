@@ -1,7 +1,7 @@
 import React from 'react';
-import rcUtil from 'rc-util';
+import classSet from 'classnames';
 
-const cx = rcUtil.classSet;
+const cx = classSet;
 
 function prefixClsFn(prefixCls, ...args) {
   return args.map((s)=> {
@@ -10,16 +10,23 @@ function prefixClsFn(prefixCls, ...args) {
 }
 
 class FormItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      labelCol:{span:"4"},
+      wrapperCol:{span:"8"},
+      col: this.props.col || 1
+    };
+  }
   _getLayoutClass(colDef) {
     if (!colDef) {
       return '';
     }
     const {span, offset} = colDef;
-    const col = span ? 'col-' + span : '';
-    const offsetCol = offset ? ' col-offset-' + offset : '';
+    const col = span ? 'bh-col-md-' + span : '';
+    const offsetCol = offset ? ' bh-col-offset-md-' + offset : '';
     return col + offsetCol;
   }
-
   renderHelp() {
     const prefixCls = this.props.prefixCls;
     return (
@@ -28,7 +35,6 @@ class FormItem extends React.Component {
       </div>
     );
   }
-
   renderValidateWrapper(c1, c2) {
     let classes = '';
     if (this.props.validateStatus) {
@@ -48,18 +54,16 @@ class FormItem extends React.Component {
       </div>
     );
   }
-
   renderWrapper(children) {
-    const wrapperCol = this.props.wrapperCol;
+    const wrapperCol = this.state.wrapperCol;
     return (
       <div className={this._getLayoutClass(wrapperCol)} key="wrapper">
         {children}
       </div>
     );
   }
-
   renderLabel() {
-    const labelCol = this.props.labelCol;
+    const labelCol = this.state.labelCol;
     const required = this.props.required ? 'required' : '';
 
     return this.props.label ? (
@@ -68,7 +72,6 @@ class FormItem extends React.Component {
       </label>
     ) : null;
   }
-
   renderChildren() {
     return [
       this.renderLabel(),
@@ -105,11 +108,15 @@ class FormItem extends React.Component {
   }
 
   renderFormItem(children) {
+    var cols = this.props.cols;
+    var wide = 12 / cols * this.state.col;
+
     const props = this.props;
     const prefixCls = props.prefixCls;
     const itemClassName = {
-      [`${prefixCls}-item`]: true,
-      [`${prefixCls}-item-compact`]: this._isCompact(props.children),
+      [`${prefixCls}-group`]: true,
+      [`${prefixCls}-group-compact`]: this._isCompact(props.children),
+      [`bh-col-md-${wide}`]: true
     };
 
     return (
@@ -135,12 +142,13 @@ FormItem.propTypes = {
   wrapperCol: React.PropTypes.object,
   className: React.PropTypes.string,
   children: React.PropTypes.node,
+  cols: React.PropTypes.string
 };
 
 FormItem.defaultProps = {
   hasFeedback: false,
   required: false,
-  prefixCls: 'ant-form',
+  prefixCls: 'bh-form',
 };
 
 module.exports = FormItem;
