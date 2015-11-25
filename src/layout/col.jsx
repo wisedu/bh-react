@@ -13,12 +13,13 @@ const Col = React.createClass({
   },
   render() {
     const {span, order, offset, push, pull, className, ...others} = this.props;
+    const prefixCls = "bh-";
     const classes = rcUtil.classSet({
-      ['col-' + span]: span,
-      ['col-order-' + order]: order,
-      ['col-offset-' + offset]: offset,
-      ['col-push-' + push]: push,
-      ['col-pull-' + pull]: pull,
+      [prefixCls + 'col-md-' + span]: span,
+      [prefixCls + 'col-order-' + order]: order,
+      [prefixCls + 'col-offset-' + offset]: offset,
+      [prefixCls + 'col-push-' + push]: push,
+      [prefixCls + 'col-pull-' + pull]: pull,
       [className]: className,
     });
     return <div {...others} className={classes}>{ this.props.children }</div>;
