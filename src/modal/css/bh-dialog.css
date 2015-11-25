@@ -43,7 +43,10 @@
   padding: 32px 0;
   background: #fff;
   color: #666;
-  text-align: center;
+  text-align: left;
+}
+.bh-dialog-confirm .bh-dialog-header{
+    text-align: center;
 }
 .bh-dialog-body{
   padding-bottom: 32px;
@@ -51,7 +54,10 @@
 .bh-dialog-footer {
   border-top: 1px solid #e9e9e9;
   padding: 32px 0;
-  text-align: center;
+  text-align: right;
+}
+.bh-dialog-confirm .bh-dialog-footer{
+    text-align: center;
 }
 .bh-dialog-zoom-enter,
 .bh-dialog-zoom-appear {

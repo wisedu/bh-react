@@ -20,7 +20,9 @@ let BhDialog = React.createClass({
       visible: this.props.visible ? this.props.visible : false,
       title: this.props.title ? <h4>{this.props.title}</h4> : '',
       closable: this.props.closable ? this.props.closable : true,
-      onClose: this.onClose
+      onClose: this.onClose,
+      type: this.props.type,
+      content: this.props.content
     };
   },
   componentWillReceiveProps(nextProps){
@@ -55,11 +57,10 @@ let BhDialog = React.createClass({
   render: function () {
     let state = this.state;
     if(state.visible){
-      var footer;
-      if(this.props.type === "alert"){
+      if(state.type === "alert"){
         state.footer = <AlertDialog {...this.props} onClose={this.onClose} />;
         state.closable = this.props.closable ? this.props.closable : false;
-      }else if(this.props.type === "confirm"){
+      }else if(state.type === "confirm"){
         state.footer = <ConfirmDialog {...this.props} onClose={this.onClose} />;
         state.closable = this.props.closable ? this.props.closable : false;
       }
