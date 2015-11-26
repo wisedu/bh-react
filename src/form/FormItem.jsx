@@ -21,8 +21,8 @@ class FormItem extends React.Component {
         wide_control = "10";
       break;
       case "3-3":
-        wide_label = " long";
-        wide_control = " long";
+        wide_label = "12";
+        wide_control = "12";
       break;
       case "2-2":
         wide_label = "2";
@@ -63,8 +63,8 @@ class FormItem extends React.Component {
         {
           'has-feedback': this.props.hasFeedback,
           'has-success': this.props.validateStatus === 'success',
-          'has-warning': this.props.validateStatus === 'warning',
-          'has-error': this.props.validateStatus === 'error',
+          'bh-form-control-warning': this.props.validateStatus === 'warning',
+          'bh-form-control-danger': this.props.validateStatus === 'error',
           'is-validating': this.props.validateStatus === 'validating',
         }
       );
@@ -85,10 +85,9 @@ class FormItem extends React.Component {
   }
   renderLabel() {
     const labelCol = this.state.labelCol;
-    const required = this.props.required ? 'required' : '';
 
     return this.props.label ? (
-      <label htmlFor={this.props.id} className={this._getLayoutClass(labelCol)} required={required} key="label">
+      <label htmlFor={this.props.id} className={this._getLayoutClass(labelCol) + " bh-form-label "} key="label">
         {this.props.label}
       </label>
     ) : null;
@@ -137,7 +136,8 @@ class FormItem extends React.Component {
     const itemClassName = {
       [`${prefixCls}-group`]: true,
       [`${prefixCls}-group-compact`]: this._isCompact(props.children),
-      [`bh-col-md-${wide}`]: true
+      [`bh-col-md-${wide}`]: true,
+      ["bh-required"]: this.props.required
     };
 
     return (

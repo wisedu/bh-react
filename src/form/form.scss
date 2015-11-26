@@ -1,0 +1,59 @@
+$ddd1px: 1px solid #DDDDDD;
+
+.bh-fm-compact {
+  display: block;
+  clear: both;
+
+  label, span{
+  	text-align: left;
+  	white-space: nowrap;
+    overflow: hidden ;
+    text-overflow: ellipsis ;
+  }
+
+  &.read {
+    border-bottom: $ddd1px;
+    border-right: $ddd1px;
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    overflow: hidden;
+
+    .bh-form-group {
+        border-top: $ddd1px;
+        border-left: $ddd1px;
+        margin: 0;
+    }
+
+    label.bh-form-label {
+      border-right: $ddd1px;
+      line-height: 32px;
+      padding: 0 10px;
+      margin-right: 0;
+      background-color: #efefef;
+    }
+    span.bh-form-control {
+    	border:none;
+    	padding: 0;
+      height: 32px;
+      line-height: 32px;
+      padding-left: 5px;
+    }
+  }
+
+  &.edit{
+    .bh-form-group {
+      margin: 2px 0;
+    }
+    label.bh-form-label {
+      line-height: 28px;
+      text-align: right;
+      font-weight: 700;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+  &.bh-row{
+  	margin: 0;
+  }
+}
