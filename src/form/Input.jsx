@@ -114,5 +114,9 @@ Input.defaultProps = {
   type: 'text',
 };
 
-module.exports = Input;
-module.exports.Group = Group;
+// module.exports = Input;
+// module.exports.Group = Group;
+
+exports['default'] = Input;
+exports['default'].Group = Group;
+module.exports = exports['default'];
