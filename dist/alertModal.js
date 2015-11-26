@@ -51,6 +51,81 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
+	//import React from 'react';
+	//import ReactDOM from 'react-dom';
+	//import Modal from '../src/modal/index.jsx';
+	//import Button from '../src/button/button.jsx';
+	
+	//const App = React.createClass({
+	//    getInitialState() {
+	//        return { visible: false };
+	//    },
+	//    showModal() {
+	//        this.setState({
+	//            visible: true
+	//        });
+	//    },
+	//    handleOk() {
+	//        console.log('点击了确定');
+	//        this.setState({
+	//            visible: false
+	//        });
+	//    },
+	//    handleCancel() {
+	//        console.log('点击了取消');
+	//        this.setState({
+	//            visible: false
+	//        });
+	//    },
+	//    render() {
+	//        return <div>
+	//            <Button classType="primary" onClick={this.showModal}>显示对话框</Button>
+	//            <Modal title="第一个 Modal" visible={this.state.visible}
+	//                   onOk={this.handleOk} onCancel={this.handleCancel}>
+	//                <p>对话框的内容</p>
+	//                <p>对话框的内容</p>
+	//                <p>对话框的内容</p>
+	//            </Modal>
+	//        </div>;
+	//    }
+	//});
+	//
+	//ReactDOM.render(<App /> , document.getElementById('example'));
+	
+	//import confirm from '../src/modal/confirm.jsx';
+	//
+	//function showConfirm(){
+	//    confirm({
+	//        title: '这是一条提醒信息',
+	//        content: '一些解释',
+	//        onOk: function() {
+	//        },
+	//        onCancel: function() {}
+	//    });
+	//}
+	//
+	//ReactDOM.render(
+	//    <Button onClick={showConfirm} classType="primary">
+	//        确认对话框
+	//    </Button>, document.getElementById('example'));
+	
+	//import alert from '../src/modal/alert.jsx';
+	//
+	//function showAlert(){
+	//    alert({
+	//        title: '这是一条提醒信息',
+	//        content: '',
+	//        okBtnText:'',
+	//        onOk: function() {
+	//        }
+	//    });
+	//}
+	//
+	//ReactDOM.render(
+	//    <Button onClick={showAlert} classType="primary">
+	//        alert 对话框
+	//    </Button>, document.getElementById('example'));
+	
 	'use strict';
 	
 	var _react = __webpack_require__(2);
@@ -65,31 +140,68 @@
 	
 	var _index2 = _interopRequireDefault(_index);
 	
-	var _button = __webpack_require__(204);
-	
-	var _button2 = _interopRequireDefault(_button);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var App = _react2.default.createClass({
-	    displayName: 'App',
+	//const MyDialog = React.createClass({
+	//    getInitialState() {
+	//        return {
+	//            visible: false,
+	//            title: "这是一条提醒信息",
+	//            type: "alert",
+	//            okBtnText: "",
+	//            handleOk: this.handleOk,
+	//            width: 600,
+	//            height: 500
+	//        };
+	//    },
+	//    handleOk(){
+	//        console.log("1111")
+	//    },
+	//    showModal() {
+	//        this.setState({
+	//            visible: true
+	//        });
+	//    },
+	//    render() {
+	//        return <div>
+	//                    <h2>ant-design dialog</h2>
+	//                    <div>
+	//                        <p>
+	//                            <button className="btn btn-primary" onClick={this.showModal}>show dialog</button>
+	//                            &nbsp;
+	//                            <label>destroy on close: <input type="checkbox" /></label>
+	//                        </p>
+	//                        <Dialog {...this.state}  />
+	//                    </div>
+	//
+	//                </div>;
+	//    }
+	//});
+	
+	var MyDialog = _react2.default.createClass({
+	    displayName: 'MyDialog',
 	    getInitialState: function getInitialState() {
-	        return { visible: false };
+	        return {
+	            visible: false,
+	            title: "这是一条confirm信息",
+	            type: "confirm",
+	            okBtnText: "",
+	            cancelBtnText: "",
+	            handleOk: this.handleOk,
+	            //handleCancel: this.handleCancel,
+	            width: 600,
+	            height: 500
+	        };
+	    },
+	    handleOk: function handleOk() {
+	        console.log("确认");
+	    },
+	    handleCancel: function handleCancel() {
+	        console.log("取消");
 	    },
 	    showModal: function showModal() {
 	        this.setState({
 	            visible: true
-	        });
-	    },
-	    handleOk: function handleOk() {
-	        console.log('点击了确定');
-	        this.setState({
-	            visible: false
-	        });
-	    },
-	    handleCancel: function handleCancel() {
-	        this.setState({
-	            visible: false
 	        });
 	    },
 	    render: function render() {
@@ -97,35 +209,104 @@
 	            'div',
 	            null,
 	            _react2.default.createElement(
-	                _button2.default,
-	                { className: 'bh-btn bh-btn-primary', onClick: this.showModal },
-	                '显示对话框'
+	                'h2',
+	                null,
+	                'ant-design dialog'
 	            ),
 	            _react2.default.createElement(
-	                _index2.default,
-	                { title: '第一个 Modal', visible: this.state.visible,
-	                    onOk: this.handleOk, onCancel: this.handleCancel },
+	                'div',
+	                null,
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    '对话框的内容'
+	                    _react2.default.createElement(
+	                        'button',
+	                        { className: 'btn btn-primary', onClick: this.showModal },
+	                        'show dialog'
+	                    ),
+	                    ' ',
+	                    _react2.default.createElement(
+	                        'label',
+	                        null,
+	                        'destroy on close: ',
+	                        _react2.default.createElement('input', { type: 'checkbox' })
+	                    )
 	                ),
-	                _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    '对话框的内容'
-	                ),
-	                _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    '对话框的内容'
-	                )
+	                _react2.default.createElement(_index2.default, this.state)
 	            )
 	        );
 	    }
 	});
 	
-	_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('example'));
+	_reactDom2.default.render(_react2.default.createElement(MyDialog, null), document.getElementById('example'));
+	
+	//import React from 'react';
+	//import ReactDOM from 'react-dom';
+	//import Dialog from 'rc-dialog';
+	//
+	//var MyControl = React.createClass({
+	//    getInitialState(){
+	//        return {
+	//            visible:false,
+	//            destroyOnClose:true
+	//        };
+	//    },
+	//
+	//    onClick: function (e) {
+	//        this.setState({
+	//            mousePosition: {
+	//                x:e.pageX,
+	//                y:e.pageY
+	//            },
+	//            visible:true
+	//        });
+	//    },
+	//
+	//    onClose(){
+	//        this.setState({
+	//            visible:false
+	//        });
+	//    },
+	//
+	//    onDestroyOnCloseChange(e){
+	//        this.setState({
+	//            destroyOnClose:e.target.checked
+	//        });
+	//    },
+	//
+	//    render: function () {
+	//        var dialog;
+	//        if(this.state.visible || !this.state.destroyOnClose){
+	//            dialog= <Dialog visible={this.state.visible}
+	//                            animation="zoom"
+	//                            maskAnimation="fade"
+	//                            onClose={this.onClose}
+	//                            style={{width:600}}
+	//                            mousePosition={this.state.mousePosition} title={<div> 第二个弹框</div>}>
+	//                <input />
+	//                <p>basic modal</p>
+	//            </Dialog>;
+	//        }
+	//        return (
+	//            <div>
+	//                <p>
+	//                    <button className="btn btn-primary" onClick={this.onClick}>show dialog</button>
+	//                    &nbsp;
+	//                    <label>destroy on close: <input type="checkbox" checked={this.state.destroyOnClose} onChange={this.onDestroyOnCloseChange}/></label>
+	//                </p>
+	//                {dialog}
+	//            </div>
+	//        );
+	//    }
+	//});
+	//
+	//ReactDOM.render(
+	//    <div>
+	//        <h2>ant-design dialog</h2>
+	//        <MyControl/>
+	//    </div>,
+	//    document.getElementById('example')
+	//);
 
 /***/ },
 /* 2 */
@@ -19736,13 +19917,13 @@
 	
 	var _rcUtil = __webpack_require__(174);
 	
-	var _confirm = __webpack_require__(201);
+	var _alert = __webpack_require__(201);
+	
+	var _alert2 = _interopRequireDefault(_alert);
+	
+	var _confirm = __webpack_require__(204);
 	
 	var _confirm2 = _interopRequireDefault(_confirm);
-	
-	var _button = __webpack_require__(204);
-	
-	var _button2 = _interopRequireDefault(_button);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -19751,25 +19932,24 @@
 	var mousePosition = undefined;
 	var mousePositionEventBinded = undefined;
 	
-	var AntModal = _react2.default.createClass({
-	  displayName: 'AntModal',
-	  getDefaultProps: function getDefaultProps() {
+	var BhDialog = _react2.default.createClass({
+	  displayName: 'BhDialog',
+	  getInitialState: function getInitialState() {
 	    return {
-	      prefixCls: 'ant-modal',
-	      onOk: noop,
-	      onCancel: noop,
-	      width: 520,
+	      prefixCls: 'rc-dialog',
+	      width: this.props.width ? this.props.width : 520,
+	      height: this.props.height ? this.props.height : 500,
 	      transitionName: 'zoom',
 	      maskAnimation: 'fade',
-	      confirmLoading: false,
-	      visible: false
+	      visible: this.props.visible ? this.props.visible : false,
+	      title: this.props.title ? this.props.title : "",
+	      closable: true
 	    };
 	  },
-	  handleCancel: function handleCancel() {
-	    this.props.onCancel();
-	  },
-	  handleOk: function handleOk() {
-	    this.props.onOk();
+	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+	    this.setState({
+	      visible: nextProps.visible
+	    });
 	  },
 	  componentDidMount: function componentDidMount() {
 	    if (mousePositionEventBinded) {
@@ -19788,56 +19968,69 @@
 	        return mousePosition = null;
 	      }, 20);
 	    });
+	
 	    mousePositionEventBinded = true;
 	  },
+	  onClose: function onClose() {
+	    this.setState({
+	      visible: false
+	    });
+	  },
+	
 	  render: function render() {
-	    var props = this.props;
-	    var defaultFooter = [_react2.default.createElement(
-	      _button2.default,
-	      { key: 'cancel',
-	        type: 'ghost',
-	        size: 'large',
-	        onClick: this.handleCancel },
-	      '取消'
-	    ), _react2.default.createElement(
-	      _button2.default,
-	      { key: 'confirm',
-	        type: 'primary',
-	        size: 'large',
-	        loading: props.confirmLoading,
-	        onClick: this.handleOk },
-	      '确定'
-	    )];
-	    var footer = props.footer || defaultFooter;
-	    return _react2.default.createElement(_rcDialog2.default, _extends({ onClose: this.handleCancel, footer: footer }, props, {
-	      visible: props.visible, mousePosition: mousePosition }));
+	    var state = this.state;
+	    if (state.visible) {
+	      var footer;
+	      if (this.props.type === "alert") {
+	        footer = _react2.default.createElement(_alert2.default, _extends({}, this.props, { onClose: this.onClose }));
+	        state.closable = false;
+	      } else if (this.props.type === "confirm") {
+	        footer = _react2.default.createElement(_confirm2.default, _extends({}, this.props, { onClose: this.onClose }));
+	        state.closable = false;
+	      }
+	      return _react2.default.createElement(
+	        _rcDialog2.default,
+	        { visible: state.visible,
+	          align: state.align,
+	          animation: state.transitionName,
+	          maskAnimation: state.maskAnimation,
+	          onClose: this.onClose,
+	          style: { width: state.width },
+	          mousePosition: mousePosition,
+	          title: state.title,
+	          closable: state.closable },
+	        footer
+	      );
+	    } else {
+	      return _react2.default.createElement('div', null);
+	    }
 	  }
 	});
 	
-	AntModal.info = function (props) {
-	  props.iconClassName = 'info-circle';
-	  props.okCancel = false;
-	  return (0, _confirm2.default)(props);
-	};
+	//Modal.info = function (props) {
+	//  props.iconClassName = 'info-circle';
+	//  props.okCancel = false;
+	//  return confirm(props);
+	//};
+	//
+	//Modal.success = function (props) {
+	//  props.iconClassName = 'check-circle';
+	//  props.okCancel = false;
+	//  return confirm(props);
+	//};
+	//
+	//Modal.error = function (props) {
+	//  props.iconClassName = 'exclamation-circle';
+	//  props.okCancel = false;
+	//  return confirm(props);
+	//};
+	//
+	//Modal.confirm = function (props) {
+	//  props.okCancel = true;
+	//  return confirm(props);
+	//};
 	
-	AntModal.success = function (props) {
-	  props.iconClassName = 'check-circle';
-	  props.okCancel = false;
-	  return (0, _confirm2.default)(props);
-	};
-	
-	AntModal.error = function (props) {
-	  props.iconClassName = 'exclamation-circle';
-	  props.okCancel = false;
-	  return (0, _confirm2.default)(props);
-	};
-	
-	AntModal.confirm = function (props) {
-	  props.okCancel = true;
-	  return (0, _confirm2.default)(props);
-	};
-	
-	exports.default = AntModal;
+	exports.default = BhDialog;
 
 /***/ },
 /* 161 */
@@ -23779,236 +23972,50 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 	
-	exports.default = function (props) {
-	  var div = document.createElement('div');
-	  document.body.appendChild(div);
-	
-	  var d = undefined;
-	  props = props || {};
-	  props.iconClassName = props.iconClassName || 'question-circle';
-	  var iconClassType = props.iconClassName;
-	
-	  var width = props.width || 416;
-	
-	  // 默认为 true，保持向下兼容
-	  if (!('okCancel' in props)) {
-	    props.okCancel = true;
-	  }
-	
-	  function close() {
-	    d.setState({
-	      visible: false
-	    });
-	    _reactDom2.default.unmountComponentAtNode(div);
-	  }
-	
-	  function onCancel() {
-	    var cancelFn = props.onCancel;
-	    if (cancelFn) {
-	      var ret = undefined;
-	      if (cancelFn.length) {
-	        ret = cancelFn(close);
-	      } else {
-	        ret = cancelFn();
-	        if (!ret) {
-	          close();
-	        }
-	      }
-	      if (ret && ret.then) {
-	        ret.then(close);
-	      }
-	    } else {
-	      close();
-	    }
-	  }
-	
-	  function onOk() {
-	    var okFn = props.onOk;
-	    if (okFn) {
-	      var ret = undefined;
-	      if (okFn.length) {
-	        ret = okFn(close);
-	      } else {
-	        ret = okFn();
-	        if (!ret) {
-	          close();
-	        }
-	      }
-	      if (ret && ret.then) {
-	        ret.then(close);
-	      }
-	    } else {
-	      close();
-	    }
-	  }
-	
-	  var body = _react2.default.createElement(
-	    'div',
-	    { className: 'ant-confirm-body' },
-	    _react2.default.createElement(_iconfont2.default, { type: iconClassType }),
-	    _react2.default.createElement(
-	      'span',
-	      { className: 'ant-confirm-title' },
-	      props.title
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'ant-confirm-content' },
-	      props.content
-	    )
-	  );
-	  var footer = _react2.default.createElement(
-	    'div',
-	    { className: 'ant-confirm-btns' },
-	    _react2.default.createElement(
-	      _button2.default,
-	      { type: 'ghost', size: 'large', onClick: onCancel },
-	      '取 消'
-	    ),
-	    _react2.default.createElement(
-	      _button2.default,
-	      { type: 'primary', size: 'large', onClick: onOk },
-	      '确 定'
-	    )
-	  );
-	
-	  if (props.okCancel) {
-	    footer = _react2.default.createElement(
-	      'div',
-	      { className: 'ant-confirm-btns' },
-	      _react2.default.createElement(
-	        _button2.default,
-	        { type: 'ghost', size: 'large', onClick: onCancel },
-	        '取 消'
-	      ),
-	      _react2.default.createElement(
-	        _button2.default,
-	        { type: 'primary', size: 'large', onClick: onOk },
-	        '确 定'
-	      )
-	    );
-	  } else {
-	    footer = _react2.default.createElement(
-	      'div',
-	      { className: 'ant-confirm-btns' },
-	      _react2.default.createElement(
-	        _button2.default,
-	        { type: 'primary', size: 'large', onClick: onOk },
-	        '知道了'
-	      )
-	    );
-	  }
-	
-	  _reactDom2.default.render(_react2.default.createElement(
-	    _index2.default,
-	    {
-	      prefixCls: 'ant-modal',
-	      className: 'ant-confirm',
-	      visible: true,
-	      closable: false,
-	      title: '',
-	      transitionName: 'zoom',
-	      footer: '',
-	      maskTransitionName: 'fade', width: width },
-	    _react2.default.createElement(
-	      'div',
-	      { style: { zoom: 1, overflow: 'hidden' } },
-	      body,
-	      ' ',
-	      footer
-	    )
-	  ), div, function () {
-	    d = this;
-	  });
-	};
-	
 	var _react = __webpack_require__(2);
-
+	
 	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(159);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _index = __webpack_require__(160);
-
+	
+	var _rcDialog = __webpack_require__(161);
+	
+	var _rcDialog2 = _interopRequireDefault(_rcDialog);
+	
+	var _index = __webpack_require__(202);
+	
 	var _index2 = _interopRequireDefault(_index);
-
-	var _iconfont = __webpack_require__(202);
-
-	var _iconfont2 = _interopRequireDefault(_iconfont);
-
-	var _button = __webpack_require__(203);
-
-	var _button2 = _interopRequireDefault(_button);
-
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var AlertDialog = _react2.default.createClass({
+	    displayName: 'AlertDialog',
+	    handleClose: function handleClose() {
+	        if (this.props.handleOk) {
+	            this.props.handleOk();
+	            this.props.onClose();
+	        } else {
+	            this.props.onClose();
+	        }
+	    },
+	
+	    render: function render() {
+	        return _react2.default.createElement(
+	            _index2.default,
+	            { classType: 'primary', onClick: this.handleClose },
+	            this.props.okBtnText ? this.props.okBtnText : "确定"
+	        );
+	    }
+	});
+	
+	exports.default = AlertDialog;
 
 /***/ },
 /* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(2);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Icon = (function (_React$Component) {
-	  _inherits(Icon, _React$Component);
-	
-	  function Icon() {
-	    _classCallCheck(this, Icon);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
-	  }
-	
-	  _createClass(Icon, [{
-	    key: 'render',
-	    value: function render() {
-	      var _props = this.props;
-	      var type = _props.type;
-	      var _props$className = _props.className;
-	      var className = _props$className === undefined ? '' : _props$className;
-	
-	      var other = _objectWithoutProperties(_props, ['type', 'className']);
-	
-	      className += ' anticon anticon-' + type;
-	      return _react2.default.createElement('i', _extends({ className: className }, other));
-	    }
-	  }]);
-	
-	  return Icon;
-	})(_react2.default.Component);
-	
-	exports.default = Icon;
-
-/***/ },
-/* 203 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -24022,7 +24029,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _button = __webpack_require__(204);
+	var _button = __webpack_require__(203);
 
 	var _button2 = _interopRequireDefault(_button);
 
@@ -24034,7 +24041,7 @@
 	exports.default = _button2.default;
 
 /***/ },
-/* 204 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24051,7 +24058,13 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _rcUtil = __webpack_require__(174);
+	
+	var _rcUtil2 = _interopRequireDefault(_rcUtil);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 	
@@ -24060,6 +24073,8 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var prefix = 'bh-btn-';
 	
 	var Button = (function (_React$Component) {
 	  _inherits(Button, _React$Component);
@@ -24074,15 +24089,54 @@
 	    key: 'render',
 	    value: function render() {
 	      var props = this.props;
+	      var classType = props.classType;
 	      var onClick = props.onClick;
 	      var htmlType = props.htmlType;
+	      var className = props.className;
 	      var children = props.children;
 	
-	      var others = _objectWithoutProperties(props, ['onClick', 'htmlType', 'children']);
+	      var others = _objectWithoutProperties(props, ['classType', 'onClick', 'htmlType', 'className', 'children']);
+	
+	      var classArr = _defineProperty({ 'bh-btn': true }, className, className);
+	      if (classType) {
+	        var classList = classType.split(" ");
+	        var _iteratorNormalCompletion = true;
+	        var _didIteratorError = false;
+	        var _iteratorError = undefined;
+	
+	        try {
+	          for (var _iterator = classList[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	            var value = _step.value;
+	
+	            if (value) {
+	              if (value !== "disabled") {
+	                classArr[prefix + value] = value;
+	              } else {
+	                classArr["bh-" + value] = value;
+	              }
+	            }
+	          }
+	        } catch (err) {
+	          _didIteratorError = true;
+	          _iteratorError = err;
+	        } finally {
+	          try {
+	            if (!_iteratorNormalCompletion && _iterator.return) {
+	              _iterator.return();
+	            }
+	          } finally {
+	            if (_didIteratorError) {
+	              throw _iteratorError;
+	            }
+	          }
+	        }
+	      }
+	
+	      var classes = _rcUtil2.default.classSet(classArr);
 	
 	      return _react2.default.createElement(
 	        'a',
-	        _extends({}, others, { type: htmlType || 'button', onClick: onClick }),
+	        _extends({}, others, { type: htmlType || 'button', className: classes, onClick: onClick }),
 	        props.children
 	      );
 	    }
@@ -24094,7 +24148,7 @@
 	exports.default = Button;
 	
 	Button.propTypes = {
-	  type: _react2.default.PropTypes.string,
+	  classType: _react2.default.PropTypes.string,
 	  htmlType: _react2.default.PropTypes.string,
 	  onClick: _react2.default.PropTypes.func,
 	  loading: _react2.default.PropTypes.bool,
@@ -24104,6 +24158,65 @@
 	Button.defaultProps = {
 	  onClick: function onClick() {}
 	};
+
+/***/ },
+/* 204 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _rcDialog = __webpack_require__(161);
+	
+	var _rcDialog2 = _interopRequireDefault(_rcDialog);
+	
+	var _index = __webpack_require__(202);
+	
+	var _index2 = _interopRequireDefault(_index);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var ConfirmDialog = _react2.default.createClass({
+	  displayName: 'ConfirmDialog',
+	  handleOk: function handleOk() {
+	    if (this.props.handleOk) {
+	      this.props.handleOk();
+	      this.props.onClose();
+	    }
+	  },
+	  handleCancel: function handleCancel() {
+	    if (this.props.handleCancel) {
+	      this.props.handleCancel();
+	    }
+	    this.props.onClose();
+	  },
+	
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        _index2.default,
+	        { classType: 'primary', onClick: this.handleOk },
+	        this.props.okBtnText ? this.props.okBtnText : "确定"
+	      ),
+	      _react2.default.createElement(
+	        _index2.default,
+	        { classType: 'primary', onClick: this.handleCancel },
+	        this.props.cancelBtnText ? this.props.cancelBtnText : "取消"
+	      )
+	    );
+	  }
+	});
+	
+	exports.default = ConfirmDialog;
 
 /***/ }
 /******/ ]);
