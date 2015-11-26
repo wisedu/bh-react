@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Dialog from '../src/modal/index.jsx';
 import Button from '../src/button/index.jsx';
+import FormDemo from '../samples/dialogForm.jsx';
 
 const AlertDialog = React.createClass({
     getInitialState() {
@@ -189,3 +190,32 @@ const DangerDialog = React.createClass({
 });
 
 ReactDOM.render(<DangerDialog /> , document.getElementById('example_alert_danger'));
+
+
+const FormDialog = React.createClass({
+    getInitialState() {
+        return {
+            visible: false,
+            title: "这是一个表单",
+            content: <FormDemo />,
+            handleOk: this.handleOk,
+            width: 800
+        };
+    },
+    handleOk(){
+        console.log("确认")
+    },
+    showModal() {
+        this.setState({
+            visible: true
+        });
+    },
+    render() {
+        return <div>
+            <Button classType="primary" onClick={this.showModal}>表单对话框</Button>
+            <Dialog {...this.state}  />
+        </div>;
+    }
+});
+
+ReactDOM.render(<FormDialog /> , document.getElementById('example_alert_form'));
