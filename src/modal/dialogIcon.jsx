@@ -5,29 +5,23 @@ let DialogIcon = React.createClass({
         let props = this.props;
         let icon;
         if(props.showType === "success"){
-            icon = <div className="sweet-alert">
-                        <div className="sa-icon sa-success">
-                            <span className="sa-line sa-tip animateSuccessTip"></span>
-                            <span className="sa-line sa-long animateSuccessLong"></span>
-                            <div className="sa-placeholder"></div>
-                            <div className="sa-fix"></div>
-                        </div>
+            icon = <div className="bh-dialog-icon bh-dialog-icon-success">
+                        <span className="bh-dialog-icon-line bh-dialog-icon-tip bh-dialog-successTip-animate"></span>
+                        <span className="bh-dialog-icon-line bh-dialog-icon-long bh-dialog-successLong-animate"></span>
+                        <div className="bh-dialog-success-icon-placeholder"></div>
+                        <div className="bh-dialog-success-icon-fix"></div>
                     </div>
         }else if(props.showType === "warning"){
-            icon = <div className="sweet-alert">
-                        <div className="sa-icon sa-warning pulseWarning">
-                            <span className="sa-body pulseWarningIns"></span>
-                            <span className="sa-dot pulseWarningPoint"></span>
-                        </div>
+            icon = <div className="bh-dialog-icon bh-dialog-icon-warning">
+                        <span className="bh-dialog-warning-body bh-dialog-warningBody-animate"></span>
+                        <span className="bh-dialog-warning-dot bh-dialog-warningDot-animate"></span>
                     </div>
         }else if(props.showType === "danger"){
-            icon = <div className="sweet-alert">
-                        <div className="sa-icon sa-error animateErrorIcon">
-                              <span className="sa-x-mark animateXMark">
-                                    <span className="sa-line sa-left errorAnimateLeft"></span>
-                                    <span className="sa-line sa-right errorAnimateRight"></span>
-                              </span>
-                        </div>
+            icon = <div className="bh-dialog-icon bh-dialog-icon-error">
+                          <span className="bh-dialog-error-mark">
+                                <span className="bh-dialog-icon-line bh-dialog-error-iconLeft bh-dialog-errorLeft-animate"></span>
+                                <span className="bh-dialog-icon-line bh-dialog-error-iconRight bh-dialog-errorRight-animate"></span>
+                          </span>
                     </div>
         }
         return (icon);
