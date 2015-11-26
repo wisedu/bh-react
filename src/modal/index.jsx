@@ -1,3 +1,5 @@
+import './css/bh-dialog.css';
+
 import React from 'react';
 import Dialog from '../rc-dialog/lib/DialogWrap.js';
 import { Dom } from 'rc-util';
