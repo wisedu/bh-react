@@ -4,7 +4,7 @@ import React from 'react';
 const AntRadio = React.createClass({
   getDefaultProps() {
     return {
-      prefixCls: 'ant-radio'
+      prefixCls: 'bh-radio'
     };
   },
   render() {
@@ -24,4 +24,4 @@ const AntRadio = React.createClass({
   }
 });
 
-export default AntRadio;
+module.exports = AntRadio;

@@ -1,5 +1,5 @@
 {
-  "name": "wis-react",
+  "name": "bh-react",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,8 @@
   "description": "",
   "dependencies": {
     "babel-preset-react": "^6.1.18",
+    "rc-checkbox": "^1.2.0",
+    "rc-radio": "^2.0.0",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
     "react-dropdown": "^0.7.2"
@@ -36,6 +38,7 @@
     "sass-loader": "^3.1.1",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.8",
-    "webpack-dev-server": "^1.12.1"
+    "webpack-dev-server": "^1.12.1",
+    "json-loader": "^0.5.3"
   }
 }

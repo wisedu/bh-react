@@ -5,7 +5,7 @@ import Input from './Input';
 
 Form.Item = FormItem;
 Form.ValueMixin = ValueMixin;
-export default {
+export {
   Form,
   Input
 };
