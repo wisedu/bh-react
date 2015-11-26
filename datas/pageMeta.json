@@ -8,13 +8,16 @@
             "dataType": "String",
             "caption": "姓名",
             "quickSearch": true,
-            "dataSize": 90
+            "dataSize": 90,
+            "require": true
         }, {
             "name": "XH",
             "dataType": "String",
             "caption": "学号",
             "quickSearch": true,
-            "dataSize": 20
+            "xtype": "textarea",
+            "dataSize": 20,
+            "col":2
         }, {
             "name": "XBDM",
             "dataType": "String",

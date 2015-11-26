@@ -1,17 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import "../src/form/form.scss";
 import {Form, Input, Button, Checkbox, Radio, Row, Col, message} from '../index.js';
 const FormItem = Form.Item;
+const FormEMAP = Form.MappingEMAP;
 const RadioGroup = Radio.Group;
 var pageMeta = require("../datas/pageMeta.json");
 
-var items = pageMeta.models[3].controls.map((item, index)=>{
-  if(!item.hidden){
-    return (<FormItem key={item.name} id={item.name} label={item.caption} required={item.require} col={item.col} cols="3">
-      <Input type={item.xtype} name={item.name} placeholder={item.placeholder} readOnly={item.readonly}/>
-    </FormItem>);
-  }
-});
+var formEMAP = new FormEMAP(pageMeta);
+var items = formEMAP.getItems("ddrzcx", 2);
 
 const Demo = React.createClass({
   mixins: [Form.ValueMixin],
@@ -41,11 +38,11 @@ const Demo = React.createClass({
   render() {
     const formData = this.state.formData;
     return (
-      <Form horizontal onSubmit={this.handleSubmit} cols="2">
+      <Form className="bh-fm-compact edit" horizontal cols="2">
         {items}
         <Row>
           <Col span="4" offset="8">
-            <Button type="primary" htmlType="submit">确定</Button>
+            <Button type="primary" onClick={this.handleSubmit}>确定</Button>
           </Col>
         </Row>
       </Form>
