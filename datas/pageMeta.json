@@ -420,6 +420,7 @@
             "dataType": "double",
             "caption": "床位数",
             "xtype": "text",
+            "col":3,
             "readonly": true
         }, {
             "name": "SYCWS",
@@ -427,7 +428,8 @@
             "caption": "空床位",
             "quickSearch": true,
             "xtype": "text",
-            "readonly": true
+            "readonly": true,
+            "col":2
         }, {
             "name": "XBDM",
             "dataType": "String",

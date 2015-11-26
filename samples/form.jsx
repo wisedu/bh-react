@@ -6,9 +6,11 @@ const RadioGroup = Radio.Group;
 var pageMeta = require("../datas/pageMeta.json");
 
 var items = pageMeta.models[3].controls.map((item, index)=>{
-  return (<FormItem key={item.name} id={item.name} label={item.caption} required={item.require} col={item.col} hidden={item.hidden} readonly={item.readonly} cols="3">
-    <Input type={item.xtype} name={item.name} placeholder={item.placeholder} />
-  </FormItem>);
+  if(!item.hidden){
+    return (<FormItem key={item.name} id={item.name} label={item.caption} required={item.require} col={item.col} cols="3">
+      <Input type={item.xtype} name={item.name} placeholder={item.placeholder} readOnly={item.readonly}/>
+    </FormItem>);
+  }
 });
 
 const Demo = React.createClass({
