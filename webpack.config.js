@@ -4,8 +4,8 @@ var path = require('path');
 
 var entry = {};
 //entry["bh"] = ["./samples/form.jsx"];
-//entry["alertModal"] = ["./samples/alertModal.jsx"];
-entry["icon"] = ["./samples/icon.jsx"];
+entry["alertModal"] = ["./samples/alertModal.jsx"];
+//entry["icon"] = ["./samples/icon.jsx"];
 
 module.exports = {
   entry: entry,
