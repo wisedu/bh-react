@@ -4,4 +4,5 @@ import Button from './button.jsx';
 //import ButtonGroup from './button-group';
 //
 //Button.Group = ButtonGroup;
-module.exports = Button;
+exports['default'] = Button;
+module.exports = exports['default'];
