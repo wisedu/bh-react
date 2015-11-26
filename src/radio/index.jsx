@@ -4,4 +4,4 @@ import Button from './radioButton';
 
 AntRadio.Button = Button;
 AntRadio.Group = Group;
-export default AntRadio;
+module.exports = AntRadio;

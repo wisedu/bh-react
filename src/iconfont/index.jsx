@@ -3,8 +3,7 @@ import React from 'react';
 class Icon extends React.Component {
 
   render() {
-    let {type, className = '', ...other} = this.props;
-    className += ` anticon anticon-${type}`;
+    let {className , ...other} = this.props;
     return <i className={className} {...other}></i>;
   }
 

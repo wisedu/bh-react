@@ -1,10 +1,10 @@
 import Checkbox from 'rc-checkbox';
 import React from 'react';
 
-export default React.createClass({
+module.exports = React.createClass({
   getDefaultProps() {
     return {
-      prefixCls: 'ant-checkbox'
+      prefixCls: 'bh-checkbox'
     };
   },
   render() {

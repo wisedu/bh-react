@@ -1,18 +1,37 @@
 import React from 'react';
+import rcUtil from 'rc-util';
+
+const prefix = 'bh-btn-';
 
 export default class Button extends React.Component {
   render() {
     const props = this.props;
-    const {onClick, htmlType, children, ...others} = props;
+    const {classType, onClick, htmlType, className, children, ...others} = props;
 
-    return <a {...others} type={htmlType || 'button'} onClick={onClick}>
+    const classArr = {'bh-btn': true, [className]: className};
+    if(classType){
+      let classList = classType.split(" ");
+      for(var value of classList){
+        if(value){
+          if(value !== "disabled"){
+            classArr[prefix + value] = value;
+          }else{
+            classArr["bh-" + value] = value;
+          }
+        }
+      }
+    }
+
+    const classes = rcUtil.classSet(classArr);
+
+    return <a {...others} type={htmlType || 'button'} className={classes} onClick={onClick}>
       {props.children}
     </a>;
   }
 }
 
 Button.propTypes = {
-  type: React.PropTypes.string,
+  classType: React.PropTypes.string,
   htmlType: React.PropTypes.string,
   onClick: React.PropTypes.func,
   loading: React.PropTypes.bool,

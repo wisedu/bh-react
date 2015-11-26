@@ -1,7 +1,7 @@
 import React from 'react';
-import rcUtil from 'rc-util';
+import classSet from 'classnames';
 
-const cx = rcUtil.classSet;
+const cx = classSet;
 
 function prefixClsFn(prefixCls, ...args) {
   return args.map((s)=> {
@@ -10,16 +10,44 @@ function prefixClsFn(prefixCls, ...args) {
 }
 
 class FormItem extends React.Component {
+  constructor(props) {
+    super(props);
+
+    let wide_label = "4";
+    let wide_control = "8";
+    switch(this.props.col+"-"+this.props.cols){
+      case "2-3":
+        wide_label = "2";
+        wide_control = "10";
+      break;
+      case "3-3":
+        wide_label = "12";
+        wide_control = "12";
+      break;
+      case "2-2":
+        wide_label = "2";
+        wide_control = "10";
+      break;
+      case "1-3":
+      default:
+      break;
+    }
+
+    this.state = {
+      labelCol:{span: wide_label},
+      wrapperCol:{span: wide_control},
+      col: this.props.col || 1
+    };
+  }
   _getLayoutClass(colDef) {
     if (!colDef) {
       return '';
     }
     const {span, offset} = colDef;
-    const col = span ? 'col-' + span : '';
-    const offsetCol = offset ? ' col-offset-' + offset : '';
+    const col = span ? 'bh-col-md-' + span : '';
+    const offsetCol = offset ? ' bh-col-offset-md-' + offset : '';
     return col + offsetCol;
   }
-
   renderHelp() {
     const prefixCls = this.props.prefixCls;
     return (
@@ -28,7 +56,6 @@ class FormItem extends React.Component {
       </div>
     );
   }
-
   renderValidateWrapper(c1, c2) {
     let classes = '';
     if (this.props.validateStatus) {
@@ -36,8 +63,8 @@ class FormItem extends React.Component {
         {
           'has-feedback': this.props.hasFeedback,
           'has-success': this.props.validateStatus === 'success',
-          'has-warning': this.props.validateStatus === 'warning',
-          'has-error': this.props.validateStatus === 'error',
+          'bh-form-control-warning': this.props.validateStatus === 'warning',
+          'bh-form-control-danger': this.props.validateStatus === 'error',
           'is-validating': this.props.validateStatus === 'validating',
         }
       );
@@ -48,27 +75,23 @@ class FormItem extends React.Component {
       </div>
     );
   }
-
   renderWrapper(children) {
-    const wrapperCol = this.props.wrapperCol;
+    const wrapperCol = this.state.wrapperCol;
     return (
       <div className={this._getLayoutClass(wrapperCol)} key="wrapper">
         {children}
       </div>
     );
   }
-
   renderLabel() {
-    const labelCol = this.props.labelCol;
-    const required = this.props.required ? 'required' : '';
+    const labelCol = this.state.labelCol;
 
     return this.props.label ? (
-      <label htmlFor={this.props.id} className={this._getLayoutClass(labelCol)} required={required} key="label">
+      <label htmlFor={this.props.id} className={this._getLayoutClass(labelCol) + " bh-form-label "} key="label">
         {this.props.label}
       </label>
     ) : null;
   }
-
   renderChildren() {
     return [
       this.renderLabel(),
@@ -105,11 +128,16 @@ class FormItem extends React.Component {
   }
 
   renderFormItem(children) {
+    var cols = this.props.cols;
+    var wide = 12 / cols * this.state.col;
+
     const props = this.props;
     const prefixCls = props.prefixCls;
     const itemClassName = {
-      [`${prefixCls}-item`]: true,
-      [`${prefixCls}-item-compact`]: this._isCompact(props.children),
+      [`${prefixCls}-group`]: true,
+      [`${prefixCls}-group-compact`]: this._isCompact(props.children),
+      [`bh-col-md-${wide}`]: true,
+      ["bh-required"]: this.props.required
     };
 
     return (
@@ -135,12 +163,17 @@ FormItem.propTypes = {
   wrapperCol: React.PropTypes.object,
   className: React.PropTypes.string,
   children: React.PropTypes.node,
+  cols: React.PropTypes.string
 };
 
 FormItem.defaultProps = {
   hasFeedback: false,
   required: false,
-  prefixCls: 'ant-form',
+  prefixCls: 'bh-form',
 };
 
-module.exports = FormItem;
+// module.exports = FormItem;
+// exports['default'] = FormItem;
+// module.exports = exports['default'];
+
+export default FormItem;
