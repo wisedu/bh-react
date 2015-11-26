@@ -7,7 +7,7 @@ $.getJSON('./data.json',(data) => {
     let treeDatas = data.datas.code.rows;
     ReactDOM.render(<Tree
         data={treeDatas}
-        multiple={true}
+        multiple={false}
         showIcon={true}
         defaultExpandAll={true}
         defaultSelectedKeys={["000012", "000406", "000001"]}

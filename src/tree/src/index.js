@@ -1,26 +1,3 @@
-//'use strict';
-//
-//Object.defineProperty(exports, '__esModule', {
-//  value: true
-//});
-//
-//function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-//
-//var _Tree = require('./Tree');
-//
-//var _Tree2 = _interopRequireDefault(_Tree);
-//
-//var _TreeNode = require('./TreeNode');
-//
-//var _TreeNode2 = _interopRequireDefault(_TreeNode);
-//
-//_Tree2['default'].TreeNode = _TreeNode2['default'];
-//
-//exports['default'] = _Tree2['default'];
-//module.exports = exports['default'];
-//
-
-
 'use strict';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -36,9 +13,7 @@ class BhTree extends React.Component {
         super(props)
         this.props = {
             prefixCls: 'bh-tree',
-            multiple: false,
-            showIcon: true,
-            //transitionName: 'slide-up',
+            transitionName: 'slide-up',
             optionLabelProp: 'children',
             showSearch: true
             //size: 'default'
@@ -49,20 +24,12 @@ class BhTree extends React.Component {
         }
     }
 
-    handleSelect(info) {
-        //console.log(info)
-    }
-
-    handleCheck(info) {
-        console.log(info)
-    }
 
     handelDataLoaded(treeNode) {
         console.log(treeNode)
     }
 
     componentWillMount() {
-        console.log(2333)
         this.setState({
             data: this.props.data
         })
@@ -110,14 +77,11 @@ class BhTree extends React.Component {
 
 
     render() {
-        console.log(this.props)
         return (
             <Tree
                 {...this.props}
                 className={this.props.profixCls}
                 checkable={false}
-                onSelect={this.handleSelect}
-                //onDataLoaded={this.handelDataLoaded}
             >
                 {this.renderTreeNodes(this.serializeJSON(this.state.data))}
             </Tree>

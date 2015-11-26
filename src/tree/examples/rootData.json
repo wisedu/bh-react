@@ -1,551 +1,557 @@
-[
-    {
-        "id": "000012",
-        "name": "校长办公室",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000001",
-        "name": "党委办公室、统战部、机关党委",
-        "pId": "",
-        "isParent": 0
-    },
-    {
-        "id": "000029",
-        "name": "农学院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000010",
-        "name": "工会",
-        "pId": "",
-        "isParent": 0
-    },
-    {
-        "id": "000021",
-        "name": "资产管理与后勤保障处",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000040",
-        "name": "理学院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000360",
-        "name": "资产经营公司",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000038",
-        "name": "人文社会科学学院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000011",
-        "name": "团委",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000338",
-        "name": "思想政治理论课教研部",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000045",
-        "name": "学术交流中心",
-        "pId": "",
-        "isParent": 0
-    },
-    {
-        "id": "000000",
-        "name": "南京农业大学",
-        "pId": "",
-        "isParent": 0
-    },
-    {
-        "id": "000039",
-        "name": "外国语学院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000041",
-        "name": "信息科学技术学院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000042",
-        "name": "生命科学学院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000016",
-        "name": "科技处、人文社会科学处",
-        "pId": "",
-        "isParent": 0
-    },
-    {
-        "id": "000383",
-        "name": "农村发展学院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000384",
-        "name": "草业学院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000017",
-        "name": "国际合作与交流处、国际教育学院、港澳台办公室",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000018",
-        "name": "发展规划办公室",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000385",
-        "name": "金融学院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000043",
-        "name": "工学院（含乡镇企业学院）",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000019",
-        "name": "产学研合作处",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000002",
-        "name": "纪委办公室",
-        "pId": "",
-        "isParent": 0
-    },
-    {
-        "id": "000030",
-        "name": "植物保护学院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000347",
-        "name": "发展规划与学科建设处",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000044",
-        "name": "继续教育学院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000020",
-        "name": "基建处",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000022",
-        "name": "实验室与基地管理处",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000024",
-        "name": "图书馆、图书与信息中心",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000025",
-        "name": "体育部",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000026",
-        "name": "后勤集团公司",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000027",
-        "name": "江浦实验农场",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000028",
-        "name": "实验牧场",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000376",
-        "name": "发展委员会办公室",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000031",
-        "name": "资源与环境科学学院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000003",
-        "name": "监察处",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000398",
-        "name": "人文社科处",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000399",
-        "name": "档案馆",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000032",
-        "name": "园艺学院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000023",
-        "name": "白马教学科研基地建设办公室",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000004",
-        "name": "审计处",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000400",
-        "name": "医院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000401",
-        "name": "新农村发展研究院办公室、江苏农村发展学院办公室、新农村发展研究院和江苏农村发展学院院务委员会秘书处",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000046",
-        "name": "中国新农村建设研究院",
-        "pId": "",
-        "isParent": 0
-    },
-    {
-        "id": "000047",
-        "name": "中华农业文明博物馆",
-        "pId": "",
-        "isParent": 0
-    },
-    {
-        "id": "000048",
-        "name": "农业生物安全研究中心",
-        "pId": "",
-        "isParent": 0
-    },
-    {
-        "id": "000049",
-        "name": "农产品安全与质量检测中心",
-        "pId": "",
-        "isParent": 0
-    },
-    {
-        "id": "000033",
-        "name": "动物科技学院（含无锡渔业学院）",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000005",
-        "name": "组织部、党校、老干部办公室",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000013",
-        "name": "人事处、人才工作领导小组办公室",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000050",
-        "name": "生命科学实验中心",
-        "pId": "",
-        "isParent": 0
-    },
-    {
-        "id": "000034",
-        "name": "动物医学院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000006",
-        "name": "宣传部",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000015",
-        "name": "教务处、植物生产国家级实验教学中心、教师发展中心",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000352",
-        "name": "科学研究院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000035",
-        "name": "食品科技学院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000007",
-        "name": "学生工作处、学生工作部",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000079",
-        "name": "人才交流培训中心",
-        "pId": "",
-        "isParent": 0
-    },
-    {
-        "id": "000036",
-        "name": "经济管理学院",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000014",
-        "name": "计财处、会计核算中心、招投标办公室",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000008",
-        "name": "研究生院、研究生工作部",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000037",
-        "name": "公共管理学院（含土地管理学院）",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000009",
-        "name": "保卫处、政保部、人武部",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "000346",
-        "name": "校区发展与基本建设处",
-        "pId": "",
-        "isParent": 1,
-        "state": {
-            "opened": true
+{
+    "datas" : {
+        "code" : {
+            "rows" : [
+                {
+                    "id": "000012",
+                    "name": "校长办公室",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000001",
+                    "name": "党委办公室、统战部、机关党委",
+                    "pId": "",
+                    "isParent": 0
+                },
+                {
+                    "id": "000029",
+                    "name": "农学院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000010",
+                    "name": "工会",
+                    "pId": "",
+                    "isParent": 0
+                },
+                {
+                    "id": "000021",
+                    "name": "资产管理与后勤保障处",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000040",
+                    "name": "理学院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000360",
+                    "name": "资产经营公司",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000038",
+                    "name": "人文社会科学学院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000011",
+                    "name": "团委",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000338",
+                    "name": "思想政治理论课教研部",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000045",
+                    "name": "学术交流中心",
+                    "pId": "",
+                    "isParent": 0
+                },
+                {
+                    "id": "000000",
+                    "name": "南京农业大学",
+                    "pId": "",
+                    "isParent": 0
+                },
+                {
+                    "id": "000039",
+                    "name": "外国语学院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000041",
+                    "name": "信息科学技术学院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000042",
+                    "name": "生命科学学院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000016",
+                    "name": "科技处、人文社会科学处",
+                    "pId": "",
+                    "isParent": 0
+                },
+                {
+                    "id": "000383",
+                    "name": "农村发展学院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000384",
+                    "name": "草业学院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000017",
+                    "name": "国际合作与交流处、国际教育学院、港澳台办公室",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000018",
+                    "name": "发展规划办公室",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000385",
+                    "name": "金融学院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000043",
+                    "name": "工学院（含乡镇企业学院）",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000019",
+                    "name": "产学研合作处",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000002",
+                    "name": "纪委办公室",
+                    "pId": "",
+                    "isParent": 0
+                },
+                {
+                    "id": "000030",
+                    "name": "植物保护学院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000347",
+                    "name": "发展规划与学科建设处",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000044",
+                    "name": "继续教育学院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000020",
+                    "name": "基建处",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000022",
+                    "name": "实验室与基地管理处",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000024",
+                    "name": "图书馆、图书与信息中心",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000025",
+                    "name": "体育部",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000026",
+                    "name": "后勤集团公司",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000027",
+                    "name": "江浦实验农场",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000028",
+                    "name": "实验牧场",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000376",
+                    "name": "发展委员会办公室",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000031",
+                    "name": "资源与环境科学学院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000003",
+                    "name": "监察处",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000398",
+                    "name": "人文社科处",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000399",
+                    "name": "档案馆",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000032",
+                    "name": "园艺学院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000023",
+                    "name": "白马教学科研基地建设办公室",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000004",
+                    "name": "审计处",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000400",
+                    "name": "医院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000401",
+                    "name": "新农村发展研究院办公室、江苏农村发展学院办公室、新农村发展研究院和江苏农村发展学院院务委员会秘书处",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000046",
+                    "name": "中国新农村建设研究院",
+                    "pId": "",
+                    "isParent": 0
+                },
+                {
+                    "id": "000047",
+                    "name": "中华农业文明博物馆",
+                    "pId": "",
+                    "isParent": 0
+                },
+                {
+                    "id": "000048",
+                    "name": "农业生物安全研究中心",
+                    "pId": "",
+                    "isParent": 0
+                },
+                {
+                    "id": "000049",
+                    "name": "农产品安全与质量检测中心",
+                    "pId": "",
+                    "isParent": 0
+                },
+                {
+                    "id": "000033",
+                    "name": "动物科技学院（含无锡渔业学院）",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000005",
+                    "name": "组织部、党校、老干部办公室",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000013",
+                    "name": "人事处、人才工作领导小组办公室",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000050",
+                    "name": "生命科学实验中心",
+                    "pId": "",
+                    "isParent": 0
+                },
+                {
+                    "id": "000034",
+                    "name": "动物医学院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000006",
+                    "name": "宣传部",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000015",
+                    "name": "教务处、植物生产国家级实验教学中心、教师发展中心",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000352",
+                    "name": "科学研究院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000035",
+                    "name": "食品科技学院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000007",
+                    "name": "学生工作处、学生工作部",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000079",
+                    "name": "人才交流培训中心",
+                    "pId": "",
+                    "isParent": 0
+                },
+                {
+                    "id": "000036",
+                    "name": "经济管理学院",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000014",
+                    "name": "计财处、会计核算中心、招投标办公室",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000008",
+                    "name": "研究生院、研究生工作部",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000037",
+                    "name": "公共管理学院（含土地管理学院）",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000009",
+                    "name": "保卫处、政保部、人武部",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "000346",
+                    "name": "校区发展与基本建设处",
+                    "pId": "",
+                    "isParent": 1,
+                    "state": {
+                        "opened": true
+                    }
+                }
+            ]
         }
     }
-]
+}

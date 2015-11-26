@@ -141,7 +141,9 @@ $contextmenuPrefixCls: bh-tree-contextmenu;
     background-position: -110px 0;
     vertical-align: top;
   }
-  &-item:hover &-item-mask,
+  &-item:hover &-item-mask {
+    background: rgba(33, 150, 243, 0.1);
+  }
   &-item.#{$treePrefixCls}-node-selected &-item-mask {
     background: rgba(33, 150, 243, 0.25);
   }

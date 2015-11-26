@@ -2,7 +2,9 @@ var webpack = require('webpack');
 
 module.exports = {
   entry : {
-    tree : ['./src/tree/examples/tree.js']
+    "tree" : ['./src/tree/examples/tree.js'],
+    "tree-async" : ['./src/tree/examples/tree-async.js'],
+    "demo01" : ['./src/tree/examples/demo01.js']
   },
   output : {
     //path: './dist/',

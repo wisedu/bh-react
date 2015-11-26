@@ -273,6 +273,7 @@ class Tree extends React.Component {
             if (index === -1) {
                 expandedKeys.push(tnProps.eventKey);
                 if (thisProps.onDataLoaded) {
+                    console.log(thisProps.onDataLoaded)
                     return thisProps.onDataLoaded(treeNode).then(() => {
                         this.setState({
                             expandedKeys: expandedKeys,
