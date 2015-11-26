@@ -1,5 +1,5 @@
 import React from 'react';
-import Dialog from 'rc-dialog';
+import Dialog from '../rc-dialog/lib/DialogWrap.js';
 import { Dom } from 'rc-util';
 import AlertDialog from './alert.jsx';
 import ConfirmDialog from './confirm.jsx';

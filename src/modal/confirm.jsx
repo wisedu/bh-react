@@ -1,5 +1,4 @@
 import React from 'react';
-import Dialog from 'rc-dialog';
 import Button from '../button/index.jsx';
 
 let ConfirmDialog = React.createClass({
