@@ -38,4 +38,5 @@ Form.defaultProps = {
   prefixCls: 'bh-form',
 };
 
-module.exports = Form;
+// module.exports = Form;
+export default Form;

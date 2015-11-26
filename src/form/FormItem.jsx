@@ -12,9 +12,30 @@ function prefixClsFn(prefixCls, ...args) {
 class FormItem extends React.Component {
   constructor(props) {
     super(props);
+
+    let wide_label = "4";
+    let wide_control = "8";
+    switch(this.props.col+"-"+this.props.cols){
+      case "2-3":
+        wide_label = "2";
+        wide_control = "10";
+      break;
+      case "3-3":
+        wide_label = " long";
+        wide_control = " long";
+      break;
+      case "2-2":
+        wide_label = "2";
+        wide_control = "10";
+      break;
+      case "1-3":
+      default:
+      break;
+    }
+
     this.state = {
-      labelCol:{span:"4"},
-      wrapperCol:{span:"8"},
+      labelCol:{span: wide_label},
+      wrapperCol:{span: wide_control},
       col: this.props.col || 1
     };
   }
@@ -151,4 +172,8 @@ FormItem.defaultProps = {
   prefixCls: 'bh-form',
 };
 
-module.exports = FormItem;
+// module.exports = FormItem;
+// exports['default'] = FormItem;
+// module.exports = exports['default'];
+
+export default FormItem;
