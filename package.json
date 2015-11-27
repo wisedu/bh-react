@@ -12,6 +12,7 @@
   "dependencies": {
     "babel-preset-react": "^6.1.18",
     "rc-checkbox": "^1.2.0",
+    "rc-form-validation": "^2.5.0",
     "rc-radio": "^2.0.0",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
