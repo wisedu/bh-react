@@ -1,5 +1,3 @@
-var webpack = require('webpack');
-
 module.exports = {
   entry : {
     "tree" : ['./src/tree/examples/tree.js'],
@@ -14,7 +12,7 @@ module.exports = {
     loaders : [
       {
         test : [/\.js$/, /\.jsx$/],
-        loader : ['babel-loader'],
+        loader : ['babel'],
         exclude : /node-modules/,
         query : {
           presets : ['react','es2015']
@@ -25,12 +23,8 @@ module.exports = {
         loaders : ['style', 'css']
       },
       {
-        test : /\.less$/,
-        loaders : ['style', 'css', 'less-loader']
-      },
-      {
         test : /\.scss$/,
-        loaders : ['style', 'css', 'sass-loader']
+        loaders : ['style', 'css', 'sass']
       }
     ]
   },
