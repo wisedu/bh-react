@@ -1,4 +1,4 @@
-import './css/bh-dialog.css';
+import './sass/bh-dialog.scss';
 
 import React from 'react';
 import Dialog from '../rc-dialog/lib/DialogWrap.js';

@@ -1,2 +1,31 @@
+@import "../../../sass/var/color";
+
+//外框的padding
 $dialog-content-padding: 0 24px;
+
+//关闭按钮的大小
 $dialog-close-x-font-size: 24px;
+
+//header的设置
+$dialog-header-padding: 32px 0;
+$dialog-header-text-align: left;
+$dialog-header-confirm-text-align: center;
+
+//body的设置
+$dialog-body-padding-bottom: 32px;
+
+//footer的设置
+$dialog-footer-padding: 32px 0;
+$dialog-footer-border-top: 1px solid $gray-lv4;
+$dialog-footer-text-align: right;
+$dialog-footer-confirm-text-align: center;
+
+//蒙板
+$dialog-mask-bg-color: rgba(0, 0, 0, 0.35);
+$dialog-mask-ie-bg-color: #000;
+$dialog-mask-ie-bg-color-filter: alpha(opacity=35);
+
+//success、warning、danger的图标设置
+$dialog-icon-width: 80px;
+$dialog-icon-height: 80px;
+$dialog-icon-margin: 0 auto 32px auto;

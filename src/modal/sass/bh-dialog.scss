@@ -28,7 +28,7 @@
   top: 12px;
   font-weight: 700;
   line-height: 1;
-  color: #000;
+  color: $gray-base;
   text-shadow: 0 1px 0 #fff;
   filter: alpha(opacity=20);
   opacity: .2;
@@ -43,24 +43,23 @@
   text-decoration: none;
 }
 .bh-dialog-header {
-  padding: 32px 0;
+  padding: $dialog-header-padding;
   background: #fff;
-  color: #666;
-  text-align: left;
+  text-align: $dialog-header-text-align;
 }
 .bh-dialog-confirm .bh-dialog-header{
-    text-align: center;
+    text-align: $dialog-header-confirm-text-align;
 }
 .bh-dialog-body{
-  padding-bottom: 32px;
+  padding-bottom: $dialog-body-padding-bottom;
 }
 .bh-dialog-footer {
-  border-top: 1px solid #e9e9e9;
-  padding: 32px 0;
-  text-align: right;
+  border-top: $dialog-footer-border-top;
+  padding: $dialog-footer-padding;
+  text-align: $dialog-footer-text-align;
 }
 .bh-dialog-confirm .bh-dialog-footer{
-    text-align: center;
+    text-align: $dialog-footer-confirm-text-align;
 }
 .bh-dialog-zoom-enter,
 .bh-dialog-zoom-appear {
@@ -149,11 +148,11 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: #373737;
-  background-color: rgba(55, 55, 55, 0.6);
+  background-color: $dialog-mask-ie-bg-color;
+  background-color: $dialog-mask-bg-color;
   height: 100%;
   z-index: 1000;
-  filter: alpha(opacity=50);
+  filter: $dialog-mask-ie-bg-color-filter;
 }
 .bh-dialog-mask-hidden {
   display: none;
@@ -232,20 +231,20 @@
 
 
 .bh-dialog .bh-dialog-icon {
-    width: 80px;
-    height: 80px;
+    width: $dialog-icon-width;
+    height: $dialog-icon-height;
     border: 4px solid gray;
     -webkit-border-radius: 40px;
     border-radius: 40px;
     border-radius: 50%;
-    margin: 20px auto;
+    margin: $dialog-icon-margin;
     padding: 0;
     position: relative;
     box-sizing: content-box
 }
 
 .bh-dialog .bh-dialog-icon.bh-dialog-icon-error {
-    border-color: #F27474
+    border-color: $brand-danger;
 }
 
 .bh-dialog .bh-dialog-icon.bh-dialog-icon-error .bh-dialog-error-mark {
@@ -257,7 +256,7 @@
     position: absolute;
     height: 5px;
     width: 47px;
-    background-color: #F27474;
+    background-color: $brand-danger;
     display: block;
     top: 37px;
     border-radius: 2px
@@ -276,7 +275,7 @@
 }
 
 .bh-dialog .bh-dialog-icon.bh-dialog-icon-warning {
-    border-color: #F8BB86
+    border-color: $brand-warning;
 }
 
 .bh-dialog .bh-dialog-icon.bh-dialog-icon-warning .bh-dialog-warning-body {
@@ -288,7 +287,7 @@
     -webkit-border-radius: 2px;
     border-radius: 2px;
     margin-left: -2px;
-    background-color: #F8BB86
+    background-color: $brand-warning
 }
 
 .bh-dialog .bh-dialog-icon.bh-dialog-icon-warning .bh-dialog-warning-dot {
@@ -300,39 +299,12 @@
     margin-left: -3px;
     left: 50%;
     bottom: 10px;
-    background-color: #F8BB86;
+    background-color: $brand-warning;
     opacity: 100;
 }
 
-.bh-dialog .bh-dialog-icon.sa-info {
-    border-color: #C9DAE1
-}
-
-.bh-dialog .bh-dialog-icon.sa-info::before {
-    content: "";
-    position: absolute;
-    width: 5px;
-    height: 29px;
-    left: 50%;
-    bottom: 17px;
-    border-radius: 2px;
-    margin-left: -2px;
-    background-color: #C9DAE1
-}
-
-.bh-dialog .bh-dialog-icon.sa-info::after {
-    content: "";
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    margin-left: -3px;
-    top: 19px;
-    background-color: #C9DAE1
-}
-
 .bh-dialog .bh-dialog-icon.bh-dialog-icon-success {
-    border-color: #A5DC86
+    border-color: $brand-success
 }
 
 .bh-dialog .bh-dialog-icon.bh-dialog-icon-success::before, .bh-dialog .bh-dialog-icon.bh-dialog-icon-success::after {
@@ -398,7 +370,7 @@
 
 .bh-dialog .bh-dialog-icon.bh-dialog-icon-success .bh-dialog-icon-line {
     height: 5px;
-    background-color: #A5DC86;
+    background-color: $brand-success;
     display: block;
     border-radius: 2px;
     position: absolute;

@@ -51,81 +51,6 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	//import React from 'react';
-	//import ReactDOM from 'react-dom';
-	//import Modal from '../src/modal/index.jsx';
-	//import Button from '../src/button/button.jsx';
-	
-	//const App = React.createClass({
-	//    getInitialState() {
-	//        return { visible: false };
-	//    },
-	//    showModal() {
-	//        this.setState({
-	//            visible: true
-	//        });
-	//    },
-	//    handleOk() {
-	//        console.log('点击了确定');
-	//        this.setState({
-	//            visible: false
-	//        });
-	//    },
-	//    handleCancel() {
-	//        console.log('点击了取消');
-	//        this.setState({
-	//            visible: false
-	//        });
-	//    },
-	//    render() {
-	//        return <div>
-	//            <Button classType="primary" onClick={this.showModal}>显示对话框</Button>
-	//            <Modal title="第一个 Modal" visible={this.state.visible}
-	//                   onOk={this.handleOk} onCancel={this.handleCancel}>
-	//                <p>对话框的内容</p>
-	//                <p>对话框的内容</p>
-	//                <p>对话框的内容</p>
-	//            </Modal>
-	//        </div>;
-	//    }
-	//});
-	//
-	//ReactDOM.render(<App /> , document.getElementById('example'));
-	
-	//import confirm from '../src/modal/confirm.jsx';
-	//
-	//function showConfirm(){
-	//    confirm({
-	//        title: '这是一条提醒信息',
-	//        content: '一些解释',
-	//        onOk: function() {
-	//        },
-	//        onCancel: function() {}
-	//    });
-	//}
-	//
-	//ReactDOM.render(
-	//    <Button onClick={showConfirm} classType="primary">
-	//        确认对话框
-	//    </Button>, document.getElementById('example'));
-	
-	//import alert from '../src/modal/alert.jsx';
-	//
-	//function showAlert(){
-	//    alert({
-	//        title: '这是一条提醒信息',
-	//        content: '',
-	//        okBtnText:'',
-	//        onOk: function() {
-	//        }
-	//    });
-	//}
-	//
-	//ReactDOM.render(
-	//    <Button onClick={showAlert} classType="primary">
-	//        alert 对话框
-	//    </Button>, document.getElementById('example'));
-	
 	'use strict';
 	
 	var _react = __webpack_require__(2);
@@ -140,46 +65,52 @@
 	
 	var _index2 = _interopRequireDefault(_index);
 	
+	var _index3 = __webpack_require__(205);
+	
+	var _index4 = _interopRequireDefault(_index3);
+	
+	var _dialogForm = __webpack_require__(209);
+	
+	var _dialogForm2 = _interopRequireDefault(_dialogForm);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	//const MyDialog = React.createClass({
-	//    getInitialState() {
-	//        return {
-	//            visible: false,
-	//            title: "这是一条提醒信息",
-	//            type: "alert",
-	//            okBtnText: "",
-	//            handleOk: this.handleOk,
-	//            width: 600,
-	//            height: 500
-	//        };
-	//    },
-	//    handleOk(){
-	//        console.log("1111")
-	//    },
-	//    showModal() {
-	//        this.setState({
-	//            visible: true
-	//        });
-	//    },
-	//    render() {
-	//        return <div>
-	//                    <h2>ant-design dialog</h2>
-	//                    <div>
-	//                        <p>
-	//                            <button className="btn btn-primary" onClick={this.showModal}>show dialog</button>
-	//                            &nbsp;
-	//                            <label>destroy on close: <input type="checkbox" /></label>
-	//                        </p>
-	//                        <Dialog {...this.state}  />
-	//                    </div>
-	//
-	//                </div>;
-	//    }
-	//});
+	var AlertDialog = _react2.default.createClass({
+	    displayName: 'AlertDialog',
+	    getInitialState: function getInitialState() {
+	        return {
+	            visible: false,
+	            title: "这是一条提醒信息",
+	            type: "alert",
+	            okBtnText: "",
+	            handleOk: this.handleOk
+	        };
+	    },
+	    handleOk: function handleOk() {
+	        console.log("1111");
+	    },
+	    showModal: function showModal() {
+	        this.setState({
+	            visible: true
+	        });
+	    },
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	                _index4.default,
+	                { classType: 'primary', onClick: this.showModal },
+	                'alert对话框'
+	            ),
+	            _react2.default.createElement(_index2.default, this.state)
+	        );
+	    }
+	});
+	_reactDom2.default.render(_react2.default.createElement(AlertDialog, null), document.getElementById('example_alert'));
 	
-	var MyDialog = _react2.default.createClass({
-	    displayName: 'MyDialog',
+	var ConfirmDialog = _react2.default.createClass({
+	    displayName: 'ConfirmDialog',
 	    getInitialState: function getInitialState() {
 	        return {
 	            visible: false,
@@ -188,9 +119,7 @@
 	            okBtnText: "",
 	            cancelBtnText: "",
 	            handleOk: this.handleOk,
-	            //handleCancel: this.handleCancel,
-	            width: 600,
-	            height: 500
+	            handleCancel: this.handleCancel
 	        };
 	    },
 	    handleOk: function handleOk() {
@@ -209,104 +138,198 @@
 	            'div',
 	            null,
 	            _react2.default.createElement(
-	                'h2',
-	                null,
-	                'ant-design dialog'
+	                _index4.default,
+	                { classType: 'primary', onClick: this.showModal },
+	                'confirm对话框'
 	            ),
-	            _react2.default.createElement(
-	                'div',
-	                null,
-	                _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    _react2.default.createElement(
-	                        'button',
-	                        { className: 'btn btn-primary', onClick: this.showModal },
-	                        'show dialog'
-	                    ),
-	                    ' ',
-	                    _react2.default.createElement(
-	                        'label',
-	                        null,
-	                        'destroy on close: ',
-	                        _react2.default.createElement('input', { type: 'checkbox' })
-	                    )
-	                ),
-	                _react2.default.createElement(_index2.default, this.state)
-	            )
+	            _react2.default.createElement(_index2.default, this.state)
 	        );
 	    }
 	});
 	
-	_reactDom2.default.render(_react2.default.createElement(MyDialog, null), document.getElementById('example'));
+	_reactDom2.default.render(_react2.default.createElement(ConfirmDialog, null), document.getElementById('example_confirm'));
 	
-	//import React from 'react';
-	//import ReactDOM from 'react-dom';
-	//import Dialog from 'rc-dialog';
-	//
-	//var MyControl = React.createClass({
-	//    getInitialState(){
-	//        return {
-	//            visible:false,
-	//            destroyOnClose:true
-	//        };
-	//    },
-	//
-	//    onClick: function (e) {
-	//        this.setState({
-	//            mousePosition: {
-	//                x:e.pageX,
-	//                y:e.pageY
-	//            },
-	//            visible:true
-	//        });
-	//    },
-	//
-	//    onClose(){
-	//        this.setState({
-	//            visible:false
-	//        });
-	//    },
-	//
-	//    onDestroyOnCloseChange(e){
-	//        this.setState({
-	//            destroyOnClose:e.target.checked
-	//        });
-	//    },
-	//
-	//    render: function () {
-	//        var dialog;
-	//        if(this.state.visible || !this.state.destroyOnClose){
-	//            dialog= <Dialog visible={this.state.visible}
-	//                            animation="zoom"
-	//                            maskAnimation="fade"
-	//                            onClose={this.onClose}
-	//                            style={{width:600}}
-	//                            mousePosition={this.state.mousePosition} title={<div> 第二个弹框</div>}>
-	//                <input />
-	//                <p>basic modal</p>
-	//            </Dialog>;
-	//        }
-	//        return (
-	//            <div>
-	//                <p>
-	//                    <button className="btn btn-primary" onClick={this.onClick}>show dialog</button>
-	//                    &nbsp;
-	//                    <label>destroy on close: <input type="checkbox" checked={this.state.destroyOnClose} onChange={this.onDestroyOnCloseChange}/></label>
-	//                </p>
-	//                {dialog}
-	//            </div>
-	//        );
-	//    }
-	//});
-	//
-	//ReactDOM.render(
-	//    <div>
-	//        <h2>ant-design dialog</h2>
-	//        <MyControl/>
-	//    </div>,
-	//    document.getElementById('example')
-	//);
+	var HasContentTextDialog = _react2.default.createClass({
+	    displayName: 'HasContentTextDialog',
+	    getInitialState: function getInitialState() {
+	        return {
+	            visible: false,
+	            title: "这是一条提醒信息",
+	            type: "alert",
+	            okBtnText: "",
+	            handleOk: this.handleOk,
+	            content: "史蒂夫·乔布斯是一位极具创造力的企业家，史蒂夫·乔布斯有如过山车般精彩的人生和犀利激越的性格，充满追求完美和誓不罢休的激情，史蒂夫·乔布斯创造出个人电脑、动画电影、音乐、手机、平板电脑以及数字出版等6大产业的颠覆性变革。史蒂夫·乔布斯的个性经常让周围的人愤怒和绝望，但其所创造出的产品也与这种个性息息相关，全然不可分割的，正如苹果的硬件和软件一样。两年多的时间，与史蒂夫·乔布斯40多次的面对面倾谈，以及与史蒂夫·乔布斯一百多个家庭成员、朋友、竞争对手、同事的不受限的采访，造就了这本独家传记。 史蒂夫·乔布斯的故事既具有启发意义，又有警示意义，充满了关于创新、个性、领导力以及价值观的教益。"
+	        };
+	    },
+	    handleOk: function handleOk() {
+	        console.log("确认");
+	    },
+	    showModal: function showModal() {
+	        this.setState({
+	            visible: true
+	        });
+	    },
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	                _index4.default,
+	                { classType: 'primary', onClick: this.showModal },
+	                '带文本的对话框'
+	            ),
+	            _react2.default.createElement(_index2.default, this.state)
+	        );
+	    }
+	});
+	
+	_reactDom2.default.render(_react2.default.createElement(HasContentTextDialog, null), document.getElementById('example_content_text'));
+	
+	var SuccessDialog = _react2.default.createClass({
+	    displayName: 'SuccessDialog',
+	    getInitialState: function getInitialState() {
+	        return {
+	            visible: false,
+	            title: "这是一条提示成功的提醒",
+	            type: "alert",
+	            showType: "success",
+	            okBtnText: "",
+	            content: "史蒂夫·乔布斯是一位极具创造力的企业家，史蒂夫·乔布斯有如过山车般精彩的人生和犀利激越的性格，充满追求完美和誓不罢休的激情，史蒂夫·乔布斯创造出个人电脑、动画电影、音乐、手机、平板电脑以及数字出版等6大产业的颠覆性变革。",
+	            handleOk: this.handleOk
+	        };
+	    },
+	    handleOk: function handleOk() {
+	        console.log("确认");
+	    },
+	    showModal: function showModal() {
+	        this.setState({
+	            visible: true
+	        });
+	    },
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	                _index4.default,
+	                { classType: 'primary', onClick: this.showModal },
+	                'sussess 对话框'
+	            ),
+	            _react2.default.createElement(_index2.default, this.state)
+	        );
+	    }
+	});
+	
+	_reactDom2.default.render(_react2.default.createElement(SuccessDialog, null), document.getElementById('example_alert_success'));
+	
+	var WarningDialog = _react2.default.createClass({
+	    displayName: 'WarningDialog',
+	    getInitialState: function getInitialState() {
+	        return {
+	            visible: false,
+	            title: "这是一条警告信息",
+	            type: "alert",
+	            showType: "warning",
+	            okBtnText: "",
+	            content: "史蒂夫·乔布斯是一位极具创造力的企业家，史蒂夫·乔布斯有如过山车般精彩的人生和犀利激越的性格，充满追求完美和誓不罢休的激情，史蒂夫·乔布斯创造出个人电脑、动画电影、音乐、手机、平板电脑以及数字出版等6大产业的颠覆性变革。",
+	            handleOk: this.handleOk
+	        };
+	    },
+	    handleOk: function handleOk() {
+	        console.log("确认");
+	    },
+	    showModal: function showModal() {
+	        this.setState({
+	            visible: true
+	        });
+	    },
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	                _index4.default,
+	                { classType: 'primary', onClick: this.showModal },
+	                'warning 对话框'
+	            ),
+	            _react2.default.createElement(_index2.default, this.state)
+	        );
+	    }
+	});
+	
+	_reactDom2.default.render(_react2.default.createElement(WarningDialog, null), document.getElementById('example_alert_warning'));
+	
+	var DangerDialog = _react2.default.createClass({
+	    displayName: 'DangerDialog',
+	    getInitialState: function getInitialState() {
+	        return {
+	            visible: false,
+	            title: "这是一条危险信息",
+	            type: "alert",
+	            showType: "danger",
+	            okBtnText: "",
+	            content: "史蒂夫·乔布斯是一位极具创造力的企业家，史蒂夫·乔布斯有如过山车般精彩的人生和犀利激越的性格，充满追求完美和誓不罢休的激情，史蒂夫·乔布斯创造出个人电脑、动画电影、音乐、手机、平板电脑以及数字出版等6大产业的颠覆性变革。",
+	            handleOk: this.handleOk
+	        };
+	    },
+	    handleOk: function handleOk() {
+	        console.log("确认");
+	    },
+	    showModal: function showModal() {
+	        this.setState({
+	            visible: true
+	        });
+	    },
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	                _index4.default,
+	                { classType: 'primary', onClick: this.showModal },
+	                'danger 对话框'
+	            ),
+	            _react2.default.createElement(_index2.default, this.state)
+	        );
+	    }
+	});
+	
+	_reactDom2.default.render(_react2.default.createElement(DangerDialog, null), document.getElementById('example_alert_danger'));
+	
+	var FormDialog = _react2.default.createClass({
+	    displayName: 'FormDialog',
+	    getInitialState: function getInitialState() {
+	        return {
+	            visible: false,
+	            title: "这是一个表单",
+	            content: _react2.default.createElement(_dialogForm2.default, null),
+	            handleOk: this.handleOk,
+	            width: 800
+	        };
+	    },
+	    handleOk: function handleOk() {
+	        console.log("确认");
+	    },
+	    showModal: function showModal() {
+	        this.setState({
+	            visible: true
+	        });
+	    },
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	                _index4.default,
+	                { classType: 'primary', onClick: this.showModal },
+	                '表单对话框'
+	            ),
+	            _react2.default.createElement(_index2.default, this.state)
+	        );
+	    }
+	});
+	
+	_reactDom2.default.render(_react2.default.createElement(FormDialog, null), document.getElementById('example_alert_form'));
 
 /***/ },
 /* 2 */
@@ -19907,23 +19930,29 @@
 	  value: true
 	});
 	
+	__webpack_require__(161);
+	
 	var _react = __webpack_require__(2);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _rcDialog = __webpack_require__(161);
+	var _DialogWrap = __webpack_require__(165);
 	
-	var _rcDialog2 = _interopRequireDefault(_rcDialog);
+	var _DialogWrap2 = _interopRequireDefault(_DialogWrap);
 	
-	var _rcUtil = __webpack_require__(174);
+	var _rcUtil = __webpack_require__(177);
 	
-	var _alert = __webpack_require__(201);
+	var _alert = __webpack_require__(204);
 	
 	var _alert2 = _interopRequireDefault(_alert);
 	
-	var _confirm = __webpack_require__(204);
+	var _confirm = __webpack_require__(207);
 	
 	var _confirm2 = _interopRequireDefault(_confirm);
+	
+	var _dialogIcon = __webpack_require__(208);
+	
+	var _dialogIcon2 = _interopRequireDefault(_dialogIcon);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -19936,14 +19965,22 @@
 	  displayName: 'BhDialog',
 	  getInitialState: function getInitialState() {
 	    return {
-	      prefixCls: 'rc-dialog',
-	      width: this.props.width ? this.props.width : 520,
-	      height: this.props.height ? this.props.height : 500,
-	      transitionName: 'zoom',
+	      prefixCls: 'bh-dialog',
+	      width: this.props.width ? this.props.width : 564,
+	      height: this.props.height ? this.props.height : "auto",
+	      animation: 'zoom',
 	      maskAnimation: 'fade',
 	      visible: this.props.visible ? this.props.visible : false,
-	      title: this.props.title ? this.props.title : "",
-	      closable: true
+	      title: this.props.title ? _react2.default.createElement(
+	        'h4',
+	        null,
+	        this.props.title
+	      ) : '',
+	      closable: this.props.closable ? this.props.closable : true,
+	      onClose: this.onClose,
+	      type: this.props.type,
+	      content: this.props.content,
+	      showType: this.props.showType
 	    };
 	  },
 	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
@@ -19980,87 +20017,112 @@
 	  render: function render() {
 	    var state = this.state;
 	    if (state.visible) {
-	      var footer;
-	      if (this.props.type === "alert") {
-	        footer = _react2.default.createElement(_alert2.default, _extends({}, this.props, { onClose: this.onClose }));
-	        state.closable = false;
-	      } else if (this.props.type === "confirm") {
-	        footer = _react2.default.createElement(_confirm2.default, _extends({}, this.props, { onClose: this.onClose }));
-	        state.closable = false;
+	      if (state.type === "alert") {
+	        if (state.showType) {
+	          state.title = _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(_dialogIcon2.default, this.props),
+	            ' ',
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              this.props.title
+	            ),
+	            ' '
+	          );
+	        }
+	        state.footer = _react2.default.createElement(_alert2.default, _extends({}, this.props, { onClose: this.onClose }));
+	        state.closable = this.props.closable ? this.props.closable : false;
+	      } else if (state.type === "confirm") {
+	        state.footer = _react2.default.createElement(_confirm2.default, _extends({}, this.props, { onClose: this.onClose }));
+	        state.closable = this.props.closable ? this.props.closable : false;
 	      }
-	      return _react2.default.createElement(
-	        _rcDialog2.default,
-	        { visible: state.visible,
-	          align: state.align,
-	          animation: state.transitionName,
-	          maskAnimation: state.maskAnimation,
-	          onClose: this.onClose,
-	          style: { width: state.width },
-	          mousePosition: mousePosition,
-	          title: state.title,
-	          closable: state.closable },
-	        footer
-	      );
+	      return _react2.default.createElement(_DialogWrap2.default, _extends({ style: { width: state.width, height: state.height }, mousePosition: mousePosition }, state));
 	    } else {
 	      return _react2.default.createElement('div', null);
 	    }
 	  }
 	});
 	
-	//Modal.info = function (props) {
-	//  props.iconClassName = 'info-circle';
-	//  props.okCancel = false;
-	//  return confirm(props);
-	//};
-	//
-	//Modal.success = function (props) {
-	//  props.iconClassName = 'check-circle';
-	//  props.okCancel = false;
-	//  return confirm(props);
-	//};
-	//
-	//Modal.error = function (props) {
-	//  props.iconClassName = 'exclamation-circle';
-	//  props.okCancel = false;
-	//  return confirm(props);
-	//};
-	//
-	//Modal.confirm = function (props) {
-	//  props.okCancel = true;
-	//  return confirm(props);
-	//};
-	
 	exports.default = BhDialog;
 
 /***/ },
 /* 161 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	module.exports = __webpack_require__(162);
-
-/***/ },
-/* 162 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
+	function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
 	
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	var _extends = Object.assign || function (target) {
+	  for (var i = 1; i < arguments.length; i++) {
+	    var source = arguments[i];for (var key in source) {
+	      if (Object.prototype.hasOwnProperty.call(source, key)) {
+	        target[key] = source[key];
+	      }
+	    }
+	  }return target;
+	};
 	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	var _createClass = (function () {
+	  function defineProperties(target, props) {
+	    for (var i = 0; i < props.length; i++) {
+	      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ('value' in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+	    }
+	  }return function (Constructor, protoProps, staticProps) {
+	    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	  };
+	})();
 	
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	var _get = function get(_x, _x2, _x3) {
+	  var _again = true;_function: while (_again) {
+	    var object = _x,
+	        property = _x2,
+	        receiver = _x3;_again = false;if (object === null) object = Function.prototype;var desc = Object.getOwnPropertyDescriptor(object, property);if (desc === undefined) {
+	      var parent = Object.getPrototypeOf(object);if (parent === null) {
+	        return undefined;
+	      } else {
+	        _x = parent;_x2 = property;_x3 = receiver;_again = true;desc = parent = undefined;continue _function;
+	      }
+	    } else if ('value' in desc) {
+	      return desc.value;
+	    } else {
+	      var getter = desc.get;if (getter === undefined) {
+	        return undefined;
+	      }return getter.call(receiver);
+	    }
+	  }
+	};
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { 'default': obj };
+	}
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	function _classCallCheck(instance, Constructor) {
+	  if (!(instance instanceof Constructor)) {
+	    throw new TypeError('Cannot call a class as a function');
+	  }
+	}
 	
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) {
+	  if (typeof superClass !== 'function' && superClass !== null) {
+	    throw new TypeError('Super expression must either be null or a function, not ' + (typeof superClass === 'undefined' ? 'undefined' : _typeof(superClass)));
+	  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	}
 	
 	var _react = __webpack_require__(2);
 	
@@ -20070,11 +20132,11 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _Dialog = __webpack_require__(163);
+	var _Dialog = __webpack_require__(166);
 	
 	var _Dialog2 = _interopRequireDefault(_Dialog);
 	
-	var _objectAssign = __webpack_require__(187);
+	var _objectAssign = __webpack_require__(190);
 	
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 	
@@ -20167,17 +20229,13 @@
 	    key: 'getDialogElement',
 	    value: function getDialogElement(extra) {
 	      var props = this.props;
-	      var dialogProps = copy(props, ['className', 'closable', 'align', 'title', 'footer', 'mask', 'animation', 'transitionName', 'maskAnimation', 'maskTransitionName', 'mousePosition', 'prefixCls', 'style', 'width', 'height', 'zIndex']);
+	      var dialogProps = copy(props, ['className', 'closable', 'align', 'title', 'footer', 'mask', 'animation', 'transitionName', 'maskAnimation', 'maskTransitionName', 'mousePosition', 'prefixCls', 'style', 'width', 'height', 'zIndex', "type", "content"]);
 	
 	      (0, _objectAssign2['default'])(dialogProps, {
 	        onClose: this.onClose,
 	        visible: this.state.visible
 	      }, extra);
-	      return _react2['default'].createElement(
-	        _Dialog2['default'],
-	        _extends({}, dialogProps, { key: 'dialog' }),
-	        props.children
-	      );
+	      return _react2['default'].createElement(_Dialog2['default'], _extends({}, dialogProps, { key: 'dialog' }), props.children);
 	    }
 	  }, {
 	    key: 'cleanDialogContainer',
@@ -20226,7 +20284,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 163 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20235,11 +20293,27 @@
 	  value: true
 	});
 	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	var _extends = Object.assign || function (target) {
+	  for (var i = 1; i < arguments.length; i++) {
+	    var source = arguments[i];for (var key in source) {
+	      if (Object.prototype.hasOwnProperty.call(source, key)) {
+	        target[key] = source[key];
+	      }
+	    }
+	  }return target;
+	};
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { 'default': obj };
+	}
 	
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	function _defineProperty(obj, key, value) {
+	  if (key in obj) {
+	    Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
+	  } else {
+	    obj[key] = value;
+	  }return obj;
+	}
 	
 	var _react = __webpack_require__(2);
 	
@@ -20249,21 +20323,21 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _rcAlign = __webpack_require__(164);
+	var _rcAlign = __webpack_require__(167);
 	
 	var _rcAlign2 = _interopRequireDefault(_rcAlign);
 	
-	var _rcUtil = __webpack_require__(174);
+	var _rcUtil = __webpack_require__(177);
 	
-	var _objectAssign = __webpack_require__(187);
+	var _objectAssign = __webpack_require__(190);
 	
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 	
-	var _rcAnimate = __webpack_require__(192);
+	var _rcAnimate = __webpack_require__(195);
 	
 	var _rcAnimate2 = _interopRequireDefault(_rcAnimate);
 	
-	var _DOMWrap = __webpack_require__(200);
+	var _DOMWrap = __webpack_require__(203);
 	
 	var _DOMWrap2 = _interopRequireDefault(_DOMWrap);
 	
@@ -20409,33 +20483,22 @@
 	
 	    var footer = undefined;
 	    if (props.footer) {
-	      footer = _react2['default'].createElement(
-	        'div',
-	        { className: prefixCls + '-footer' },
-	        props.footer
-	      );
+	      footer = _react2['default'].createElement('div', { className: prefixCls + '-footer' }, props.footer);
 	    }
 	
 	    var header = undefined;
 	    if (props.title) {
-	      header = _react2['default'].createElement(
-	        'div',
-	        { className: prefixCls + '-header' },
-	        _react2['default'].createElement(
-	          'div',
-	          { className: prefixCls + '-title' },
-	          props.title
-	        )
-	      );
+	      header = _react2['default'].createElement('div', { className: prefixCls + '-header' }, _react2['default'].createElement('div', { className: prefixCls + '-title' }, props.title));
 	    }
 	
 	    var closer = undefined;
 	    if (closable) {
-	      closer = _react2['default'].createElement(
-	        'a',
-	        { tabIndex: '0', onClick: this.close, className: prefixCls + '-close' },
-	        _react2['default'].createElement('span', { className: prefixCls + '-close-x' })
-	      );
+	      closer = _react2['default'].createElement('a', { tabIndex: '0', onClick: this.close, className: prefixCls + '-close' }, _react2['default'].createElement('span', { className: prefixCls + '-close-x' }));
+	    }
+	
+	    var body = undefined;
+	    if (props.content) {
+	      body = _react2['default'].createElement('div', { className: prefixCls + '-body' }, props.content);
 	    }
 	
 	    var style = (0, _objectAssign2['default'])({}, props.style, dest);
@@ -20448,52 +20511,28 @@
 	      onKeyDown: this.onKeyDown
 	    };
 	    var transitionName = this.getTransitionName();
-	    var dialogElement = _react2['default'].createElement(
-	      _DOMWrap2['default'],
-	      _extends({}, dialogProps, {
-	        hiddenClassName: prefixCls + '-hidden' }),
-	      _react2['default'].createElement(
-	        'div',
-	        { className: prefixCls + '-content' },
-	        closer,
-	        header,
-	        _react2['default'].createElement(
-	          'div',
-	          { className: prefixCls + '-body' },
-	          props.children
-	        ),
-	        footer
-	      ),
-	      _react2['default'].createElement(
-	        'div',
-	        { tabIndex: '0', ref: 'sentinel', style: { width: 0, height: 0, overflow: 'hidden' } },
-	        'sentinel'
-	      )
-	    );
+	    var contentClass = prefixCls + '-content';
+	    if (props.type) {
+	      contentClass += " " + prefixCls + "-confirm";
+	    }
+	    var dialogElement = _react2['default'].createElement(_DOMWrap2['default'], _extends({}, dialogProps, {
+	      hiddenClassName: prefixCls + '-hidden' }), _react2['default'].createElement('div', { className: contentClass }, closer, header, body, footer), _react2['default'].createElement('div', { tabIndex: '0', ref: 'sentinel', style: { width: 0, height: 0, overflow: 'hidden' } }, 'sentinel'));
 	    // add key for align to keep animate children stable
-	    return _react2['default'].createElement(
-	      _rcAnimate2['default'],
-	      { key: 'dialog',
-	        showProp: 'dialogVisible',
-	        onLeave: this.onAnimateLeave,
-	        transitionName: transitionName,
-	        component: '',
-	        transitionAppear: true },
-	      _react2['default'].createElement(
-	        _rcAlign2['default'],
-	        { align: props.align,
-	          key: 'dialog',
-	          onAlign: this.onAlign,
-	          dialogVisible: props.visible,
-	          childrenProps: {
-	            visible: 'dialogVisible'
-	          },
-	          monitorBufferTime: 80,
-	          monitorWindowResize: true,
-	          disabled: !props.visible },
-	        dialogElement
-	      )
-	    );
+	    return _react2['default'].createElement(_rcAnimate2['default'], { key: 'dialog',
+	      showProp: 'dialogVisible',
+	      onLeave: this.onAnimateLeave,
+	      transitionName: transitionName,
+	      component: '',
+	      transitionAppear: true }, _react2['default'].createElement(_rcAlign2['default'], { align: props.align,
+	      key: 'dialog',
+	      onAlign: this.onAlign,
+	      dialogVisible: props.visible,
+	      childrenProps: {
+	        visible: 'dialogVisible'
+	      },
+	      monitorBufferTime: 80,
+	      monitorWindowResize: true,
+	      disabled: !props.visible }, dialogElement));
 	  },
 	
 	  getMaskElement: function getMaskElement() {
@@ -20512,13 +20551,9 @@
 	        visible: props.visible,
 	        hiddenClassName: props.prefixCls + '-mask-hidden' }));
 	      if (maskTransition) {
-	        maskElement = _react2['default'].createElement(
-	          _rcAnimate2['default'],
-	          { key: 'mask', showProp: 'visible',
-	            transitionAppear: true, component: '',
-	            transitionName: maskTransition },
-	          maskElement
-	        );
+	        maskElement = _react2['default'].createElement(_rcAnimate2['default'], { key: 'mask', showProp: 'visible',
+	          transitionAppear: true, component: '',
+	          transitionName: maskTransition }, maskElement);
 	      }
 	    }
 	    return maskElement;
@@ -20553,11 +20588,7 @@
 	    var prefixCls = props.prefixCls;
 	    var className = _defineProperty({}, prefixCls + '-wrap', 1);
 	
-	    return _react2['default'].createElement(
-	      'div',
-	      { className: (0, _rcUtil.classSet)(className) },
-	      [this.getMaskElement(), this.getDialogElement()]
-	    );
+	    return _react2['default'].createElement('div', { className: (0, _rcUtil.classSet)(className) }, [this.getMaskElement(), this.getDialogElement()]);
 	  }
 	});
 	
@@ -20565,7 +20596,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 164 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// export this package's api
@@ -20577,7 +20608,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _Align = __webpack_require__(165);
+	var _Align = __webpack_require__(168);
 	
 	var _Align2 = _interopRequireDefault(_Align);
 	
@@ -20585,7 +20616,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 165 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20604,13 +20635,13 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _domAlign = __webpack_require__(166);
+	var _domAlign = __webpack_require__(169);
 	
 	var _domAlign2 = _interopRequireDefault(_domAlign);
 	
-	var _rcUtil = __webpack_require__(174);
+	var _rcUtil = __webpack_require__(177);
 	
-	var _isWindow = __webpack_require__(191);
+	var _isWindow = __webpack_require__(194);
 	
 	var _isWindow2 = _interopRequireDefault(_isWindow);
 	
@@ -20742,7 +20773,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 166 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20758,27 +20789,27 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utils = __webpack_require__(167);
+	var _utils = __webpack_require__(170);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
-	var _getOffsetParent = __webpack_require__(168);
+	var _getOffsetParent = __webpack_require__(171);
 	
 	var _getOffsetParent2 = _interopRequireDefault(_getOffsetParent);
 	
-	var _getVisibleRectForElement = __webpack_require__(169);
+	var _getVisibleRectForElement = __webpack_require__(172);
 	
 	var _getVisibleRectForElement2 = _interopRequireDefault(_getVisibleRectForElement);
 	
-	var _adjustForViewport = __webpack_require__(170);
+	var _adjustForViewport = __webpack_require__(173);
 	
 	var _adjustForViewport2 = _interopRequireDefault(_adjustForViewport);
 	
-	var _getRegion = __webpack_require__(171);
+	var _getRegion = __webpack_require__(174);
 	
 	var _getRegion2 = _interopRequireDefault(_getRegion);
 	
-	var _getElFuturePos = __webpack_require__(172);
+	var _getElFuturePos = __webpack_require__(175);
 	
 	var _getElFuturePos2 = _interopRequireDefault(_getElFuturePos);
 	
@@ -20945,7 +20976,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 167 */
+/* 170 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -21443,7 +21474,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 168 */
+/* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21454,7 +21485,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utils = __webpack_require__(167);
+	var _utils = __webpack_require__(170);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
@@ -21501,7 +21532,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 169 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21512,11 +21543,11 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utils = __webpack_require__(167);
+	var _utils = __webpack_require__(170);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
-	var _getOffsetParent = __webpack_require__(168);
+	var _getOffsetParent = __webpack_require__(171);
 	
 	var _getOffsetParent2 = _interopRequireDefault(_getOffsetParent);
 	
@@ -21582,7 +21613,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 170 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21593,7 +21624,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utils = __webpack_require__(167);
+	var _utils = __webpack_require__(170);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
@@ -21642,7 +21673,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 171 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21653,7 +21684,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utils = __webpack_require__(167);
+	var _utils = __webpack_require__(170);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
@@ -21683,7 +21714,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 172 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21694,7 +21725,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _getAlignOffset = __webpack_require__(173);
+	var _getAlignOffset = __webpack_require__(176);
 	
 	var _getAlignOffset2 = _interopRequireDefault(_getAlignOffset);
 	
@@ -21724,7 +21755,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 173 */
+/* 176 */
 /***/ function(module, exports) {
 
 	/**
@@ -21769,31 +21800,31 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 174 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	module.exports = {
-	  guid: __webpack_require__(175),
-	  classSet: __webpack_require__(176),
-	  joinClasses: __webpack_require__(178),
-	  KeyCode: __webpack_require__(179),
-	  PureRenderMixin: __webpack_require__(180),
-	  shallowEqual: __webpack_require__(181),
-	  createChainedFunction: __webpack_require__(182),
+	  guid: __webpack_require__(178),
+	  classSet: __webpack_require__(179),
+	  joinClasses: __webpack_require__(181),
+	  KeyCode: __webpack_require__(182),
+	  PureRenderMixin: __webpack_require__(183),
+	  shallowEqual: __webpack_require__(184),
+	  createChainedFunction: __webpack_require__(185),
 	  Dom: {
-	    addEventListener: __webpack_require__(183),
-	    contains: __webpack_require__(188)
+	    addEventListener: __webpack_require__(186),
+	    contains: __webpack_require__(191)
 	  },
 	  Children: {
-	    toArray: __webpack_require__(189),
-	    mapSelf: __webpack_require__(190)
+	    toArray: __webpack_require__(192),
+	    mapSelf: __webpack_require__(193)
 	  }
 	};
 
 /***/ },
-/* 175 */
+/* 178 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -21804,15 +21835,15 @@
 	};
 
 /***/ },
-/* 176 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	module.exports = __webpack_require__(177);
+	module.exports = __webpack_require__(180);
 
 /***/ },
-/* 177 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -21866,7 +21897,7 @@
 
 
 /***/ },
-/* 178 */
+/* 181 */
 /***/ function(module, exports) {
 
 	/**
@@ -21900,7 +21931,7 @@
 	module.exports = joinClasses;
 
 /***/ },
-/* 179 */
+/* 182 */
 /***/ function(module, exports) {
 
 	/**
@@ -22425,12 +22456,12 @@
 	module.exports = KeyCode;
 
 /***/ },
-/* 180 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var shallowEqual = __webpack_require__(181);
+	var shallowEqual = __webpack_require__(184);
 	
 	/**
 	 * If your React component's render function is "pure", e.g. it will render the
@@ -22465,7 +22496,7 @@
 	module.exports = ReactComponentWithPureRenderMixin;
 
 /***/ },
-/* 181 */
+/* 184 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -22493,7 +22524,7 @@
 	module.exports = shallowEqual;
 
 /***/ },
-/* 182 */
+/* 185 */
 /***/ function(module, exports) {
 
 	/**
@@ -22520,7 +22551,7 @@
 	module.exports = createChainedFunction;
 
 /***/ },
-/* 183 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22532,7 +22563,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _addDomEventListener = __webpack_require__(184);
+	var _addDomEventListener = __webpack_require__(187);
 	
 	var _addDomEventListener2 = _interopRequireDefault(_addDomEventListener);
 	
@@ -22551,7 +22582,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 184 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22563,7 +22594,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _EventObject = __webpack_require__(185);
+	var _EventObject = __webpack_require__(188);
 	
 	var _EventObject2 = _interopRequireDefault(_EventObject);
 	
@@ -22593,7 +22624,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 185 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -22610,11 +22641,11 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _EventBaseObject = __webpack_require__(186);
+	var _EventBaseObject = __webpack_require__(189);
 	
 	var _EventBaseObject2 = _interopRequireDefault(_EventBaseObject);
 	
-	var _objectAssign = __webpack_require__(187);
+	var _objectAssign = __webpack_require__(190);
 	
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 	
@@ -22876,7 +22907,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 186 */
+/* 189 */
 /***/ function(module, exports) {
 
 	/**
@@ -22944,7 +22975,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 187 */
+/* 190 */
 /***/ function(module, exports) {
 
 	/* eslint-disable no-unused-vars */
@@ -22989,7 +23020,7 @@
 
 
 /***/ },
-/* 188 */
+/* 191 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -23007,7 +23038,7 @@
 	};
 
 /***/ },
-/* 189 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23023,7 +23054,7 @@
 	};
 
 /***/ },
-/* 190 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23040,7 +23071,7 @@
 	};
 
 /***/ },
-/* 191 */
+/* 194 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -23059,16 +23090,16 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 192 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// export this package's api
 	'use strict';
 	
-	module.exports = __webpack_require__(193);
+	module.exports = __webpack_require__(196);
 
 /***/ },
-/* 193 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23085,13 +23116,13 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _ChildrenUtils = __webpack_require__(194);
+	var _ChildrenUtils = __webpack_require__(197);
 	
-	var _AnimateChild = __webpack_require__(195);
+	var _AnimateChild = __webpack_require__(198);
 	
 	var _AnimateChild2 = _interopRequireDefault(_AnimateChild);
 	
-	var _util = __webpack_require__(199);
+	var _util = __webpack_require__(202);
 	
 	var _util2 = _interopRequireDefault(_util);
 	
@@ -23388,7 +23419,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 194 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23506,7 +23537,7 @@
 	}
 
 /***/ },
-/* 195 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23525,11 +23556,11 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _cssAnimation = __webpack_require__(196);
+	var _cssAnimation = __webpack_require__(199);
 	
 	var _cssAnimation2 = _interopRequireDefault(_cssAnimation);
 	
-	var _util = __webpack_require__(199);
+	var _util = __webpack_require__(202);
 	
 	var _util2 = _interopRequireDefault(_util);
 	
@@ -23609,13 +23640,13 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 196 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Event = __webpack_require__(197);
-	var Css = __webpack_require__(198);
+	var Event = __webpack_require__(200);
+	var Css = __webpack_require__(201);
 	var isCssAnimationSupported = Event.endEvents.length !== 0;
 	
 	function getDuration(node, name) {
@@ -23767,7 +23798,7 @@
 	module.exports = cssAnimation;
 
 /***/ },
-/* 197 */
+/* 200 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23855,7 +23886,7 @@
 	module.exports = TransitionEvents;
 
 /***/ },
-/* 198 */
+/* 201 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23886,7 +23917,7 @@
 	};
 
 /***/ },
-/* 199 */
+/* 202 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -23919,7 +23950,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 200 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23928,13 +23959,15 @@
 	  value: true
 	});
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { 'default': obj };
+	}
 	
 	var _react = __webpack_require__(2);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _objectAssign = __webpack_require__(187);
+	var _objectAssign = __webpack_require__(190);
 	
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 	
@@ -23966,7 +23999,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 201 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23979,11 +24012,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _rcDialog = __webpack_require__(161);
-	
-	var _rcDialog2 = _interopRequireDefault(_rcDialog);
-	
-	var _index = __webpack_require__(202);
+	var _index = __webpack_require__(205);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
@@ -24001,9 +24030,18 @@
 	    },
 	
 	    render: function render() {
+	        var className = "primary";
+	        var props = this.props;
+	        if (props.showType === "success") {
+	            className = "success";
+	        } else if (props.showType === "warning") {
+	            className = "warning";
+	        } else if (props.showType === "danger") {
+	            className = "danger";
+	        }
 	        return _react2.default.createElement(
 	            _index2.default,
-	            { classType: 'primary', onClick: this.handleClose },
+	            { classType: className, onClick: this.handleClose },
 	            this.props.okBtnText ? this.props.okBtnText : "确定"
 	        );
 	    }
@@ -24012,36 +24050,33 @@
 	exports.default = AlertDialog;
 
 /***/ },
-/* 202 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
+	
 	var _react = __webpack_require__(2);
-
+	
 	var _react2 = _interopRequireDefault(_react);
-
+	
 	var _reactDom = __webpack_require__(159);
-
+	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _button = __webpack_require__(203);
-
+	
+	var _button = __webpack_require__(206);
+	
 	var _button2 = _interopRequireDefault(_button);
-
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	
 	//import ButtonGroup from './button-group';
 	//
 	//Button.Group = ButtonGroup;
-	exports.default = _button2.default;
+	exports['default'] = _button2.default;
+	module.exports = exports['default'];
 
 /***/ },
-/* 203 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24058,7 +24093,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _rcUtil = __webpack_require__(174);
+	var _rcUtil = __webpack_require__(177);
 	
 	var _rcUtil2 = _interopRequireDefault(_rcUtil);
 	
@@ -24160,7 +24195,7 @@
 	};
 
 /***/ },
-/* 204 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24173,11 +24208,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _rcDialog = __webpack_require__(161);
-	
-	var _rcDialog2 = _interopRequireDefault(_rcDialog);
-	
-	var _index = __webpack_require__(202);
+	var _index = __webpack_require__(205);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
@@ -24209,7 +24240,7 @@
 	      ),
 	      _react2.default.createElement(
 	        _index2.default,
-	        { classType: 'primary', onClick: this.handleCancel },
+	        { classType: 'default', onClick: this.handleCancel },
 	        this.props.cancelBtnText ? this.props.cancelBtnText : "取消"
 	      )
 	    );
@@ -24217,6 +24248,2134 @@
 	});
 	
 	exports.default = ConfirmDialog;
+
+/***/ },
+/* 208 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var DialogIcon = _react2.default.createClass({
+	    displayName: "DialogIcon",
+	
+	    render: function render() {
+	        var props = this.props;
+	        var icon = undefined;
+	        if (props.showType === "success") {
+	            icon = _react2.default.createElement(
+	                "div",
+	                { className: "bh-dialog-icon bh-dialog-icon-success" },
+	                _react2.default.createElement("span", { className: "bh-dialog-icon-line bh-dialog-icon-tip bh-dialog-successTip-animate" }),
+	                _react2.default.createElement("span", { className: "bh-dialog-icon-line bh-dialog-icon-long bh-dialog-successLong-animate" }),
+	                _react2.default.createElement("div", { className: "bh-dialog-success-icon-placeholder" }),
+	                _react2.default.createElement("div", { className: "bh-dialog-success-icon-fix" })
+	            );
+	        } else if (props.showType === "warning") {
+	            icon = _react2.default.createElement(
+	                "div",
+	                { className: "bh-dialog-icon bh-dialog-icon-warning" },
+	                _react2.default.createElement("span", { className: "bh-dialog-warning-body bh-dialog-warningBody-animate" }),
+	                _react2.default.createElement("span", { className: "bh-dialog-warning-dot bh-dialog-warningDot-animate" })
+	            );
+	        } else if (props.showType === "danger") {
+	            icon = _react2.default.createElement(
+	                "div",
+	                { className: "bh-dialog-icon bh-dialog-icon-error" },
+	                _react2.default.createElement(
+	                    "span",
+	                    { className: "bh-dialog-error-mark" },
+	                    _react2.default.createElement("span", { className: "bh-dialog-icon-line bh-dialog-error-iconLeft bh-dialog-errorLeft-animate" }),
+	                    _react2.default.createElement("span", { className: "bh-dialog-icon-line bh-dialog-error-iconRight bh-dialog-errorRight-animate" })
+	                )
+	            );
+	        }
+	        return icon;
+	    }
+	});
+	
+	exports.default = DialogIcon;
+
+/***/ },
+/* 209 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(159);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _index = __webpack_require__(210);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var FormItem = _index.Form.Item;
+	var RadioGroup = _index.Radio.Group;
+	var pageMeta = __webpack_require__(231);
+	
+	var items = pageMeta.models[3].controls.map(function (item, index) {
+	    if (!item.hidden) {
+	        return _react2.default.createElement(
+	            FormItem,
+	            { key: item.name, id: item.name, label: item.caption, required: item.require, col: item.col, cols: '3' },
+	            _react2.default.createElement(_index.Input, { type: item.xtype, name: item.name, placeholder: item.placeholder, readOnly: item.readonly })
+	        );
+	    }
+	});
+	
+	var Demo = _react2.default.createClass({
+	    displayName: 'Demo',
+	
+	    mixins: [_index.Form.ValueMixin],
+	
+	    getInitialState: function getInitialState() {
+	        return {
+	            formData: {
+	                userName: '大眼萌 minion',
+	                password: undefined,
+	                gender: 'male',
+	                remark: undefined,
+	                agreement: undefined
+	            }
+	        };
+	    },
+	    handleSubmit: function handleSubmit(e) {
+	        e.preventDefault();
+	        _index.message.success("收到表单值~~~ ：" + JSON.stringify(this.state.formData, function (k, v) {
+	            if (typeof v === 'undefined') {
+	                return '';
+	            }
+	            return v;
+	        }));
+	    },
+	    render: function render() {
+	        var formData = this.state.formData;
+	        return _react2.default.createElement(
+	            _index.Form,
+	            { horizontal: true, onSubmit: this.handleSubmit, cols: '2' },
+	            items,
+	            _react2.default.createElement(
+	                _index.Row,
+	                null,
+	                _react2.default.createElement(
+	                    _index.Col,
+	                    { span: '4', offset: '8' },
+	                    _react2.default.createElement(
+	                        _index.Button,
+	                        { type: 'primary', htmlType: 'submit' },
+	                        '确定'
+	                    )
+	                )
+	            )
+	        );
+	    }
+	});
+	
+	exports.default = Demo;
+
+/***/ },
+/* 210 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(159);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+	
+	// require('./style/index.less');
+	//
+	// // matchMedia polyfill for
+	// // https://github.com/WickyNilliams/enquire.js/issues/82
+	// if (typeof window !== 'undefined') {
+	//   const matchMediaPolyfill = function matchMediaPolyfill() {
+	//     return {
+	//       matches: false,
+	//       addListener: function () {
+	//       },
+	//       removeListener: function () {
+	//       }
+	//     };
+	//   };
+	//   window.matchMedia = window.matchMedia || matchMediaPolyfill;
+	// }
+	
+	var bhReact = {
+	  // Affix: require('./src/affix'),
+	  // Datepicker: require('./src/datepicker'),
+	  // Tooltip: require('./src/tooltip'),
+	  // Carousel: require('./src/carousel'),
+	  // Tabs: require('./src/tabs'),
+	  // Modal: require('./src/modal'),
+	  // Dropdown: require('./src/dropdown'),
+	  // Progress: require('./src/progress'),
+	  // Popover: require('./src/popover'),
+	  // Select: require('./src/select'),
+	  // Breadcrumb: require('./src/breadcrumb'),
+	  // Popconfirm: require('./src/popconfirm'),
+	  // Pagination: require('./src/pagination'),
+	  // Steps: require('./src/steps'),
+	  // InputNumber: require('./src/input-number'),
+	  // Switch: require('./src/switch'),
+	  Checkbox: __webpack_require__(211),
+	  // Table: require('./src/table'),
+	  // Tag: require('./src/tag'),
+	  // Collapse: require('./src/collapse'),
+	  // message: require('./src/message'),
+	  // Slider: require('./src/slider'),
+	  // QueueAnim: require('./src/queue-anim'),
+	  Radio: __webpack_require__(214),
+	  // notification: require('./src/notification'),
+	  // Alert: require('./src/alert'),
+	  // Validation: require('./src/validation'),
+	  // Tree: require('./src/tree'),
+	  // Upload: require('./src/upload'),
+	  // Badge: require('./src/badge'),
+	  // Menu: require('./src/menu'),
+	  // Timeline: require('./src/timeline'),
+	  Button: __webpack_require__(205),
+	  // ButtonGroup: require('./src/button').Group,
+	  // Icon: require('./src/iconfont'),
+	  Row: __webpack_require__(220).Row,
+	  Col: __webpack_require__(220).Col,
+	  // Spin: require('./src/spin'),
+	  Form: __webpack_require__(223).Form,
+	  Input: __webpack_require__(223).Input,
+	  // Calendar: require('./src/calendar'),
+	  // Timepicker: require('./src/timepicker')
+	  AA: __webpack_require__(223)
+	};
+	
+	bhReact.version = __webpack_require__(229).version;
+	
+	// if (process.env.NODE_ENV !== 'production') {
+	//   const warning = require('warning');
+	//   const semver = require('semver');
+	//   const reactVersionInDeps = require('./package.json').devDependencies.react;
+	//   warning(semver.satisfies(React.version, reactVersionInDeps) || semver.gtr(React.version, reactVersionInDeps),
+	//     `antd@${antd.version} need react@${reactVersionInDeps} or higher, which is react@${React.version} now.`);
+	// }
+	
+	if (typeof module !== 'undefined' && module.exports) {
+	  module.exports = bhReact;
+	} else if ("function" === 'function' && _typeof(__webpack_require__(230)) === 'object' && __webpack_require__(230)) {
+	  // register as 'classnames', consistent with npm package name
+	  !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+	    return bhReact;
+	  }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {
+	  window.React = _react2.default;
+	  window.ReactDOM = _reactDom2.default;
+	  window.bhReact = bhReact;
+	}
+
+/***/ },
+/* 211 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _rcCheckbox = __webpack_require__(212);
+	
+	var _rcCheckbox2 = _interopRequireDefault(_rcCheckbox);
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	module.exports = _react2.default.createClass({
+	  displayName: 'exports',
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      prefixCls: 'bh-checkbox'
+	    };
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(_rcCheckbox2.default, this.props);
+	  }
+	});
+
+/***/ },
+/* 212 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	module.exports = __webpack_require__(213);
+
+/***/ },
+/* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _classnames2 = __webpack_require__(180);
+	
+	var _classnames3 = _interopRequireDefault(_classnames2);
+	
+	var Checkbox = (function (_React$Component) {
+	  _inherits(Checkbox, _React$Component);
+	
+	  function Checkbox(props) {
+	    _classCallCheck(this, Checkbox);
+	
+	    _get(Object.getPrototypeOf(Checkbox.prototype), 'constructor', this).call(this, props);
+	    this.handleChange = this.handleChange.bind(this);
+	    var checked = false;
+	    if ('checked' in props) {
+	      checked = props.checked;
+	    } else {
+	      checked = props.defaultChecked;
+	    }
+	    this.state = { checked: checked };
+	  }
+	
+	  _createClass(Checkbox, [{
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      if ('checked' in nextProps) {
+	        this.setState({
+	          checked: nextProps.checked
+	        });
+	      }
+	    }
+	  }, {
+	    key: 'handleChange',
+	    value: function handleChange(e) {
+	      var checked = e.target.checked;
+	      if (!('checked' in this.props)) {
+	        this.setState({
+	          checked: checked ? 1 : 0
+	        });
+	      }
+	      this.props.onChange(e, this.state.checked);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _classnames;
+	
+	      var props = this.props;
+	      var prefixCls = props.prefixCls;
+	      var checked = this.state.checked;
+	      if (typeof checked === 'boolean') {
+	        checked = checked ? 1 : 0;
+	      }
+	      var className = (0, _classnames3['default'])((_classnames = {}, _defineProperty(_classnames, props.className, !!props.className), _defineProperty(_classnames, prefixCls, 1), _defineProperty(_classnames, prefixCls + '-checked', checked), _defineProperty(_classnames, prefixCls + '-checked-' + checked, !!checked), _defineProperty(_classnames, prefixCls + '-disabled', props.disabled), _classnames));
+	      return _react2['default'].createElement(
+	        'span',
+	        { className: className,
+	          style: props.style },
+	        _react2['default'].createElement('span', { className: prefixCls + '-inner' }),
+	        _react2['default'].createElement('input', _extends({}, props, {
+	          defaultChecked: !!props.defaultChecked,
+	          className: prefixCls + '-input',
+	          checked: !!checked,
+	          onChange: this.handleChange
+	        }))
+	      );
+	    }
+	  }]);
+	
+	  return Checkbox;
+	})(_react2['default'].Component);
+	
+	exports['default'] = Checkbox;
+	
+	Checkbox.propTypes = {
+	  prefixCls: _react2['default'].PropTypes.string,
+	  style: _react2['default'].PropTypes.object,
+	  type: _react2['default'].PropTypes.string,
+	  className: _react2['default'].PropTypes.string,
+	  defaultChecked: _react2['default'].PropTypes.oneOfType([_react2['default'].PropTypes.number, _react2['default'].PropTypes.bool]),
+	  checked: _react2['default'].PropTypes.oneOfType([_react2['default'].PropTypes.number, _react2['default'].PropTypes.bool]),
+	  onChange: _react2['default'].PropTypes.func
+	};
+	
+	Checkbox.defaultProps = {
+	  prefixCls: 'rc-checkbox',
+	  style: {},
+	  type: 'checkbox',
+	  className: '',
+	  defaultChecked: 0,
+	  onChange: function onChange() {}
+	};
+	module.exports = exports['default'];
+
+/***/ },
+/* 214 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _radio = __webpack_require__(215);
+	
+	var _radio2 = _interopRequireDefault(_radio);
+	
+	var _group = __webpack_require__(218);
+	
+	var _group2 = _interopRequireDefault(_group);
+	
+	var _radioButton = __webpack_require__(219);
+	
+	var _radioButton2 = _interopRequireDefault(_radioButton);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	_radio2.default.Button = _radioButton2.default;
+	_radio2.default.Group = _group2.default;
+	module.exports = _radio2.default;
+
+/***/ },
+/* 215 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _rcRadio = __webpack_require__(216);
+	
+	var _rcRadio2 = _interopRequireDefault(_rcRadio);
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var AntRadio = _react2.default.createClass({
+	  displayName: 'AntRadio',
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      prefixCls: 'bh-radio'
+	    };
+	  },
+	  render: function render() {
+	    var classString = this.props.className;
+	    if (classString) {
+	      classString += this.props.checked ? ' ' + classString + '-checked' : '';
+	    }
+	    if (this.props.disabled) {
+	      classString += ' ' + this.props.className + '-disabled';
+	    }
+	    return _react2.default.createElement(
+	      'label',
+	      { className: classString },
+	      _react2.default.createElement(_rcRadio2.default, _extends({}, this.props, { children: null })),
+	      this.props.children
+	    );
+	  }
+	});
+	
+	module.exports = AntRadio;
+
+/***/ },
+/* 216 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	module.exports = __webpack_require__(217);
+
+/***/ },
+/* 217 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var React = __webpack_require__(2);
+	var Checkbox = __webpack_require__(212);
+	
+	var Radio = React.createClass({
+	  displayName: 'Radio',
+	
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      prefixCls: 'rc-radio',
+	      type: 'radio'
+	    };
+	  },
+	
+	  render: function render() {
+	    return React.createElement(Checkbox, _extends({}, this.props, { ref: 'checkbox' }));
+	  }
+	});
+	
+	module.exports = Radio;
+
+/***/ },
+/* 218 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _radio = __webpack_require__(215);
+	
+	var _radio2 = _interopRequireDefault(_radio);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function getCheckedValue(children) {
+	  var checkedValue = null;
+	  _react2.default.Children.forEach(children, function (radio) {
+	    if (radio.props && radio.props.checked) {
+	      checkedValue = radio.props.value;
+	    }
+	  });
+	  return checkedValue;
+	}
+	
+	exports.default = _react2.default.createClass({
+	  displayName: 'group',
+	
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      prefixCls: 'bh-radio-group',
+	      disabled: false,
+	      onChange: function onChange() {}
+	    };
+	  },
+	  getInitialState: function getInitialState() {
+	    var props = this.props;
+	    return {
+	      value: props.value || props.defaultValue || getCheckedValue(props.children)
+	    };
+	  },
+	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+	    if ('value' in nextProps || getCheckedValue(nextProps.children)) {
+	      this.setState({
+	        value: nextProps.value || getCheckedValue(nextProps.children)
+	      });
+	    }
+	  },
+	
+	  render: function render() {
+	    var _this = this;
+	
+	    var props = this.props;
+	    var children = _react2.default.Children.map(props.children, function (radio) {
+	      if (radio.props) {
+	        return _react2.default.createElement(_radio2.default, _extends({
+	          key: radio.props.value
+	        }, radio.props, {
+	          onChange: _this.onRadioChange,
+	          checked: _this.state.value === radio.props.value,
+	          disabled: _this.props.disabled
+	        }));
+	      }
+	      return radio;
+	    });
+	    return _react2.default.createElement(
+	      'div',
+	      { className: props.prefixCls },
+	      children
+	    );
+	  },
+	  onRadioChange: function onRadioChange(ev) {
+	    this.setState({
+	      value: ev.target.value
+	    });
+	    this.props.onChange(ev);
+	  }
+	});
+
+/***/ },
+/* 219 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _radio = __webpack_require__(215);
+	
+	var _radio2 = _interopRequireDefault(_radio);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var RadioButton = _react2.default.createClass({
+	  displayName: 'RadioButton',
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      className: 'bh-radio-button'
+	    };
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(_radio2.default, this.props);
+	  }
+	});
+	
+	module.exports = RadioButton;
+
+/***/ },
+/* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.Col = exports.Row = undefined;
+	
+	var _row = __webpack_require__(221);
+	
+	var _row2 = _interopRequireDefault(_row);
+	
+	var _col = __webpack_require__(222);
+	
+	var _col2 = _interopRequireDefault(_col);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.Row = _row2.default;
+	exports.Col = _col2.default;
+
+/***/ },
+/* 221 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _rcUtil = __webpack_require__(177);
+	
+	var _rcUtil2 = _interopRequireDefault(_rcUtil);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	
+	var Row = _react2.default.createClass({
+	  displayName: 'Row',
+	
+	  propTypes: {
+	    type: _react2.default.PropTypes.string,
+	    align: _react2.default.PropTypes.string,
+	    justify: _react2.default.PropTypes.string,
+	    className: _react2.default.PropTypes.string,
+	    children: _react2.default.PropTypes.node
+	  },
+	  render: function render() {
+	    var _rcUtil$classSet;
+	
+	    var _props = this.props;
+	    var type = _props.type;
+	    var justify = _props.justify;
+	    var align = _props.align;
+	    var className = _props.className;
+	
+	    var others = _objectWithoutProperties(_props, ['type', 'justify', 'align', 'className']);
+	
+	    var prefixCls = "bh-";
+	    var classes = _rcUtil2.default.classSet((_rcUtil$classSet = {}, _defineProperty(_rcUtil$classSet, prefixCls + 'row', true), _defineProperty(_rcUtil$classSet, className, className), _rcUtil$classSet));
+	    return _react2.default.createElement(
+	      'div',
+	      _extends({}, others, { className: classes }),
+	      this.props.children
+	    );
+	  }
+	});
+	
+	exports.default = Row;
+
+/***/ },
+/* 222 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _rcUtil = __webpack_require__(177);
+	
+	var _rcUtil2 = _interopRequireDefault(_rcUtil);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	
+	var Col = _react2.default.createClass({
+	  displayName: 'Col',
+	
+	  propTypes: {
+	    span: _react2.default.PropTypes.string,
+	    order: _react2.default.PropTypes.string,
+	    offset: _react2.default.PropTypes.string,
+	    push: _react2.default.PropTypes.string,
+	    pull: _react2.default.PropTypes.string,
+	    className: _react2.default.PropTypes.string,
+	    children: _react2.default.PropTypes.node
+	  },
+	  render: function render() {
+	    var _rcUtil$classSet;
+	
+	    var _props = this.props;
+	    var span = _props.span;
+	    var order = _props.order;
+	    var offset = _props.offset;
+	    var push = _props.push;
+	    var pull = _props.pull;
+	    var className = _props.className;
+	
+	    var others = _objectWithoutProperties(_props, ['span', 'order', 'offset', 'push', 'pull', 'className']);
+	
+	    var prefixCls = "bh-";
+	    var classes = _rcUtil2.default.classSet((_rcUtil$classSet = {}, _defineProperty(_rcUtil$classSet, prefixCls + 'col-md-' + span, span), _defineProperty(_rcUtil$classSet, prefixCls + 'col-order-' + order, order), _defineProperty(_rcUtil$classSet, prefixCls + 'col-offset-' + offset, offset), _defineProperty(_rcUtil$classSet, prefixCls + 'col-push-' + push, push), _defineProperty(_rcUtil$classSet, prefixCls + 'col-pull-' + pull, pull), _defineProperty(_rcUtil$classSet, className, className), _rcUtil$classSet));
+	    return _react2.default.createElement(
+	      'div',
+	      _extends({}, others, { className: classes }),
+	      this.props.children
+	    );
+	  }
+	});
+	
+	exports.default = Col;
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.Input = exports.Form = undefined;
+	
+	var _Form = __webpack_require__(224);
+	
+	var _Form2 = _interopRequireDefault(_Form);
+	
+	var _FormItem = __webpack_require__(225);
+	
+	var _FormItem2 = _interopRequireDefault(_FormItem);
+	
+	var _ValueMixin = __webpack_require__(226);
+	
+	var _ValueMixin2 = _interopRequireDefault(_ValueMixin);
+	
+	var _Input = __webpack_require__(227);
+	
+	var _Input2 = _interopRequireDefault(_Input);
+	
+	var _MappingEMAP = __webpack_require__(228);
+	
+	var _MappingEMAP2 = _interopRequireDefault(_MappingEMAP);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	_Form2.default.Item = _FormItem2.default;
+	_Form2.default.ValueMixin = _ValueMixin2.default;
+	_Form2.default.MappingEMAP = _MappingEMAP2.default;
+	exports.Form = _Form2.default;
+	exports.Input = _Input2.default;
+
+/***/ },
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _classnames = __webpack_require__(180);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var cx = _classnames2.default;
+	
+	var Form = (function (_React$Component) {
+	  _inherits(Form, _React$Component);
+	
+	  function Form() {
+	    _classCallCheck(this, Form);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Form).apply(this, arguments));
+	  }
+	
+	  _createClass(Form, [{
+	    key: 'render',
+	    value: function render() {
+	      var _formClassName;
+	
+	      var prefixCls = this.props.prefixCls;
+	      var formClassName = (_formClassName = {}, _defineProperty(_formClassName, prefixCls + '-horizontal', this.props.horizontal), _defineProperty(_formClassName, prefixCls + '-inline', this.props.inline), _defineProperty(_formClassName, this.props.className, this.props.className || false), _defineProperty(_formClassName, "validates", true), _formClassName);
+	      var classes = cx(formClassName);
+	
+	      return _react2.default.createElement(
+	        'form',
+	        _extends({}, this.props, { className: classes }),
+	        this.props.children,
+	        _react2.default.createElement('div', { className: 'clearfix bh-clearfix' })
+	      );
+	    }
+	  }]);
+	
+	  return Form;
+	})(_react2.default.Component);
+	
+	Form.propTypes = {
+	  prefixCls: _react2.default.PropTypes.string,
+	  horizontal: _react2.default.PropTypes.bool,
+	  inline: _react2.default.PropTypes.bool,
+	  children: _react2.default.PropTypes.any,
+	  onSubmit: _react2.default.PropTypes.func,
+	  cols: _react2.default.PropTypes.string
+	};
+	
+	Form.defaultProps = {
+	  prefixCls: 'bh-form'
+	};
+	
+	// module.exports = Form;
+	exports.default = Form;
+
+/***/ },
+/* 225 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _classnames = __webpack_require__(180);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var cx = _classnames2.default;
+	
+	function prefixClsFn(prefixCls) {
+	  for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+	    args[_key - 1] = arguments[_key];
+	  }
+	
+	  return args.map(function (s) {
+	    return prefixCls + '-' + s;
+	  }).join(' ');
+	}
+	
+	var FormItem = (function (_React$Component) {
+	  _inherits(FormItem, _React$Component);
+	
+	  function FormItem(props) {
+	    _classCallCheck(this, FormItem);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(FormItem).call(this, props));
+	
+	    var wide_label = "4";
+	    var wide_control = "8";
+	    switch (_this.props.col + "-" + _this.props.cols) {
+	      case "2-3":
+	        wide_label = "2";
+	        wide_control = "10";
+	        break;
+	      case "3-3":
+	        wide_label = "12";
+	        wide_control = "12";
+	        break;
+	      case "2-2":
+	        wide_label = "2";
+	        wide_control = "10";
+	        break;
+	      case "1-3":
+	      default:
+	        break;
+	    }
+	
+	    _this.state = {
+	      labelCol: { span: wide_label },
+	      wrapperCol: { span: wide_control },
+	      col: _this.props.col || 1
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(FormItem, [{
+	    key: '_getLayoutClass',
+	    value: function _getLayoutClass(colDef) {
+	      if (!colDef) {
+	        return '';
+	      }
+	      var span = colDef.span;
+	      var offset = colDef.offset;
+	
+	      var col = span ? 'bh-col-md-' + span : '';
+	      var offsetCol = offset ? ' bh-col-offset-md-' + offset : '';
+	      return col + offsetCol;
+	    }
+	  }, {
+	    key: 'renderHelp',
+	    value: function renderHelp() {
+	      var prefixCls = this.props.prefixCls;
+	      return _react2.default.createElement(
+	        'div',
+	        { className: this.props.help ? prefixClsFn(prefixCls, 'explain') : '', key: 'help' },
+	        this.props.help
+	      );
+	    }
+	  }, {
+	    key: 'renderValidateWrapper',
+	    value: function renderValidateWrapper(c1, c2) {
+	      var classes = '';
+	      if (this.props.validateStatus) {
+	        classes = cx({
+	          'has-feedback': this.props.hasFeedback,
+	          'has-success': this.props.validateStatus === 'success',
+	          'bh-form-control-warning': this.props.validateStatus === 'warning',
+	          'bh-form-control-danger': this.props.validateStatus === 'error',
+	          'is-validating': this.props.validateStatus === 'validating'
+	        });
+	      }
+	      return _react2.default.createElement(
+	        'div',
+	        { className: classes },
+	        c1,
+	        ' ',
+	        c2
+	      );
+	    }
+	  }, {
+	    key: 'renderWrapper',
+	    value: function renderWrapper(children) {
+	      var wrapperCol = this.state.wrapperCol;
+	      return _react2.default.createElement(
+	        'div',
+	        { className: this._getLayoutClass(wrapperCol), key: 'wrapper' },
+	        children
+	      );
+	    }
+	  }, {
+	    key: 'renderLabel',
+	    value: function renderLabel() {
+	      var labelCol = this.state.labelCol;
+	
+	      return this.props.label ? _react2.default.createElement(
+	        'label',
+	        { htmlFor: this.props.id, className: this._getLayoutClass(labelCol) + " bh-form-label ", key: 'label' },
+	        this.props.label
+	      ) : null;
+	    }
+	  }, {
+	    key: 'renderChildren',
+	    value: function renderChildren() {
+	      return [this.renderLabel(), this.renderWrapper(this.renderValidateWrapper(this.props.children, this.renderHelp()))];
+	    }
+	
+	    // 判断是否要 `.ant-form-item-compact` 样式类
+	
+	  }, {
+	    key: '_isCompact',
+	    value: function _isCompact(children) {
+	      var _this2 = this;
+	
+	      var compactControls = ['checkbox', 'radio', 'radio-group', 'static', 'file'];
+	      var isCompact = false;
+	
+	      if (!Array.isArray(children)) {
+	        children = [children];
+	      }
+	      children.map(function (child, i) {
+	        var type = child.props && child.props.type;
+	        var prefixCls = child.props && child.props.prefixCls;
+	        prefixCls = prefixCls ? prefixCls.substring(prefixCls.indexOf('-') + 1) : '';
+	
+	        if (type && compactControls.indexOf(type) > -1 || prefixCls && compactControls.indexOf(prefixCls) > -1) {
+	          isCompact = true;
+	        } else if (child.props && _typeof(child.props.children) === 'object') {
+	          isCompact = _this2._isCompact(child.props.children);
+	        }
+	      });
+	
+	      return isCompact;
+	    }
+	  }, {
+	    key: 'renderFormItem',
+	    value: function renderFormItem(children) {
+	      var _itemClassName;
+	
+	      var cols = this.props.cols;
+	      var wide = 12 / cols * this.state.col;
+	
+	      var props = this.props;
+	      var prefixCls = props.prefixCls;
+	      var itemClassName = (_itemClassName = {}, _defineProperty(_itemClassName, prefixCls + '-group', true), _defineProperty(_itemClassName, prefixCls + '-group-compact', this._isCompact(props.children)), _defineProperty(_itemClassName, 'bh-col-md-' + wide, true), _defineProperty(_itemClassName, "bh-required", this.props.required), _itemClassName);
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { className: cx(itemClassName) },
+	        children
+	      );
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var children = this.renderChildren();
+	      return this.renderFormItem(children);
+	    }
+	  }]);
+	
+	  return FormItem;
+	})(_react2.default.Component);
+	
+	FormItem.propTypes = {
+	  prefixCls: _react2.default.PropTypes.string,
+	  label: _react2.default.PropTypes.node,
+	  labelCol: _react2.default.PropTypes.object,
+	  help: _react2.default.PropTypes.node,
+	  validateStatus: _react2.default.PropTypes.oneOf(['', 'success', 'warning', 'error', 'validating']),
+	  hasFeedback: _react2.default.PropTypes.bool,
+	  wrapperCol: _react2.default.PropTypes.object,
+	  className: _react2.default.PropTypes.string,
+	  children: _react2.default.PropTypes.node,
+	  cols: _react2.default.PropTypes.string
+	};
+	
+	FormItem.defaultProps = {
+	  hasFeedback: false,
+	  required: false,
+	  prefixCls: 'bh-form'
+	};
+	
+	// module.exports = FormItem;
+	// exports['default'] = FormItem;
+	// module.exports = exports['default'];
+	
+	exports.default = FormItem;
+
+/***/ },
+/* 226 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	function merge() {
+	  var ret = {};
+	  var args = [].slice.call(arguments, 0);
+	  args.forEach(function (a) {
+	    Object.keys(a).forEach(function (k) {
+	      ret[k] = a[k];
+	    });
+	  });
+	  return ret;
+	}
+	
+	var ValueMixin = {
+	  setValue: function setValue(field, e) {
+	    var v = e;
+	    var target = e && e.target;
+	    if (target) {
+	      if ((target.nodeName + '').toLowerCase() === 'input' && target.type === 'checkbox') {
+	        v = target.checked;
+	      } else {
+	        v = e.target.value;
+	      }
+	    }
+	    var newFormData = {};
+	    newFormData[field] = v;
+	    this.setState({
+	      formData: merge(this.state.formData, newFormData)
+	    });
+	  }
+	};
+	
+	exports.default = ValueMixin;
+
+/***/ },
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+	
+	function prefixClsFn(prefixCls) {
+	  for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+	    args[_key - 1] = arguments[_key];
+	  }
+	
+	  return args.map(function (s) {
+	    return prefixCls + '-' + s;
+	  }).join(' ');
+	}
+	
+	function ieGT9() {
+	  if ((typeof document === 'undefined' ? 'undefined' : _typeof(document)) === undefined) {
+	    return false;
+	  }
+	  var documentMode = document.documentMode || 0;
+	  return documentMode > 9;
+	}
+	
+	var Group = (function (_React$Component) {
+	  _inherits(Group, _React$Component);
+	
+	  function Group() {
+	    _classCallCheck(this, Group);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Group).apply(this, arguments));
+	  }
+	
+	  _createClass(Group, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: this.props.className },
+	        this.props.children
+	      );
+	    }
+	  }]);
+	
+	  return Group;
+	})(_react2.default.Component);
+	
+	Group.propTypes = {
+	  className: _react2.default.PropTypes.string,
+	  children: _react2.default.PropTypes.any
+	};
+	
+	Group.defaultProps = {
+	  className: 'bh-input-group'
+	};
+	
+	var Input = (function (_React$Component2) {
+	  _inherits(Input, _React$Component2);
+	
+	  function Input() {
+	    _classCallCheck(this, Input);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Input).apply(this, arguments));
+	  }
+	
+	  _createClass(Input, [{
+	    key: 'renderLabledInput',
+	    value: function renderLabledInput(children) {
+	      var props = this.props;
+	      var wrapperClassName = prefixClsFn(props.prefixCls, 'input-group');
+	      var addonClassName = prefixClsFn(wrapperClassName, 'addon');
+	      var addonBefore = props.addonBefore ? _react2.default.createElement(
+	        'span',
+	        { className: addonClassName },
+	        props.addonBefore
+	      ) : null;
+	
+	      var addonAfter = props.addonAfter ? _react2.default.createElement(
+	        'span',
+	        { className: addonClassName },
+	        props.addonAfter
+	      ) : null;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { className: addonBefore || addonAfter ? wrapperClassName : '' },
+	        addonBefore,
+	        children,
+	        addonAfter
+	      );
+	    }
+	  }, {
+	    key: 'renderInput',
+	    value: function renderInput() {
+	      var props = this.props;
+	      var prefixCls = props.prefixCls;
+	      var inputClassName = prefixClsFn(prefixCls, 'form-control');
+	      if (!props.type) {
+	        return props.children;
+	      }
+	
+	      switch (props.size) {
+	        case 'small':
+	          inputClassName = prefixClsFn(prefixCls, 'form-control', 'input-sm');break;
+	        case 'large':
+	          inputClassName = prefixClsFn(prefixCls, 'form-control', 'input-lg');break;
+	        default:
+	      }
+	      var placeholder = props.placeholder;
+	      if (placeholder && ieGT9()) {
+	        placeholder = null;
+	      }
+	      switch (props.type) {
+	        case 'textarea':
+	          return _react2.default.createElement('textarea', _extends({}, props, { placeholder: placeholder, className: inputClassName, ref: 'input' }));
+	        default:
+	          inputClassName = props.className ? props.className : inputClassName;
+	          return _react2.default.createElement('input', _extends({}, props, { placeholder: placeholder, className: inputClassName, ref: 'input' }));
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return this.renderLabledInput(this.renderInput());
+	    }
+	  }]);
+	
+	  return Input;
+	})(_react2.default.Component);
+	
+	Input.propTypes = {
+	  type: _react2.default.PropTypes.string,
+	  id: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.number]),
+	  size: _react2.default.PropTypes.oneOf(['small', 'default', 'large']),
+	  disabled: _react2.default.PropTypes.bool,
+	  value: _react2.default.PropTypes.any,
+	  defaultValue: _react2.default.PropTypes.any,
+	  className: _react2.default.PropTypes.string,
+	  addonBefore: _react2.default.PropTypes.node,
+	  addonAfter: _react2.default.PropTypes.node,
+	  prefixCls: _react2.default.PropTypes.string
+	};
+	
+	Input.defaultProps = {
+	  defaultValue: '',
+	  disabled: false,
+	  prefixCls: 'bh',
+	  type: 'text'
+	};
+	
+	// module.exports = Input;
+	// module.exports.Group = Group;
+	
+	exports['default'] = Input;
+	exports['default'].Group = Group;
+	module.exports = exports['default'];
+
+/***/ },
+/* 228 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _FormItem = __webpack_require__(225);
+	
+	var _FormItem2 = _interopRequireDefault(_FormItem);
+	
+	var _Input = __webpack_require__(227);
+	
+	var _Input2 = _interopRequireDefault(_Input);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var MappingFormEMAP = (function () {
+	  function MappingFormEMAP(pageMeta) {
+	    _classCallCheck(this, MappingFormEMAP);
+	
+	    this.pageMeta = pageMeta;
+	  }
+	
+	  _createClass(MappingFormEMAP, [{
+	    key: 'getItems',
+	    value: function getItems(modelName, cols) {
+	      var pageMetaModel = this.pageMeta.models.filter(function (elm, index) {
+	        if (elm.name == modelName) return elm;
+	      });
+	      if (pageMetaModel.length != 1) return [];
+	
+	      var items = pageMetaModel[0].controls.map(function (item, index) {
+	        if (!item.hidden) {
+	          return _react2.default.createElement(
+	            _FormItem2.default,
+	            { key: item.name, id: item.name, label: item.caption, required: item.require, col: item.col, cols: cols },
+	            _react2.default.createElement(_Input2.default, { type: item.xtype, name: item.name, placeholder: item.placeholder, readOnly: item.readonly })
+	          );
+	        }
+	      });
+	
+	      return items;
+	    }
+	  }]);
+	
+	  return MappingFormEMAP;
+	})();
+	
+	exports.default = MappingFormEMAP;
+
+/***/ },
+/* 229 */
+/***/ function(module, exports) {
+
+	module.exports = {
+		"name": "bh-react",
+		"version": "1.0.0",
+		"main": "index.js",
+		"scripts": {
+			"test": "echo \"Error: no test specified\" && exit 1",
+			"webpack-dev-server": "webpack-dev-server"
+		},
+		"author": "",
+		"license": "ISC",
+		"description": "",
+		"dependencies": {
+			"babel-preset-react": "^6.1.18",
+			"rc-checkbox": "^1.2.0",
+			"rc-radio": "^2.0.0",
+			"react": "^0.14.2",
+			"react-dom": "^0.14.2",
+			"react-dropdown": "^0.7.2"
+		},
+		"devDependencies": {
+			"babel-core": "^6.1.21",
+			"babel-loader": "^6.1.0",
+			"babel-preset-es2015": "^6.1.18",
+			"babel-preset-react": "^6.1.18",
+			"babel-preset-stage-0": "^6.1.18",
+			"babel-preset-stage-1": "^6.1.18",
+			"babel-preset-stage-2": "^6.1.18",
+			"babel-preset-stage-3": "^6.1.18",
+			"css-loader": "^0.23.0",
+			"extract-text-webpack-plugin": "^0.9.1",
+			"json-loader": "^0.5.3",
+			"less": "^2.5.3",
+			"less-loader": "^2.2.1",
+			"node-sass": "^3.4.2",
+			"rc-animate": "2.x",
+			"rc-checkbox": "^1.2.0",
+			"rc-dialog": "^5.3.0",
+			"rc-radio": "^2.0.0",
+			"rc-util": "^3.0.1",
+			"react-hot-loader": "^1.3.0",
+			"sass": "^0.5.0",
+			"sass-loader": "^3.1.2",
+			"style-loader": "^0.13.0",
+			"webpack": "^1.12.8",
+			"webpack-dev-server": "^1.12.1"
+		}
+	};
+
+/***/ },
+/* 230 */
+/***/ function(module, exports) {
+
+	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, {}))
+
+/***/ },
+/* 231 */
+/***/ function(module, exports) {
+
+	module.exports = {
+		"datas": {},
+		"models": [
+			{
+				"name": "ddrzcx",
+				"url": "sszdt/ddrzcx.do",
+				"controls": [
+					{
+						"name": "XM",
+						"dataType": "String",
+						"caption": "姓名",
+						"quickSearch": true,
+						"dataSize": 90,
+						"require": true
+					},
+					{
+						"name": "XH",
+						"dataType": "String",
+						"caption": "学号",
+						"quickSearch": true,
+						"xtype": "textarea",
+						"dataSize": 20,
+						"col": 2
+					},
+					{
+						"name": "XBDM",
+						"dataType": "String",
+						"caption": "性别",
+						"url": "/ssxtweb/code/b2738d0d-0eb1-4b03-b0f6-98f509a88c8c.do",
+						"xtype": "select",
+						"dataSize": 1
+					},
+					{
+						"name": "PYCCDM",
+						"dataType": "String",
+						"caption": "培养层次",
+						"url": "/ssxtweb/code/9ec58134-0517-4664-8969-5342ffcaf190.do",
+						"xtype": "select",
+						"dataSize": 1
+					},
+					{
+						"name": "DDLBDM",
+						"dataType": "String",
+						"caption": "调动类别",
+						"url": "/ssxtweb/code/67dbb4e6-5283-4da2-ae0c-37414988b50b/DDLBDM.do",
+						"xtype": "select",
+						"dataSize": 1
+					},
+					{
+						"name": "DDRQ",
+						"dataType": "String",
+						"caption": "调动日期",
+						"xtype": "text",
+						"dataSize": 20
+					},
+					{
+						"name": "DDYY",
+						"dataType": "String",
+						"caption": "调动原因",
+						"url": "/ssxtweb/code/9dafbc85-e0a0-4f49-9a3e-e8857cb1a850.do",
+						"xtype": "select",
+						"dataSize": 300
+					},
+					{
+						"name": "DCSSL",
+						"dataType": "String",
+						"caption": "调出宿舍楼",
+						"url": "/ssxtweb/code/c043b195-d8a2-498d-86b5-09e27da23b2d.do",
+						"xtype": "select",
+						"dataSize": 40
+					},
+					{
+						"name": "DCFJH",
+						"dataType": "String",
+						"caption": "调出房间号",
+						"quickSearch": true,
+						"dataSize": 40
+					},
+					{
+						"name": "DRSSL",
+						"dataType": "String",
+						"caption": "调进宿舍楼",
+						"url": "/ssxtweb/code/c043b195-d8a2-498d-86b5-09e27da23b2d.do",
+						"xtype": "select",
+						"dataSize": 40
+					},
+					{
+						"name": "DRFJH",
+						"dataType": "String",
+						"caption": "调进房间号",
+						"quickSearch": true,
+						"dataSize": 40
+					},
+					{
+						"name": "RYLB",
+						"dataType": "String",
+						"caption": "人员类别",
+						"url": "/ssxtweb/code/67dbb4e6-5283-4da2-ae0c-37414988b50b/RYLB.do",
+						"xtype": "select",
+						"dataSize": 3
+					},
+					{
+						"name": "CZZXM",
+						"dataType": "String",
+						"caption": "操作人",
+						"xtype": "text",
+						"dataSize": 90
+					},
+					{
+						"name": "CZRQ",
+						"dataType": "Timestamp",
+						"caption": "操作时间",
+						"xtype": "text",
+						"dataSize": 7,
+						"format": "yyyy-MM-dd"
+					},
+					{
+						"name": "XSBH",
+						"dataType": "String",
+						"caption": "学生编号",
+						"grid.hidden": true,
+						"xtype": "text",
+						"grid.fixed": true,
+						"dataSize": 40,
+						"hidden": true
+					},
+					{
+						"name": "DCSSDM",
+						"dataType": "String",
+						"caption": "调出宿舍",
+						"grid.hidden": true,
+						"xtype": "text",
+						"grid.fixed": true,
+						"dataSize": 40,
+						"hidden": true
+					},
+					{
+						"name": "DRSSDM",
+						"dataType": "String",
+						"caption": "调入宿舍",
+						"grid.hidden": true,
+						"xtype": "text",
+						"grid.fixed": true,
+						"dataSize": 40,
+						"hidden": true
+					},
+					{
+						"name": "XZNJ",
+						"dataType": "String",
+						"caption": "现在年级",
+						"grid.hidden": true,
+						"xtype": "text",
+						"grid.fixed": true,
+						"dataSize": 4,
+						"hidden": true
+					},
+					{
+						"name": "DWDM",
+						"dataType": "String",
+						"caption": "院系代码",
+						"url": "/ssxtweb/code/ffcf5f04-e557-4b90-8528-f22019bd8cf0.do",
+						"grid.hidden": true,
+						"xtype": "text",
+						"grid.fixed": true,
+						"dataSize": 40,
+						"hidden": true
+					},
+					{
+						"name": "ZYDM",
+						"dataType": "String",
+						"caption": "专业代码",
+						"url": "/ssxtweb/code/94b15a8a-9b45-4455-b254-1ec2065028d9.do",
+						"grid.hidden": true,
+						"xtype": "text",
+						"grid.fixed": true,
+						"dataSize": 40,
+						"hidden": true
+					},
+					{
+						"name": "BJDM",
+						"dataType": "String",
+						"caption": "班级代码",
+						"url": "/ssxtweb/code/ab43d66a-9778-49b1-b3e0-0ce46317fed9.do",
+						"grid.hidden": true,
+						"xtype": "text",
+						"grid.fixed": true,
+						"dataSize": 40,
+						"hidden": true
+					},
+					{
+						"name": "DCSSQ",
+						"dataType": "String",
+						"caption": "调出宿舍区",
+						"url": "/ssxtweb/code/f4fbe313-bcf7-4599-90ff-f89db2716417.do",
+						"grid.hidden": true,
+						"grid.fixed": true,
+						"dataSize": 40,
+						"hidden": true
+					},
+					{
+						"name": "DRSSQ",
+						"dataType": "String",
+						"caption": "调入宿舍区",
+						"url": "/ssxtweb/code/f4fbe313-bcf7-4599-90ff-f89db2716417.do",
+						"grid.hidden": true,
+						"grid.fixed": true,
+						"dataSize": 40,
+						"hidden": true
+					}
+				]
+			},
+			{
+				"name": "sszdtcx",
+				"url": "sszdt/sszdtcx.do",
+				"controls": [
+					{
+						"name": "XM",
+						"dataType": "String",
+						"caption": "姓名",
+						"quickSearch": true,
+						"xtype": "text",
+						"dataSize": 90
+					},
+					{
+						"name": "XH",
+						"dataType": "String",
+						"caption": "学号",
+						"quickSearch": true,
+						"xtype": "text",
+						"dataSize": 20
+					},
+					{
+						"name": "XBDM",
+						"dataType": "String",
+						"caption": "性别",
+						"url": "/ssxtweb/code/b2738d0d-0eb1-4b03-b0f6-98f509a88c8c.do",
+						"xtype": "select",
+						"dataSize": 1
+					},
+					{
+						"name": "PYCCDM",
+						"dataType": "String",
+						"caption": "培养层次",
+						"url": "/ssxtweb/code/9ec58134-0517-4664-8969-5342ffcaf190.do",
+						"xtype": "select",
+						"dataSize": 1
+					},
+					{
+						"name": "DWDM",
+						"dataType": "String",
+						"caption": "院系",
+						"url": "/ssxtweb/code/ffcf5f04-e557-4b90-8528-f22019bd8cf0.do",
+						"quickSearch": false,
+						"xtype": "select",
+						"dataSize": 10
+					},
+					{
+						"name": "ZYDM",
+						"dataType": "String",
+						"caption": "专业",
+						"url": "/ssxtweb/code/94b15a8a-9b45-4455-b254-1ec2065028d9.do",
+						"quickSearch": false,
+						"xtype": "select",
+						"dataSize": 6
+					},
+					{
+						"name": "BJDM",
+						"dataType": "String",
+						"caption": "班级",
+						"url": "/ssxtweb/code/ab43d66a-9778-49b1-b3e0-0ce46317fed9.do",
+						"xtype": "select",
+						"dataSize": 100,
+						"hidden": true
+					},
+					{
+						"name": "XZNJ",
+						"dataType": "String",
+						"caption": "现在年级",
+						"quickSearch": false,
+						"xtype": "text",
+						"dataSize": 10
+					},
+					{
+						"name": "SSQDM",
+						"dataType": "String",
+						"caption": "宿舍区",
+						"url": "/ssxtweb/code/f4fbe313-bcf7-4599-90ff-f89db2716417.do",
+						"xtype": "select",
+						"dataSize": 40,
+						"hidden": true
+					},
+					{
+						"name": "SSLDM",
+						"dataType": "String",
+						"caption": "宿舍楼",
+						"url": "/ssxtweb/code/c043b195-d8a2-498d-86b5-09e27da23b2d.do",
+						"quickSearch": false,
+						"xtype": "select",
+						"dataSize": 40
+					},
+					{
+						"name": "FJH",
+						"dataType": "String",
+						"caption": "房间号",
+						"quickSearch": true,
+						"xtype": "text",
+						"dataSize": 40
+					},
+					{
+						"name": "SSDM",
+						"dataType": "String",
+						"caption": "宿舍代码",
+						"xtype": "text",
+						"dataSize": 40,
+						"hidden": true
+					},
+					{
+						"name": "XSBH",
+						"dataType": "String",
+						"caption": "学生编号",
+						"xtype": "text",
+						"dataSize": 40,
+						"hidden": true
+					},
+					{
+						"name": "WID",
+						"dataType": "String",
+						"caption": "WID",
+						"xtype": "text",
+						"dataSize": 40,
+						"hidden": true
+					}
+				]
+			},
+			{
+				"name": "T_SS_ZS_DDYY_QUERY",
+				"url": "sszdt/T_SS_ZS_DDYY_QUERY.do",
+				"controls": [
+					{
+						"name": "WID",
+						"dataType": "String",
+						"caption": "WID",
+						"xtype": "text",
+						"dataSize": 40
+					},
+					{
+						"name": "DDYYDM",
+						"dataType": "String",
+						"caption": "调动原因代码",
+						"xtype": "text",
+						"dataSize": 40
+					},
+					{
+						"name": "DDYY",
+						"dataType": "String",
+						"caption": "调动原因",
+						"xtype": "text",
+						"dataSize": 300
+					},
+					{
+						"name": "DDLBDM",
+						"dataType": "String",
+						"caption": "调动类别代码",
+						"url": "/ssxtweb/code/67dbb4e6-5283-4da2-ae0c-37414988b50b/DDLBDM.do",
+						"xtype": "text",
+						"dataSize": 1
+					},
+					{
+						"name": "PX",
+						"dataType": "double",
+						"caption": "排序",
+						"xtype": "text",
+						"dataSize": 22
+					},
+					{
+						"name": "SFSY",
+						"dataType": "double",
+						"caption": "是否使用",
+						"url": "/ssxtweb/code/67dbb4e6-5283-4da2-ae0c-37414988b50b/SFSY.do",
+						"xtype": "text",
+						"dataSize": 22
+					},
+					{
+						"name": "TBRQ",
+						"dataType": "Timestamp",
+						"caption": "同步日期",
+						"xtype": "text",
+						"dataSize": 7
+					},
+					{
+						"name": "TBLX",
+						"dataType": "String",
+						"caption": "同步操作",
+						"xtype": "text",
+						"dataSize": 10
+					},
+					{
+						"name": "CZRQ",
+						"dataType": "Timestamp",
+						"caption": "操作日期",
+						"xtype": "text",
+						"dataSize": 7
+					},
+					{
+						"name": "CZZ",
+						"dataType": "String",
+						"caption": "操作者",
+						"xtype": "text",
+						"dataSize": 30
+					},
+					{
+						"name": "CZZXM",
+						"dataType": "String",
+						"caption": "操作者姓名",
+						"xtype": "text",
+						"dataSize": 90
+					}
+				]
+			},
+			{
+				"name": "fyfp",
+				"url": "sszdt/fyfp.do",
+				"controls": [
+					{
+						"name": "WID",
+						"dataType": "String",
+						"caption": "WID",
+						"xtype": "text",
+						"dataSize": 40,
+						"hidden": true
+					},
+					{
+						"name": "SSDM",
+						"dataType": "String",
+						"caption": "宿舍代码",
+						"xtype": "text",
+						"dataSize": 40,
+						"hidden": true
+					},
+					{
+						"name": "XQDM",
+						"dataType": "String",
+						"caption": "校区",
+						"url": "/ssxtweb/code/2eac9654-d335-4449-9ab0-42a32a3a0fda.do",
+						"quickSearch": true,
+						"xtype": "select",
+						"dataSize": 40,
+						"hidden": true
+					},
+					{
+						"name": "SSQDM",
+						"dataType": "String",
+						"caption": "宿舍区",
+						"url": "/ssxtweb/code/f4fbe313-bcf7-4599-90ff-f89db2716417.do",
+						"xtype": "select",
+						"dataSize": 40,
+						"readonly": true
+					},
+					{
+						"name": "SSLDM",
+						"dataType": "String",
+						"caption": "宿舍楼",
+						"url": "/ssxtweb/code/c043b195-d8a2-498d-86b5-09e27da23b2d.do",
+						"xtype": "select",
+						"dataSize": 40,
+						"readonly": true
+					},
+					{
+						"name": "FJH",
+						"dataType": "String",
+						"caption": "房间号",
+						"quickSearch": true,
+						"xtype": "text",
+						"dataSize": 40,
+						"readonly": true
+					},
+					{
+						"name": "LC",
+						"dataType": "double",
+						"caption": "楼层",
+						"xtype": "text",
+						"hidden": true
+					},
+					{
+						"name": "CWS",
+						"dataType": "double",
+						"caption": "床位数",
+						"xtype": "text",
+						"col": 3,
+						"readonly": true
+					},
+					{
+						"name": "SYCWS",
+						"dataType": "double",
+						"caption": "空床位",
+						"quickSearch": true,
+						"xtype": "text",
+						"readonly": true,
+						"col": 2
+					},
+					{
+						"name": "XBDM",
+						"dataType": "String",
+						"caption": "学生性别",
+						"url": "/ssxtweb/code/b2738d0d-0eb1-4b03-b0f6-98f509a88c8c.do",
+						"xtype": "select",
+						"dataSize": 10,
+						"readonly": true
+					},
+					{
+						"name": "PYCCDM",
+						"dataType": "String",
+						"caption": "培养层次",
+						"url": "/ssxtweb/code/9ec58134-0517-4664-8969-5342ffcaf190.do",
+						"xtype": "select",
+						"dataSize": 10,
+						"readonly": true
+					},
+					{
+						"name": "YRZCWS",
+						"dataType": "double",
+						"caption": "已入住床位数",
+						"xtype": "text",
+						"hidden": true
+					},
+					{
+						"name": "YFPCWS",
+						"dataType": "double",
+						"caption": "已分配床位数",
+						"xtype": "text",
+						"hidden": true
+					},
+					{
+						"name": "DDYY",
+						"dataType": "String",
+						"caption": "调动原因",
+						"url": "/ssxtweb/code/9dafbc85-e0a0-4f49-9a3e-e8857cb1a850.do",
+						"xtype": "select",
+						"required": true,
+						"dataSize": 40
+					}
+				]
+			},
+			{
+				"name": "ddyysfczcx",
+				"url": "sszdt/ddyysfczcx.do",
+				"controls": [
+					{
+						"name": "WID",
+						"dataType": "String",
+						"caption": "WID",
+						"xtype": "text",
+						"dataSize": 40
+					}
+				]
+			},
+			{
+				"name": "fyxxcx",
+				"url": "sszdt/fyxxcx.do",
+				"controls": [
+					{
+						"name": "WID",
+						"dataType": "String",
+						"caption": "WID",
+						"xtype": "text",
+						"dataSize": 40,
+						"hidden": true
+					},
+					{
+						"name": "SSDM",
+						"dataType": "String",
+						"caption": "宿舍代码",
+						"xtype": "text",
+						"dataSize": 40,
+						"hidden": true
+					},
+					{
+						"name": "XQDM",
+						"dataType": "String",
+						"caption": "校区",
+						"url": "/ssxtweb/code/2eac9654-d335-4449-9ab0-42a32a3a0fda.do",
+						"quickSearch": true,
+						"xtype": "select",
+						"dataSize": 40,
+						"hidden": true
+					},
+					{
+						"name": "SSQDM",
+						"dataType": "String",
+						"caption": "宿舍区",
+						"url": "/ssxtweb/code/f4fbe313-bcf7-4599-90ff-f89db2716417.do",
+						"xtype": "select",
+						"dataSize": 40
+					},
+					{
+						"name": "SSLDM",
+						"dataType": "String",
+						"caption": "宿舍楼",
+						"url": "/ssxtweb/code/c043b195-d8a2-498d-86b5-09e27da23b2d.do",
+						"xtype": "select",
+						"dataSize": 40
+					},
+					{
+						"name": "FJH",
+						"dataType": "String",
+						"caption": "房间号",
+						"quickSearch": true,
+						"xtype": "text",
+						"dataSize": 40
+					},
+					{
+						"name": "LC",
+						"dataType": "double",
+						"caption": "楼层",
+						"xtype": "text",
+						"hidden": true
+					},
+					{
+						"name": "CWS",
+						"dataType": "double",
+						"caption": "床位数",
+						"xtype": "text"
+					},
+					{
+						"name": "SYCWS",
+						"dataType": "double",
+						"caption": "空床位",
+						"quickSearch": true,
+						"xtype": "text"
+					},
+					{
+						"name": "XBDM",
+						"dataType": "String",
+						"caption": "学生性别",
+						"url": "/ssxtweb/code/b2738d0d-0eb1-4b03-b0f6-98f509a88c8c.do",
+						"xtype": "select",
+						"dataSize": 10
+					},
+					{
+						"name": "PYCCDM",
+						"dataType": "String",
+						"caption": "培养层次",
+						"url": "/ssxtweb/code/9ec58134-0517-4664-8969-5342ffcaf190.do",
+						"xtype": "select",
+						"dataSize": 10
+					},
+					{
+						"name": "YRZCWS",
+						"dataType": "double",
+						"caption": "已入住床位数",
+						"xtype": "text",
+						"hidden": true
+					},
+					{
+						"name": "YFPCWS",
+						"dataType": "double",
+						"caption": "已分配床位数",
+						"xtype": "text",
+						"hidden": true
+					}
+				]
+			}
+		],
+		"routes": {}
+	};
 
 /***/ }
 /******/ ]);
