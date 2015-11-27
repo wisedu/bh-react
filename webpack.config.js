@@ -4,39 +4,50 @@ var path = require('path');
 
 var entry = {};
 //entry["bh"] = ["./samples/form.jsx"];
-entry["alertModal"] = ["./samples/alertModal.jsx"];
-entry["treeDemo01"] = ["./src/tree/examples/demo01.js"];
+entry["dialog"] = ["./src/dialog/example/dialog.jsx"];
+//entry["treeDemo01"] = ["./src/tree/examples/demo01.js"];
 //entry["icon"] = ["./samples/icon.jsx"];
 
 module.exports = {
-  entry : entry,
-  output : {
-    //path: './dist/',
+  entry: entry,
+
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+
+  output: {
+    //path: path.join(process.cwd(), 'dist'),
     filename: '[name].js'
   },
-  module : {
-    loaders : [
-      {
-        test : [/\.js$/, /\.jsx$/],
-        loader : ['babel-loader'],
-        exclude : /node-modules/,
-        query : {
-          presets : ['react','es2015']
-        }
-      },
-      {
-        test : /\.css$/,
-        loaders : ['style', 'css']
-      },
-      {
-        test : /\.less$/,
-        loaders : ['style', 'css', 'less-loader']
-      },
-      {
-        test : /\.scss$/,
-        loaders : ['style', 'css', 'sass-loader']
+
+  module: {
+    loaders: [{
+      test: /\.jsx?$/,
+      exclude: /node_modules/,
+      loader: 'babel',
+      query:{
+        "compact": false,
+        "presets": ["react", "es2015", "stage-0"]
       }
-    ]
+    }, {
+      test: /\.json$/,
+      loader: 'json-loader'
+    }, {
+      test: /\.scss$/,
+      loader: ExtractTextPlugin.extract(
+          'style-loader',"css-loader!sass-loader"
+      )
+    }, {
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract(
+          'style-loader', 'css-loader'
+      )
+    }]
   },
-  devtool : 'source-map'
+
+  plugins: [
+    new ExtractTextPlugin('[name].css')
+  ],
+
+  devtool: 'source-map'
 };
