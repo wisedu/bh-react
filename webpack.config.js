@@ -1,8 +1,12 @@
+var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var path = require('path');
 
 var entry =  {
-    "tree": ['./src/tree/examples/tree.js'],
-    "tree-async": ['./src/tree/examples/tree-async.js'],
-    "treeDemo01": ['./samples/treeDemo01.js']
+    // "tree": ['./src/tree/examples/tree.js'],
+    // "tree-async": ['./src/tree/examples/tree-async.js'],
+    // "treeDemo01": ['./samples/treeDemo01.js']
+    "bh":["./samples/form.jsx"]
 };
 
 var output = {
