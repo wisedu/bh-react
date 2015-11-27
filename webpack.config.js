@@ -1,45 +1,51 @@
-var config = require('./webpack.config.common.dev.js');
-var path = require("path");
-console.log(path )
 
-config.entry =  {
-    // "tree": ['./src/tree/examples/tree.js'],
-    // "tree-async": ['./src/tree/examples/tree-async.js'],
-    // "demo01": ['./src/tree/examples/demo01.js']
-    "bh":["./samples/form.jsx"]
+var entry =  {
+    "tree": ['./src/tree/examples/tree.js'],
+    "tree-async": ['./src/tree/examples/tree-async.js'],
+    "treeDemo01": ['./samples/treeDemo01.js']
 };
 
-config.output = {
-    path: '/dist',
+var output = {
+    //path: '/dist',
     filename: '[name].js'
 };
 
-module.exports = config;
+module.exports = {
+    entry : entry,
+    output : output,
 
-//module.exports = {
-//    output: {
-//        //path: './dist/',
-//        filename: '[name].js'
-//    },
-//    module: {
-//        loaders: [
-//            {
-//                test: [/\.js$/, /\.jsx$/],
-//                loader: ['babel'],
-//                exclude: /node-modules/,
-//                query: {
-//                    presets: ['react', 'es2015']
-//                }
-//            },
-//            {
-//                test: /\.css$/,
-//                loaders: ['style', 'css']
-//            },
-//            {
-//                test: /\.scss$/,
-//                loaders: ['style', 'css', 'sass']
-//            }
-//        ]
-//    },
-//    devtool: 'source-map'
-//};
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+
+  module: {
+    loaders: [{
+      test: /\.jsx?$/,
+      exclude: /node_modules/,
+      loader: 'babel',
+      query:{
+        "compact": false,
+        "presets": ["react", "es2015", "stage-0"]
+      }
+    }, {
+      test: /\.json$/,
+      loader: 'json-loader'
+    }, {
+      test: /\.scss$/,
+      loader: ExtractTextPlugin.extract(
+          'style-loader',"css-loader!sass-loader"
+      )
+    }, {
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract(
+          'style-loader', 'css-loader'
+      )
+    }]
+  },
+
+  plugins: [
+    new ExtractTextPlugin('[name].css')
+  ],
+
+  devtool: 'source-map'
+};
