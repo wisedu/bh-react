@@ -16,10 +16,8 @@ $.getJSON('./data.json',(data) => {
 });
 
 function handleSelect (info) {
-    console.log(info)
     var pos = info.node.props.pos;
     var level = pos.split("-").length -1;
-    console.log(level)
 
     if (level == 1) {
         $("#jstree1").find("h5").html(info.node.props.title);

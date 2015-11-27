@@ -6,13 +6,15 @@
                     "id": "000406",
                     "name": "综合科",
                     "pId": "000401",
-                    "isParent": 0
+                    "isParent": 0,
+                    "icon" : "icon-search"
                 },
                 {
                     "id": "000012",
                     "name": "校长办公室",
                     "pId": "",
-                    "isParent": 1
+                    "isParent": 1,
+                    "icon" : "icon-search"
                 },
                 {
                     "id": "000001",

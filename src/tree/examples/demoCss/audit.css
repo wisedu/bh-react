@@ -1,0 +1,113 @@
+.resultTable td {
+  text-align: left;
+}
+.width-250 {
+  width: 250px;
+}
+.top-24{
+  margin-top:24px;
+}
+.width-138{
+  width:138px;
+}
+.width-34{
+  width:34px;
+}
+.result section {
+  display: -webkit-inline-box;
+  margin-right: 22px;
+}
+#fade1 span,
+#fade1 p,
+#fade2 p,
+#fade3 p,
+#fade4 p{
+	font-weight:bold;
+}
+#fade4 p{
+	font-size:14px;
+}
+.blue{
+	color:#2e8ded;
+	margin:0px 11px;
+}
+#fade2.verticalcenter,#fade3.verticalcenter{
+	margin-top:49px;
+}
+#fade2 span{
+	color:#b4b4b4;
+}
+table {
+    background-color: #ffffff;
+    text-align: left;
+}
+.sumnum{
+  margin-left: 473px;
+  }
+.bh-table {
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #efefef;
+}
+a.th:hover {
+  text-decoration: underline;
+}
+img.hashover:hover {
+  cursor: pointer;
+}
+.bh-table > thead > tr > th,
+.bh-table > tbody > tr > th,
+.bh-table > tfoot > tr > th,
+.bh-table > thead > tr > td,
+.bh-table > tbody > tr > td,
+.bh-table > tfoot > tr > td {
+    padding: 0 8px;
+    vertical-align: top;
+    border-top: 1px solid #efefef;
+    border-right: 1px solid #efefef;
+    line-height: 32px;
+}
+.bh-table > thead > tr > th {
+    vertical-align: bottom;
+    border-right: 1px solid #ffffff;
+    background-color: #efefef;
+}
+.bh-table > thead > tr > th:last-of-type {
+    border-right: none;
+}
+.bh-table > caption + thead > tr:first-child > th,
+.bh-table > colgroup + thead > tr:first-child > th,
+.bh-table > thead:first-child > tr:first-child > th,
+.bh-table > caption + thead > tr:first-child > td,
+.bh-table > colgroup + thead > tr:first-child > td,
+.bh-table > thead:first-child > tr:first-child > td {
+    border-top: 0;
+}
+.bh-table td.ch-active,
+.bh-table td.ch-hover {
+    background-color: rgba(33, 150, 243, 0.1);
+}
+.bh-table th.ch-active,
+.bh-table th.ch-hover {
+    background-color: rgba(33, 150, 243, 0.25);
+}
+
+.bh-table tr.ch-hover td {
+    background-color: rgba(33, 150, 243, 0.1);
+}
+.bh-table tr.ch-hover td.ch-active,
+.bh-table tr.ch-hover td.ch-hover {
+    background-color: rgba(33, 150, 243, 0.25);
+}
+.left-8{
+    margin-left:8px;
+}
+.left-16{
+    margin-left:16px;
+}
+.bottom *{
+    margin-bottom:24px;
+}
+.resultTable.dataTable .checkbox input, .resultTable.dataTable .checkbox .input-helper:before, .resultTable.dataTable .checkbox .input-helper:after {
+  top: 0px;
+}

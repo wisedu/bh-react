@@ -170,13 +170,24 @@ class TreeNode extends React.Component {
         const prefixCls = props.prefixCls;
         const expandedState = props.expanded ? 'open' : 'close';
         const iconEleCls = {
-            [`fa`]: true,
-            [`fa-folder`]: true,
+            [`icon-folder-close`]: true,
             [`${prefixCls}-icon_loading`]: this.state.dataLoading,
             //[`${prefixCls}-icon__${expandedState}`]: true,
-            [`fa-folder-${expandedState}`]: true,
-            ['fa-file']: !(props.children && props.children.length > 0)
+            [`icon-folder-${expandedState}`]: true,
+            ['icon-file-alt']: !(props.children && props.children.length > 0)
         };
+        if (!(props.children && props.children.length > 0)) {
+            iconEleCls['icon-paste'] = true;
+            iconEleCls[`icon-folder-close`] = false;
+            iconEleCls[`icon-folder-${expandedState}`] = false;
+        }
+        if (props.icon && props.icon != "") {
+            iconEleCls[props.icon] = true;
+            iconEleCls[`icon-folder-close`] = false;
+            iconEleCls[`icon-folder-${expandedState}`] = false;
+            iconEleCls['icon-paste'] = false;
+            iconEleCls['icon-file-alt'] = false;
+        }
 
         let canRenderSwitcher = true;
         const content = props.title;

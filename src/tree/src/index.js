@@ -69,6 +69,7 @@ class BhTree extends React.Component {
                 id={node.id ? node.id : `${prefixCls}-${i}`}
                 disabled={node.disable}
                 selected={node.selected}
+                icon={node.icon ? node.icon : ""}
             >
                 {(node.children && node.children.length > 0) ? this.renderTreeNodes(node.children, `${prefixCls}-${i}`) : ""}
             </TreeNode>
