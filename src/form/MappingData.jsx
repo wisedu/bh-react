@@ -20,27 +20,27 @@ class MappingData{
       </Validation>
     </Form>);
   }
-  getGroup(item){
-    if(!item.hidden){
+  getGroup(groupName, ishidden){
+    if(!ishidden){
       let groupItem;
-      if(this.defaultGroup != item.groupName){
-          this.defaultGroup = item.groupName;
+      if(this.defaultGroup != groupName){
+          this.defaultGroup = groupName;
           this.index++;
           return (<Row key={this.index}>
             <Col span="12">
-              <h4 className="form">{item.groupName}</h4>
+              <h4 className="form">{groupName}</h4>
             </Col>
           </Row>);
       }
     }
   }
-  getItem(item){
-    if(!item.hidden){
-      return (<FormItem key={item.name} id={item.name} label={item.caption} required={item.require} col={item.col} cols={this.cols}>
+  getItem(name, xtype, caption, require, readonly, placeholder, col, hidden){
+    if(!hidden){
+      return (<FormItem key={name} id={name} label={caption} required={require} col={col} cols={this.cols}>
         <Validator rules={[{required: true,whitespace: true,message: ''}]}>
-          <Input type={item.xtype} name={item.name} placeholder={item.placeholder} readOnly={item.readonly}/>
+          <Input type={xtype} name={name} placeholder={placeholder} readOnly={readonly}/>
         </Validator>
-        {this.getIcon(item.xtype)}
+        {this.getIcon(xtype)}
       </FormItem>);
     }
   }

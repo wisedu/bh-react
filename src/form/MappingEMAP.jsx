@@ -18,8 +18,8 @@ class MappingFormEMAP{
     var formItem = new MappingData(cols);
     var items = [];
     pageMetaModel[0].controls.map((item, index)=>{
-      items.push(formItem.getGroup(item));
-      items.push(formItem.getItem(item));
+      items.push(formItem.getGroup(item.groupName, item.hidden));
+      items.push(formItem.getItem(item.name, item.xtype, item.caption, item.require, item.readonly, item.placeholder, item.col, item.hidden));
     });
 
     return items;

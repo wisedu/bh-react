@@ -28,11 +28,7 @@ const Demo = React.createClass({
   render() {
     return (
       <div>
-        <Row>
-          <Col span="12">
-            {formEMAP.buildForm("ddrzcx", 3)}
-          </Col>
-        </Row>
+        {formEMAP.buildForm("ddrzcx", 3)}
         <Row>
           <Col span="4" offset="8">
             <Button type="primary" onClick={this.handleSubmit}>确定</Button>
