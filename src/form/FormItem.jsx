@@ -169,7 +169,7 @@ FormItem.propTypes = {
   wrapperCol: React.PropTypes.object,
   className: React.PropTypes.string,
   children: React.PropTypes.node,
-  cols: React.PropTypes.string
+  cols: React.PropTypes.number
 };
 
 FormItem.defaultProps = {

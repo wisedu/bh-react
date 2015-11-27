@@ -1,17 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "../src/form/form.scss";
-import {Form, Input, Button, Checkbox, Radio, Row, Col, Validation} from '../index.js';
-const FormItem = Form.Item;
+import {Button, Row, Col, Form} from '../index.js';
 const FormEMAP = Form.MappingEMAP;
-const RadioGroup = Radio.Group;
 var pageMeta = require("../datas/pageMeta.json");
 
 var formEMAP = new FormEMAP(pageMeta);
-var items = formEMAP.getItems("ddrzcx", 3);
+// var items = formEMAP.getItems("ddrzcx", 3);
 
 const Demo = React.createClass({
-  mixins: [Form.ValueMixin],
+  // mixins: [Form.ValueMixin],
 
   handleSubmit(e) {
     e.preventDefault();
@@ -29,16 +27,18 @@ const Demo = React.createClass({
 
   render() {
     return (
-      <Form className="bh-fm-compact edit" cols="2" horizontal>
-        <Validation ref="validation" onValidate={this.handleValidate}>
-          {items}
-        </Validation>
+      <div>
+        <Row>
+          <Col span="12">
+            {formEMAP.buildForm("ddrzcx", 3)}
+          </Col>
+        </Row>
         <Row>
           <Col span="4" offset="8">
             <Button type="primary" onClick={this.handleSubmit}>确定</Button>
           </Col>
         </Row>
-      </Form>
+      </div>
     );
   }
 });

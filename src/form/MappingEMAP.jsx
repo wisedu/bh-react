@@ -4,6 +4,9 @@ class MappingFormEMAP{
   constructor(pageMeta) {
       this.pageMeta = pageMeta;
   }
+  buildForm(modelName, cols){
+    return MappingData.getForm(this.getItems(modelName, cols));
+  }
   getItems(modelName, cols){
     var pageMetaModel = this.pageMeta.models.filter((elm, index)=>{
       if(elm.name == modelName)

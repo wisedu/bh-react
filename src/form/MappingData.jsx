@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from './Form';
 import FormItem from './FormItem';
 import Input from './Input';
 import Validation from '../validation/index.jsx';
@@ -11,6 +12,13 @@ class MappingData{
     this.defaultGroup = undefined;
     this.index = 0;
     this.cols = cols;
+  }
+  static getForm(items){
+    return (<Form className="bh-fm-compact edit" horizontal>
+      <Validation ref="validation" onValidate={this.handleValidate}>
+        {items}
+      </Validation>
+    </Form>);
   }
   getGroup(item){
     if(!item.hidden){
