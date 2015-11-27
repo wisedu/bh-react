@@ -13,7 +13,11 @@ export default class Button extends React.Component {
       let classList = classType.split(" ");
       for(var value of classList){
         if(value){
-          classArr[prefix + value] = value;
+          if(value !== "disabled"){
+            classArr[prefix + value] = value;
+          }else{
+            classArr["bh-" + value] = value;
+          }
         }
       }
     }

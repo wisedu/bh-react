@@ -48,6 +48,7 @@ class FormItem extends React.Component {
     const offsetCol = offset ? ' bh-col-offset-md-' + offset : '';
     return col + offsetCol;
   }
+
   renderHelp() {
     const prefixCls = this.props.prefixCls;
     return (
@@ -56,6 +57,7 @@ class FormItem extends React.Component {
       </div>
     );
   }
+
   renderValidateWrapper(c1, c2) {
     let classes = '';
     if (this.props.validateStatus) {
@@ -75,8 +77,10 @@ class FormItem extends React.Component {
       </div>
     );
   }
+
   renderWrapper(children) {
     const wrapperCol = this.state.wrapperCol;
+
     return (
       <div className={this._getLayoutClass(wrapperCol)} key="wrapper">
         {children}
@@ -88,10 +92,12 @@ class FormItem extends React.Component {
 
     return this.props.label ? (
       <label htmlFor={this.props.id} className={this._getLayoutClass(labelCol) + " bh-form-label "} key="label">
+
         {this.props.label}
       </label>
     ) : null;
   }
+
   renderChildren() {
     return [
       this.renderLabel(),
@@ -177,3 +183,4 @@ FormItem.defaultProps = {
 // module.exports = exports['default'];
 
 export default FormItem;
+

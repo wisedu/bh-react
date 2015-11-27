@@ -1,0 +1,530 @@
+.bh-dialog {
+  outline: none;
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  z-index: 1000; }
+
+.bh-dialog-hidden {
+  display: none; }
+
+.bh-dialog-content {
+  position: relative;
+  background-color: #fff;
+  border: none;
+  background-clip: padding-box;
+  outline: 0;
+  padding: 0 24px; }
+
+.bh-dialog-close {
+  cursor: pointer;
+  outline: none;
+  font-size: 24px;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .2;
+  text-decoration: none; }
+
+.bh-dialog-close-x:after {
+  content: '\D7'; }
+
+.bh-dialog-close:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  text-decoration: none; }
+
+.bh-dialog-header {
+  padding: 32px 0;
+  background: #fff;
+  text-align: left; }
+
+.bh-dialog-confirm .bh-dialog-header {
+  text-align: center; }
+
+.bh-dialog-body {
+  padding-bottom: 32px; }
+
+.bh-dialog-footer {
+  border-top: 1px solid #DDDDDD;
+  padding: 32px 0;
+  text-align: right; }
+
+.bh-dialog-confirm .bh-dialog-footer {
+  text-align: center; }
+
+.bh-dialog-zoom-enter,
+.bh-dialog-zoom-appear {
+  opacity: 0;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+  animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused; }
+
+.bh-dialog-zoom-leave {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+  animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused; }
+
+.bh-dialog-zoom-enter.bh-dialog-zoom-enter-active,
+.bh-dialog-zoom-appear.bh-dialog-zoom-appear-active {
+  -webkit-animation-name: bhDialogZoomIn;
+  animation-name: bhDialogZoomIn;
+  -webkit-animation-play-state: running;
+  animation-play-state: running; }
+
+.bh-dialog-zoom-leave.bh-dialog-zoom-leave-active {
+  -webkit-animation-name: bhDialogZoomOut;
+  animation-name: bhDialogZoomOut;
+  -webkit-animation-play-state: running;
+  animation-play-state: running; }
+
+@-webkit-keyframes bhDialogZoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); } }
+
+@keyframes bhDialogZoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); } }
+
+@-webkit-keyframes bhDialogZoomOut {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0); } }
+
+@keyframes bhDialogZoomOut {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0); } }
+
+.bh-dialog-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.35);
+  height: 100%;
+  z-index: 1000;
+  filter: alpha(opacity=35); }
+
+.bh-dialog-mask-hidden {
+  display: none; }
+
+.bh-dialog-fade-enter,
+.bh-dialog-fade-appear {
+  opacity: 0;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused; }
+
+.bh-dialog-fade-leave {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused; }
+
+.bh-dialog-fade-enter.bh-dialog-fade-enter-active,
+.bh-dialog-fade-appear.bh-dialog-fade-appear-active {
+  -webkit-animation-name: bhDialogFadeIn;
+  animation-name: bhDialogFadeIn;
+  -webkit-animation-play-state: running;
+  animation-play-state: running; }
+
+.bh-dialog-fade-leave.bh-dialog-fade-leave-active {
+  -webkit-animation-name: bhDialogFadeOut;
+  animation-name: bhDialogFadeOut;
+  -webkit-animation-play-state: running;
+  animation-play-state: running; }
+
+@-webkit-keyframes bhDialogFadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes bhDialogFadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes bhDialogFadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes bhDialogFadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+.bh-dialog .bh-dialog-icon {
+  width: 80px;
+  height: 80px;
+  border: 4px solid gray;
+  -webkit-border-radius: 40px;
+  border-radius: 40px;
+  border-radius: 50%;
+  margin: 0 auto 32px auto;
+  padding: 0;
+  position: relative;
+  box-sizing: content-box; }
+
+.bh-dialog .bh-dialog-icon.bh-dialog-icon-error {
+  border-color: #F44336; }
+
+.bh-dialog .bh-dialog-icon.bh-dialog-icon-error .bh-dialog-error-mark {
+  position: relative;
+  display: block; }
+
+.bh-dialog .bh-dialog-icon.bh-dialog-icon-error .bh-dialog-icon-line {
+  position: absolute;
+  height: 5px;
+  width: 47px;
+  background-color: #F44336;
+  display: block;
+  top: 37px;
+  border-radius: 2px; }
+
+.bh-dialog .bh-dialog-icon.bh-dialog-icon-error .bh-dialog-icon-line.bh-dialog-error-iconLeft {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: 17px; }
+
+.bh-dialog .bh-dialog-icon.bh-dialog-icon-error .bh-dialog-icon-line.bh-dialog-error-iconRight {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  right: 16px; }
+
+.bh-dialog .bh-dialog-icon.bh-dialog-icon-warning {
+  border-color: #FEC006; }
+
+.bh-dialog .bh-dialog-icon.bh-dialog-icon-warning .bh-dialog-warning-body {
+  position: absolute;
+  width: 5px;
+  height: 47px;
+  left: 50%;
+  top: 10px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  margin-left: -2px;
+  background-color: #FEC006; }
+
+.bh-dialog .bh-dialog-icon.bh-dialog-icon-warning .bh-dialog-warning-dot {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin-left: -3px;
+  left: 50%;
+  bottom: 10px;
+  background-color: #FEC006;
+  opacity: 100; }
+
+.bh-dialog .bh-dialog-icon.bh-dialog-icon-success {
+  border-color: #8BC34A; }
+
+.bh-dialog .bh-dialog-icon.bh-dialog-icon-success::before, .bh-dialog .bh-dialog-icon.bh-dialog-icon-success::after {
+  content: '';
+  -webkit-border-radius: 40px;
+  border-radius: 40px;
+  border-radius: 50%;
+  position: absolute;
+  width: 60px;
+  height: 120px;
+  background: #fff;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.bh-dialog .bh-dialog-icon.bh-dialog-icon-success::before {
+  -webkit-border-radius: 120px 0 0 120px;
+  border-radius: 120px 0 0 120px;
+  top: -7px;
+  left: -33px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 60px 60px;
+  transform-origin: 60px 60px; }
+
+.bh-dialog .bh-dialog-icon.bh-dialog-icon-success::after {
+  -webkit-border-radius: 0 120px 120px 0;
+  border-radius: 0 120px 120px 0;
+  top: -11px;
+  left: 30px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 0 60px;
+  transform-origin: 0 60px; }
+
+.bh-dialog .bh-dialog-icon.bh-dialog-icon-success .bh-dialog-success-icon-placeholder {
+  width: 80px;
+  height: 80px;
+  border: 4px solid rgba(165, 220, 134, 0.2);
+  -webkit-border-radius: 40px;
+  border-radius: 40px;
+  border-radius: 50%;
+  box-sizing: content-box;
+  position: absolute;
+  left: -4px;
+  top: -4px;
+  z-index: 2; }
+
+.bh-dialog .bh-dialog-icon.bh-dialog-icon-success .bh-dialog-success-icon-fix {
+  width: 5px;
+  height: 90px;
+  background-color: #fff;
+  position: absolute;
+  left: 28px;
+  top: 8px;
+  z-index: 1;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+.bh-dialog .bh-dialog-icon.bh-dialog-icon-success .bh-dialog-icon-line {
+  height: 5px;
+  background-color: #8BC34A;
+  display: block;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 2; }
+
+.bh-dialog .bh-dialog-icon.bh-dialog-icon-success .bh-dialog-icon-line.bh-dialog-icon-tip {
+  width: 25px;
+  left: 14px;
+  top: 46px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.bh-dialog .bh-dialog-icon.bh-dialog-icon-success .bh-dialog-icon-line.bh-dialog-icon-long {
+  width: 47px;
+  right: 8px;
+  top: 38px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+.bh-dialog .bh-dialog-icon.sa-custom {
+  background-size: contain;
+  border-radius: 0;
+  border: none;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.bh-dialog-successTip-animate {
+  -webkit-animation: bh-dialog-successTip-animate .75s;
+  animation: bh-dialog-successTip-animate .75s; }
+
+@-webkit-keyframes bh-dialog-successTip-animate {
+  0% {
+    width: 0;
+    left: 1px;
+    top: 19px; }
+  54% {
+    width: 0;
+    left: 1px;
+    top: 19px; }
+  70% {
+    width: 50px;
+    left: -8px;
+    top: 37px; }
+  84% {
+    width: 17px;
+    left: 21px;
+    top: 48px; }
+  100% {
+    width: 25px;
+    left: 14px;
+    top: 45px; } }
+
+@keyframes bh-dialog-successTip-animate {
+  0% {
+    width: 0;
+    left: 1px;
+    top: 19px; }
+  54% {
+    width: 0;
+    left: 1px;
+    top: 19px; }
+  70% {
+    width: 50px;
+    left: -8px;
+    top: 37px; }
+  84% {
+    width: 17px;
+    left: 21px;
+    top: 48px; }
+  100% {
+    width: 25px;
+    left: 14px;
+    top: 45px; } }
+
+.bh-dialog-successLong-animate {
+  -webkit-animation: bh-dialog-successLong-animate .75s;
+  animation: bh-dialog-successLong-animate .75s; }
+
+@-webkit-keyframes bh-dialog-successLong-animate {
+  0% {
+    width: 0;
+    right: 46px;
+    top: 54px; }
+  65% {
+    width: 0;
+    right: 46px;
+    top: 54px; }
+  84% {
+    width: 55px;
+    right: 0;
+    top: 35px; }
+  100% {
+    width: 47px;
+    right: 8px;
+    top: 38px; } }
+
+@keyframes bh-dialog-successLong-animate {
+  0% {
+    width: 0;
+    right: 46px;
+    top: 54px; }
+  65% {
+    width: 0;
+    right: 46px;
+    top: 54px; }
+  84% {
+    width: 55px;
+    right: 0;
+    top: 35px; }
+  100% {
+    width: 47px;
+    right: 8px;
+    top: 38px; } }
+
+.bh-dialog-warningBody-animate {
+  -webkit-animation: bh-dialog-warningBody-animate .5s;
+  animation: bh-dialog-warningBody-animate .5s; }
+
+@keyframes bh-dialog-warningBody-animate {
+  0% {
+    height: 0; }
+  100% {
+    height: 47px; } }
+
+@-webkit-keyframes bh-dialog-warningBody-animate {
+  0% {
+    height: 0; }
+  100% {
+    height: 47px; } }
+
+.bh-dialog-warningDot-animate {
+  -webkit-animation: bh-dialog-warningDot-animate .6s;
+  animation: bh-dialog-warningDot-animate .6s; }
+
+@keyframes bh-dialog-warningDot-animate {
+  0% {
+    opacity: 0; }
+  80% {
+    opacity: 0; }
+  100% {
+    opacity: 100; } }
+
+@-webkit-keyframes bh-dialog-warningDot-animate {
+  0% {
+    opacity: 0; }
+  80% {
+    opacity: 0; }
+  100% {
+    opacity: 100; } }
+
+.bh-dialog-errorLeft-animate {
+  -webkit-animation: bh-dialog-errorLeft-animate .75s;
+  animation: bh-dialog-errorLeft-animate .75s; }
+
+@keyframes bh-dialog-errorLeft-animate {
+  0% {
+    width: 0;
+    top: 0; }
+  50% {
+    width: 30px;
+    top: 30px; }
+  100% {
+    width: 47px;
+    top: 37px; } }
+
+@-webkit-keyframes bh-dialog-errorLeft-animate {
+  0% {
+    width: 0;
+    top: 0; }
+  50% {
+    width: 25px;
+    top: 29px; }
+  100% {
+    width: 47px;
+    top: 37px; } }
+
+.bh-dialog-errorRight-animate {
+  -webkit-animation: bh-dialog-errorRight-animate .35s;
+  animation: bh-dialog-errorRight-animate .35s; }
+
+@keyframes bh-dialog-errorRight-animate {
+  0% {
+    width: 0;
+    top: 0; }
+  100% {
+    width: 47px;
+    top: 37px; } }
+
+@-webkit-keyframes bh-dialog-errorRight-animate {
+  0% {
+    width: 0;
+    top: 0; }
+  100% {
+    width: 47px;
+    top: 37px; } }
+
+/*# sourceMappingURL=alertModal.css.map*/
