@@ -3,8 +3,8 @@ import './sass/bh-dialog.scss';
 import React from 'react';
 import Dialog from '../rc-dialog/lib/DialogWrap.js';
 import { Dom } from 'rc-util';
-import AlertDialog from './alert.jsx';
-import ConfirmDialog from './confirm.jsx';
+import AlertFooter from './dialogAlertFooter.jsx';
+import Footer from './dialogFooter.jsx';
 import DialogIcon from './dialogIcon.jsx';
 
 function noop() {}
@@ -65,10 +65,13 @@ let BhDialog = React.createClass({
         if(state.showType){
           state.title = <div><DialogIcon {...this.props} /> <h4>{this.props.title}</h4> </div>;
         }
-        state.footer = <AlertDialog {...this.props} onClose={this.onClose} />;
+        state.footer = <AlertFooter {...this.props} onClose={this.onClose} />;
         state.closable = this.props.closable ? this.props.closable : false;
       }else if(state.type === "confirm"){
-        state.footer = <ConfirmDialog {...this.props} onClose={this.onClose} />;
+        state.footer = <Footer {...this.props} onClose={this.onClose} />;
+        state.closable = this.props.closable ? this.props.closable : false;
+      }else{
+        state.footer = <Footer {...this.props} onClose={this.onClose} />;
         state.closable = this.props.closable ? this.props.closable : false;
       }
       return (<Dialog style={{width:state.width, height: state.height}} mousePosition={mousePosition} {...state}>
