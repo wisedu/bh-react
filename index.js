@@ -45,7 +45,7 @@ const bhReact = {
   Radio: require('./src/radio'),
   // notification: require('./src/notification'),
   // Alert: require('./src/alert'),
-  // Validation: require('./src/validation'),
+  Validation: require('./src/validation'),
   // Tree: require('./src/tree'),
   // Upload: require('./src/upload'),
   // Badge: require('./src/badge'),

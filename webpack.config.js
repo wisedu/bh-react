@@ -13,25 +13,39 @@ var output = {
 module.exports = {
     entry : entry,
     output : output,
-    module : {
-        loaders : [
-            {
-                test : [/\.js$/, /\.jsx$/],
-                loader : ['babel'],
-                exclude : /node-modules/,
-                query : {
-                    presets : ['react','es2015', "stage-0"]
-                }
-            },
-            {
-                test : /\.css$/,
-                loaders : ['style', 'css']
-            },
-            {
-                test : /\.scss$/,
-                loaders : ['style', 'css', 'sass']
-            }
-        ]
-    },
-    devtool : 'source-map'
+
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+
+  module: {
+    loaders: [{
+      test: /\.jsx?$/,
+      exclude: /node_modules/,
+      loader: 'babel',
+      query:{
+        "compact": false,
+        "presets": ["react", "es2015", "stage-0"]
+      }
+    }, {
+      test: /\.json$/,
+      loader: 'json-loader'
+    }, {
+      test: /\.scss$/,
+      loader: ExtractTextPlugin.extract(
+          'style-loader',"css-loader!sass-loader"
+      )
+    }, {
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract(
+          'style-loader', 'css-loader'
+      )
+    }]
+  },
+
+  plugins: [
+    new ExtractTextPlugin('[name].css')
+  ],
+
+  devtool: 'source-map'
 };
