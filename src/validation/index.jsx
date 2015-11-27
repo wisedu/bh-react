@@ -1,3 +1,3 @@
 import Validation from 'rc-form-validation';
 
-export default Validation;
+module.exports = Validation;

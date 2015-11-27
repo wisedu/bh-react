@@ -1,6 +1,8 @@
 import React from 'react';
 import FormItem from './FormItem';
 import Input from './Input';
+import Validation from '../validation/index.jsx';
+const Validator = Validation.Validator;
 
 class MappingFormEMAP{
   constructor(pageMeta) {
@@ -17,7 +19,9 @@ class MappingFormEMAP{
     var items = pageMetaModel[0].controls.map((item, index)=>{
       if(!item.hidden){
         return (<FormItem key={item.name} id={item.name} label={item.caption} required={item.require} col={item.col} cols={cols}>
-          <Input type={item.xtype} name={item.name} placeholder={item.placeholder} readOnly={item.readonly}/>
+          <Validator rules={[{required: true,whitespace: true,message: ''}]}>
+            <Input type={item.xtype} name={item.name} placeholder={item.placeholder} readOnly={item.readonly}/>
+          </Validator>
         </FormItem>);
       }
     });

@@ -7,6 +7,7 @@ class Form extends React.Component {
   contextTypes: {
     cols: React.PropTypes.string
   }
+
   render() {
     const prefixCls = this.props.prefixCls;
     const formClassName = {
@@ -14,6 +15,7 @@ class Form extends React.Component {
       [`${prefixCls}-inline`]: this.props.inline,
       [this.props.className]: this.props.className || false,
       ["validates"]:true
+
     };
     const classes = cx(formClassName);
 
