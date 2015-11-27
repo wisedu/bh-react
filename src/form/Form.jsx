@@ -12,6 +12,7 @@ class Form extends React.Component {
     const prefixCls = this.props.prefixCls;
     const formClassName = {
       [`${prefixCls}-horizontal`]: this.props.horizontal,
+      [`${prefixCls}-vertical`]: this.props.vertical,
       [`${prefixCls}-inline`]: this.props.inline,
       [this.props.className]: this.props.className || false,
       ["validates"]:true

@@ -21,8 +21,8 @@ class FormItem extends React.Component {
         wide_control = "10";
       break;
       case "3-3":
-        wide_label = "12";
-        wide_control = "12";
+        wide_label = "1_9";
+        wide_control = "8_9";
       break;
       case "2-2":
         wide_label = "2";
@@ -59,7 +59,7 @@ class FormItem extends React.Component {
   }
 
   renderValidateWrapper(c1, c2) {
-    let classes = '';
+    let classes = 'colwapper';
     if (this.props.validateStatus) {
       classes = cx(
         {
@@ -67,7 +67,7 @@ class FormItem extends React.Component {
           'has-success': this.props.validateStatus === 'success',
           'bh-form-control-warning': this.props.validateStatus === 'warning',
           'bh-form-control-danger': this.props.validateStatus === 'error',
-          'is-validating': this.props.validateStatus === 'validating',
+          'is-validating': this.props.validateStatus === 'validating'
         }
       );
     }
@@ -183,4 +183,3 @@ FormItem.defaultProps = {
 // module.exports = exports['default'];
 
 export default FormItem;
-

@@ -9,95 +9,109 @@
             "caption": "姓名",
             "quickSearch": true,
             "dataSize": 90,
-            "require": true
+            "require": true,
+            "groupName":"个人信息"
         }, {
             "name": "XH",
             "dataType": "String",
             "caption": "学号",
             "quickSearch": true,
-            "xtype": "textarea",
             "dataSize": 20,
-            "col":2
+            "groupName":"个人信息"
         }, {
             "name": "XBDM",
             "dataType": "String",
             "caption": "性别",
             "url": "\/ssxtweb\/code\/b2738d0d-0eb1-4b03-b0f6-98f509a88c8c.do",
             "xtype": "select",
-            "dataSize": 1
+            "dataSize": 1,
+            "groupName":"个人信息"
         }, {
             "name": "PYCCDM",
             "dataType": "String",
             "caption": "培养层次",
             "url": "\/ssxtweb\/code\/9ec58134-0517-4664-8969-5342ffcaf190.do",
             "xtype": "select",
-            "dataSize": 1
+            "dataSize": 1,
+            "groupName":"个人信息",
+            "col":2
         }, {
             "name": "DDLBDM",
             "dataType": "String",
             "caption": "调动类别",
             "url": "\/ssxtweb\/code\/67dbb4e6-5283-4da2-ae0c-37414988b50b\/DDLBDM.do",
             "xtype": "select",
-            "dataSize": 1
+            "dataSize": 1,
+            "groupName":"宿舍信息"
         }, {
             "name": "DDRQ",
             "dataType": "String",
             "caption": "调动日期",
-            "xtype": "text",
-            "dataSize": 20
+            "xtype": "date-ym",
+            "dataSize": 20,
+            "groupName":"宿舍信息"
         }, {
             "name": "DDYY",
             "dataType": "String",
             "caption": "调动原因",
             "url": "\/ssxtweb\/code\/9dafbc85-e0a0-4f49-9a3e-e8857cb1a850.do",
-            "xtype": "select",
-            "dataSize": 300
+            "xtype": "textarea",
+            "dataSize": 300,
+            "groupName":"宿舍信息",
+            "col":3
         }, {
             "name": "DCSSL",
             "dataType": "String",
             "caption": "调出宿舍楼",
             "url": "\/ssxtweb\/code\/c043b195-d8a2-498d-86b5-09e27da23b2d.do",
             "xtype": "select",
-            "dataSize": 40
+            "dataSize": 40,
+            "groupName":"宿舍信息"
         }, {
             "name": "DCFJH",
             "dataType": "String",
             "caption": "调出房间号",
             "quickSearch": true,
-            "dataSize": 40
+            "dataSize": 40,
+            "groupName":"宿舍信息"
         }, {
             "name": "DRSSL",
             "dataType": "String",
             "caption": "调进宿舍楼",
             "url": "\/ssxtweb\/code\/c043b195-d8a2-498d-86b5-09e27da23b2d.do",
             "xtype": "select",
-            "dataSize": 40
+            "dataSize": 40,
+            "groupName":"宿舍信息"
         }, {
             "name": "DRFJH",
             "dataType": "String",
             "caption": "调进房间号",
             "quickSearch": true,
-            "dataSize": 40
+            "dataSize": 40,
+            "groupName":"宿舍信息"
         }, {
             "name": "RYLB",
             "dataType": "String",
             "caption": "人员类别",
             "url": "\/ssxtweb\/code\/67dbb4e6-5283-4da2-ae0c-37414988b50b\/RYLB.do",
             "xtype": "select",
-            "dataSize": 3
+            "dataSize": 3,
+            "groupName":"宿舍信息"
         }, {
             "name": "CZZXM",
             "dataType": "String",
             "caption": "操作人",
             "xtype": "text",
-            "dataSize": 90
+            "dataSize": 90,
+            "groupName":"宿舍信息"
         }, {
             "name": "CZRQ",
             "dataType": "Timestamp",
             "caption": "操作时间",
-            "xtype": "text",
+            "xtype": "date-local",
             "dataSize": 7,
-            "format": "yyyy-MM-dd"
+            "format": "yyyy-MM-dd",
+            "groupName":"宿舍信息"
         }, {
             "name": "XSBH",
             "dataType": "String",

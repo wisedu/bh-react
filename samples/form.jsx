@@ -8,7 +8,7 @@ const RadioGroup = Radio.Group;
 var pageMeta = require("../datas/pageMeta.json");
 
 var formEMAP = new FormEMAP(pageMeta);
-var items = formEMAP.getItems("ddrzcx", 2);
+var items = formEMAP.getItems("ddrzcx", 3);
 
 const Demo = React.createClass({
   mixins: [Form.ValueMixin],
@@ -29,7 +29,7 @@ const Demo = React.createClass({
 
   render() {
     return (
-      <Form className="bh-fm-compact edit" horizontal cols="2">
+      <Form className="bh-fm-compact edit" cols="2" horizontal>
         <Validation ref="validation" onValidate={this.handleValidate}>
           {items}
         </Validation>

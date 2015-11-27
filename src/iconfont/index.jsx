@@ -4,7 +4,8 @@ class Icon extends React.Component {
 
   render() {
     let {className , ...other} = this.props;
-    return <i className={className} {...other}></i>;
+    let curClassName = "fa fa-"+className;
+    return <i className={curClassName} {...other}></i>;
   }
 
 }

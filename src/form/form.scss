@@ -4,6 +4,14 @@ $ddd1px: 1px solid #DDDDDD;
   display: block;
   clear: both;
 
+  h4.form{
+    border-left: 3px solid #3E50B4;
+    padding-left: 5px;
+    line-height: 20px;
+    color: #3E50B4;
+    margin: 8px 0;
+  }
+
   label, span{
   	text-align: left;
   	white-space: nowrap;
@@ -52,8 +60,32 @@ $ddd1px: 1px solid #DDDDDD;
       padding-top: 0;
       padding-bottom: 0;
     }
+    &.validates .bh-form-control{
+      width:calc(100% - 20px) !important;
+    }
+    .colwapper{
+      position: relative;
+    }
+    .icon{
+      position: absolute;
+      right: 30px;
+      top: 8px;
+    }
   }
-  &.bh-row{
+
+  .bh-row{
   	margin: 0;
+  }
+
+  .bh-col-md-1_9{
+    width: 11.1%;
+	  float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .bh-col-md-8_9{
+    width: 88.9%;
+	  float: left;
   }
 }
