@@ -1,42 +1,45 @@
-var webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var path = require('path');
+var config = require('./webpack.config.common.dev.js');
+var path = require("path");
+console.log(path )
 
-var entry = {};
-//entry["bh"] = ["./samples/form.jsx"];
-entry["alertModal"] = ["./samples/alertModal.jsx"];
-entry["treeDemo01"] = ["./src/tree/examples/demo01.js"];
-//entry["icon"] = ["./samples/icon.jsx"];
-
-module.exports = {
-  entry : entry,
-  output : {
-    //path: './dist/',
-    filename: '[name].js'
-  },
-  module : {
-    loaders : [
-      {
-        test : [/\.js$/, /\.jsx$/],
-        loader : ['babel-loader'],
-        exclude : /node-modules/,
-        query : {
-          presets : ['react','es2015']
-        }
-      },
-      {
-        test : /\.css$/,
-        loaders : ['style', 'css']
-      },
-      {
-        test : /\.less$/,
-        loaders : ['style', 'css', 'less-loader']
-      },
-      {
-        test : /\.scss$/,
-        loaders : ['style', 'css', 'sass-loader']
-      }
-    ]
-  },
-  devtool : 'source-map'
+config.entry =  {
+    // "tree": ['./src/tree/examples/tree.js'],
+    // "tree-async": ['./src/tree/examples/tree-async.js'],
+    // "demo01": ['./src/tree/examples/demo01.js']
+    "bh":["./samples/form.jsx"]
 };
+
+config.output = {
+    path: '/dist',
+    filename: '[name].js'
+};
+
+module.exports = config;
+
+//module.exports = {
+//    output: {
+//        //path: './dist/',
+//        filename: '[name].js'
+//    },
+//    module: {
+//        loaders: [
+//            {
+//                test: [/\.js$/, /\.jsx$/],
+//                loader: ['babel'],
+//                exclude: /node-modules/,
+//                query: {
+//                    presets: ['react', 'es2015']
+//                }
+//            },
+//            {
+//                test: /\.css$/,
+//                loaders: ['style', 'css']
+//            },
+//            {
+//                test: /\.scss$/,
+//                loaders: ['style', 'css', 'sass']
+//            }
+//        ]
+//    },
+//    devtool: 'source-map'
+//};
