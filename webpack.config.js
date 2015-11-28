@@ -6,13 +6,16 @@ var entry =  {
 };
 
 var output = {
-    //path: '/dist',
+    path: './dist',
     filename: '[name].js'
 };
 
 module.exports = {
     entry : entry,
     output : output,
+    resolve: {
+        extensions: ['', '.js', '.jsx']
+    },
     module : {
         loaders : [
             {
@@ -26,6 +29,9 @@ module.exports = {
             {
                 test : /\.css$/,
                 loaders : ['style', 'css']
+            }, {
+                test: /\.json$/,
+                loader: 'json-loader'
             },
             {
                 test : /\.scss$/,
