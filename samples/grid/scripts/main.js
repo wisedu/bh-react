@@ -2,39 +2,47 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Pagination, Table}  from '../../../index';
 
-const columns = [{
-  title: '姓名',
-  dataIndex: 'name',
-  render: function(text) {
-    return <a href="#">{text}</a>;
-  }
-}, {
-  title: '年龄',
-  dataIndex: 'age',
-  sorter: function(a, b) {
-    return a.age - b.age;
-  }
-}, {
-  title: '住址',
-  dataIndex: 'address'
-}];
+var pageMeta = require('../mock/pageMeta.json');
+var tableData = require('../mock/table.json');
+var dataName = 'sszdtcx';
+var colData = pageMeta.models.find(function(value, index, arr){
+  return value.name == dataName
+});
 
-const data = [];
-for (let i = 0; i < 460; i++) {
-  data.push({
-    key: i,
-    name: '李大嘴' + i,
-    age: 32,
-    address: '西湖区湖底公园' + i + '号'
-  });
+var columns = [];
+for(let control of colData.controls){
+  columns.push({
+    title: control.caption,
+    dataIndex: control.name
+  })
 }
 
-const pagination = {
+// let dataSource = new Table.DataSource({
+//   url: '../mock/table.json',
+//   resolve: function(result){
+//     console.log(result);
+//     return result.data;
+//   }
+// });
+
+let data = [];
+var index = 0;
+for(let row of tableData.datas.sszdtcx.rows){
+  var tmpObj = {};
+  tmpObj.key = index++;
+  for(let col of columns){
+    tmpObj[col.dataIndex] = row[col.dataIndex];
+  }
+  data.push(tmpObj);
+}
+
+let pagination = {
   total: data.length,
-  current: 2,
+  pageSize: 100,
   showSizeChanger: true,
-  pageSizeOptions: ['10', '20', '50', '100']
+  pageSizeOptions: ['100','50','20','10']
 };
+
 const rowSelection = {
   onSelect: function(record, selected, selectedRows) {
     console.log(record, selected, selectedRows);
