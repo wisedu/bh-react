@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>学生审核</title>
+    <!-- <link rel="stylesheet" href="http://res.wisedu.com/fe_components/bh.css" /> -->
+    <link rel="stylesheet" href="styles/bh.css" />
+    <link rel="stylesheet" href="styles/activity.css" />
+    <link rel="stylesheet" href="../../grid.css" />
+  </head>
+  <body>
+    <header class="activity-header">
+    <div class="activity-logo"><img src="images/logo.png" alt="this is a logo"/></div>
+    <div  class="activity-nav">
+        
+        <div class="activity-nav-right">
+            <nav class="bh-pull-left">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">求职助手</a></li>
+                    <li><a href="#">就业管理</a></li>
+                    <li><a href="#">毕业去向</a>
+                        <div class="activity-jszx-nav-div">
+                            <ul>
+                                <li class="bh-str-cut"><a href="#">去向登记</a></li>
+                                <li class="bh-str-cut"><a href="#">网上预约</a></li>
+                                <li class="bh-str-cut"><a href="#">签约作废申请</a></li>
+                                <li class="bh-str-cut"><a href="#">报到证</a></li>
+                                <li class="bh-str-cut"><a href="#">户口档案回籍</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">自我认知</a></li>
+                    <li><a href="#">自我发展</a></li>
+                    <li><a href="#">生涯辅导</a></li>
+                    <li><a href="#">小试牛刀</a></li>
+                </ul>  
+            </nav>
+            <div class="activity-nav-right">
+                <a class="b-customer" href="#">天骐</a>
+                <a href="#"><i class="md md-exit-to-app"></i></a>
+            </div>
+        </div>
+    </div>
+</header>
+    <section class="bh-container activity-container">
+        <div class="b-header">
+            <h4 class="b-h4">学生审核</h4>
+            <div class="bh-breadcrumb">
+                <a href="#">教师首页</a>
+                <span>/</span>
+                <a href="#">辅导活动</a>
+                <span>/</span>
+                <a>学生审核</a>
+            </div>
+            <span class="b-return"><a href="javascript:void(0)">返回</a></span>
+        </div>
+        <div class="b-content">
+            <div class="bh-card bh-card-lv1 bh-active b-card-container">
+                <div class="b-tab-title">
+                    <h2>"关爱留守儿童，锻造幸福生活"</h2>
+                </div>
+                <ul class="bh-tab bh-tab-lv2 b-tab-lv2-ul">
+                    <li class="bh-active"><a href="#tab_lv2_1" data-toggle="tab">未审核</a></li>
+                    <li><a href="#tab_lv2_2" data-toggle="tab">已审核</a></li>
+                    <li><a href="#tab_lv2_3" data-toggle="tab">未通过</a></li>
+                </ul>
+                <div class="bh-tab-content">
+                    <div class="b-tab-btn">
+                        <a class="bh-btn bh-btn-primary ">通过</a>
+                        <a class="bh-btn bh-btn-primary ">退回</a>
+                        <a class="bh-btn bh-btn-default ">删除</a>
+                        <div class="b-search">
+                            <i class="md  md-search b-icon-search"></i>
+                            <input type="text" placeholder="&nbsp;请输入学院或者专业来搜索" />
+                        </div>
+                    </div>
+                    <!-- react 表格控件区域-->
+                    <div class="bh-tab-pane bh-active" id="tab_lv2_1"></div>
+                    <!-- /react 表格控件区域-->
+                    <div class="bh-tab-pane" id="tab_lv2_2">
+                        二级tab_标签二
+                    </div>
+                    <div class="bh-tab-pane" id="tab_lv2_3">
+                        二级tab_标签三
+                    </div>
+                </div>
+                <!-- react 分页控件区域-->
+                <div id="paging-wrapper"></div>
+                <!-- /react 分页控件区域-->
+                
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="bh-text-caption-large bh-color-caption activity-footer">Copyright @ 2011同济大学学生就业培训中心 All rights Reserved</div>
+    </footer>
+    <!-- <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script> -->
+    <script src="./lib/jquery-min-1.11.3.js"></script>
+    <!-- <script src="http://res.wisedu.com/fe_components/bh.js"></script> -->
+    <script src="./lib/bh.js"></script>
+    <script src="../../grid.js"></script>
+    <script src="http://localhost:8080/webpack-dev-server.js"></script>
+  </body>
+</html>
