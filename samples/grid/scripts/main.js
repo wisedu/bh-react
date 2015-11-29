@@ -57,7 +57,7 @@ ReactDOM.render(<Table rowSelection={rowSelection} columns={columns} dataSource=
 
 
 
-/* ---------------------------------- 分页空间调用方式 ---------------------------------*/
+/* ---------------------------------- 分页组件调用方式 ---------------------------------*/
 /*
 ReactDOM.render(
     <Pagination showQuickJumper={true} showSizeChanger={true} total={500} onChange={onChange} onShowSizeChange={onShowSizeChange} pageSizeOptions={['10', '20', '50', '100']}/>, 

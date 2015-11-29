@@ -11,7 +11,7 @@ var entry =  {
 };
 
 var output = {
-    //path: '/dist',
+    path: './dist',
     filename: '[name].js'
 };
 
