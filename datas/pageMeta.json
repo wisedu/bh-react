@@ -73,7 +73,8 @@
             "caption": "调出房间号",
             "quickSearch": true,
             "dataSize": 40,
-            "groupName":"宿舍信息"
+            "groupName":"宿舍信息",
+            "col":2
         }, {
             "name": "DRSSL",
             "dataType": "String",
@@ -81,7 +82,8 @@
             "url": "\/ssxtweb\/code\/c043b195-d8a2-498d-86b5-09e27da23b2d.do",
             "xtype": "select",
             "dataSize": 40,
-            "groupName":"宿舍信息"
+            "groupName":"宿舍信息",
+            "col":2
         }, {
             "name": "DRFJH",
             "dataType": "String",
@@ -111,7 +113,8 @@
             "xtype": "date-local",
             "dataSize": 7,
             "format": "yyyy-MM-dd",
-            "groupName":"宿舍信息"
+            "groupName":"宿舍信息",
+            "col":2
         }, {
             "name": "XSBH",
             "dataType": "String",

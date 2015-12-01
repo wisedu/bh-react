@@ -7,9 +7,11 @@ var pageMeta = require("../datas/pageMeta.json");
 
 var formEMAP = new FormEMAP(pageMeta);
 // var items = formEMAP.getItems("ddrzcx", 3);
+var data = {XM:"阮一峰", XH:"WW1022112",XBDM:1};
 
 const Demo = React.createClass({
   // mixins: [Form.ValueMixin],
+  
 
   handleSubmit(e) {
     e.preventDefault();
@@ -27,16 +29,19 @@ const Demo = React.createClass({
 
   render() {
     return (
-      <div>
-        {formEMAP.buildForm("ddrzcx", 3)}
+      <div className="bh-container">
+        {formEMAP.buildForm("ddrzcx", data, 3)}
         <Row>
           <Col span="4" offset="8">
             <Button type="primary" onClick={this.handleSubmit}>确定</Button>
           </Col>
         </Row>
+        {formEMAP.buildForm("ddrzcx", data, 3, true)}
+        {formEMAP.buildForm("T_SS_ZS_DDYY_QUERY", data, 2, true)}
       </div>
     );
   }
+
 });
 
 ReactDOM.render(<Demo />, document.getElementById('app'));

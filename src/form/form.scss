@@ -1,5 +1,9 @@
 $ddd1px: 1px solid #DDDDDD;
 
+.bh-fm-block {
+  overflow: hidden;
+}
+
 .bh-fm-compact {
   display: block;
   clear: both;
@@ -20,20 +24,32 @@ $ddd1px: 1px solid #DDDDDD;
   }
 
   &.read {
-    border-bottom: $ddd1px;
-    border-right: $ddd1px;
+    // border-bottom: $ddd1px;
+    // border-right: $ddd1px;
     width: 100%;
     padding-left: 0px;
     padding-right: 0px;
     overflow: hidden;
 
     .bh-form-group {
-        border-top: $ddd1px;
-        border-left: $ddd1px;
+        // border-top: $ddd1px;
+        // border-left: $ddd1px;
+        // border: $ddd1px;
         margin: 0;
+        display: flex;
     }
-
+    .groupRow{
+      border-bottom: $ddd1px;
+    }
+    .readRow{
+      border-bottom: $ddd1px;
+      border-right: $ddd1px;
+    }
+    .readRow:first-child{
+      border-top: $ddd1px;
+    }
     label.bh-form-label {
+      border-left: $ddd1px;
       border-right: $ddd1px;
       line-height: 32px;
       padding: 0 10px;
