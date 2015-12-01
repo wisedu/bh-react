@@ -5,7 +5,7 @@ import Pagination from '../pagination/index';
 // import Spin from '../spin/index';
 // import Icon from '../iconfont/index';
 // import Checkbox from '../checkbox/index';
-import {Spin, Icon, Checkbox} from 'antd';
+import {Spin, Icon, Checkbox} from '../../index';
 
 require('./bh-table.scss');
 
@@ -313,7 +313,7 @@ let Table = React.createClass({
             column = Object.assign({}, column);
             let key = this.getColumnKey(column, i);
             let sortButton;
-          
+
             if (column.sorter) {
                 let isSortColumn = this.isSortColumn(column);
                 if (isSortColumn) {

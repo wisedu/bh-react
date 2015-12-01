@@ -6,8 +6,8 @@ var entry =  {
     // "tree": ['./src/tree/examples/tree.js'],
     // "tree-async": ['./src/tree/examples/tree-async.js'],
     // "treeDemo01": ['./samples/treeDemo01.js']
-    //"bh":["./samples/form.jsx"]
-    "grid": ["./samples/grid/scripts/main.js"]
+    "bh":["./samples/form.jsx"]
+    // "grid": ["./samples/grid/scripts/main.js"]
 };
 
 var output = {

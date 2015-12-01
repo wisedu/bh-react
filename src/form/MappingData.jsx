@@ -48,14 +48,14 @@ class MappingData{
       {items}
     </Row>);
   }
-  getItem(col, name, xtype, caption, require, readonly, placeholder){
+  getItem(col, value, name, xtype, caption, require, readonly, placeholder){
 
     var control;
     var icon;
     if(this.isRead){
-      control = (<span className="bh-form-label">123</span>);
+      control = (<span className="bh-form-control">{value}</span>);
     }else{
-      control = (<Input type={xtype} name={name} placeholder={placeholder} readOnly={readonly}/>);
+      control = (<Input type={xtype} name={name} placeholder={placeholder} readOnly={readonly} value={value}/>);
       icon = this.getIcon(xtype);
     }
 

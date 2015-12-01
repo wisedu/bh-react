@@ -6,9 +6,9 @@ class MappingFormEMAP{
   }
   buildForm(modelName, datas, cols = 2, isRead = false){
     this.cols = cols;
-    return MappingData.getForm(this.getItems(modelName, cols, isRead), isRead);
+    return MappingData.getForm(this.getItems(modelName, datas, cols, isRead), isRead);
   }
-  getItems(modelName, cols, isRead = false){
+  getItems(modelName, datas = {}, cols, isRead = false){
     var pageMetaModel = this.pageMeta.models.filter((elm, index)=>{
       if(elm.name == modelName)
         return elm;
@@ -24,7 +24,7 @@ class MappingFormEMAP{
     var isNewRow = false;
     pageMetaModel[0].controls.map((item, index)=>{
       if(!item.hidden){
-        let column = formItem.getItem(item.col, item.name, item.xtype, item.caption, item.require, item.readonly, item.placeholder);
+        let column = formItem.getItem(item.col, datas[item.name], item.name, item.xtype, item.caption, item.require, item.readonly, item.placeholder);
 
         var groupRow = formItem.getGroup(item.groupName, item.hidden);
         if(groupRow){
